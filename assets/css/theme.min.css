@@ -21448,8 +21448,9 @@ label.form-control {
 
 .navbar-brand-logo {
     width: 100%;
-    min-width: 7.5rem;
-    max-width: 7.5rem
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
 }
 
 .navbar-brand-collapsed,
