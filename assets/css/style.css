@@ -5,3 +5,7 @@ html {
 a[href^="#"] {
     scroll-behavior: smooth;
 }
+
+.team-overflow {
+    overflow-y: scroll;
+}

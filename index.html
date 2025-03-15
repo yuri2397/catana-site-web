@@ -17,12 +17,18 @@
 
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="./assets/css/vendor.min.css">
+    <link href="./assets/fonts/feather/feather.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="./assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./assets/vendor/aos/dist/aos.css">
 
     <!-- CSS Front Template -->
     <link rel="stylesheet" href="./assets/css/theme.min.css?v=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link href="./assets/libs/tiny-slider/dist/tiny-slider.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/libs/glightbox/dist/css/glightbox.min.css" />
+
 </head>
 
 <body>
@@ -295,7 +301,8 @@
                                         </clipPath>
                                         <g clip-path="url(#circleImgID3)">
                                             <image width="100%" height="100%" class="rounded-circle"
-                                                xlink:href="./assets/img/valeur-2.png" style="width: 100%; height: 100%; object-fit: fill;"
+                                                xlink:href="./assets/img/valeur-2.png"
+                                                style="width: 100%; height: 100%; object-fit: fill;"
                                                 transform="matrix(1 0 0 1 1.639390e-02 2.880859e-02)"></image>
                                         </g>
                                     </g>
@@ -331,8 +338,7 @@
                                             <use xlink:href="#circleImgID6"></use>
                                         </clipPath>
                                         <g clip-path="url(#circleImgID5)">
-                                            <image width="100%" height="100%"
-                                                xlink:href="./assets/img/valeur-3.jpg"
+                                            <image width="100%" height="100%" xlink:href="./assets/img/valeur-3.jpg"
                                                 preserveAspectRatio="xMidYMid slice"></image>
                                         </g>
                                     </g>
@@ -476,7 +482,6 @@
         <!-- END VALUES -->
         <br>
         <br>
-
         <!-- FAQ -->
         <div id="faq" class="container content-space-2 content-space-lg-2 bg-light rounded rounded-3">
             <!-- Heading -->
@@ -577,466 +582,227 @@
         </div>
         <!-- End FAQ -->
 
-        <!-- TEST -->
 
-        <section class="py-8 bg-light">
-            <div class="container">
-                <div class="row gy-4 gy-xl-0">
-                    <div class="col-xl-4 col-lg-6 col-12">
-                        <div class="bg-primary px-4 pt-4 rounded-3 position-relative d-flex flex-column justify-content-center">
-                            <img src="../../assets/images/landing-immigration/testimonial-img.png" alt="" class="img-fluid">
-                            <div class="position-absolute top-50 start-50 mx-n4">
-                                <a class="glightbox icon-shape rounded-circle icon-xl pulser"
-                                    href="https://www.youtube.com/watch?v=Nfzi7034Kbg">
-                                    <i class="fe fe-play"></i>
-                                </a>
-                            </div>
-                            <div class="position-absolute bottom-0 mb-6 start-0 end-0 ps-4">
-                                <div class="bg-dark d-inline-block p-2 px-3 text-white fw-semibold">Shawn Beltran</div>
-                                <div class="bg-white d-inline-block p-2 px-3 text-dark fw-semibold ms-5">
-                                    <span class="text-gray-500">Columbia University</span>
-                                    <span class="mx-2">Canada</span>
-                                    <svg width="24" height="24" viewBox="0 0 72 72" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_8060_1993)">
-                                            <path
-                                                d="M36 72C55.8823 72 72 55.8823 72 36C72 16.1177 55.8823 0 36 0C16.1177 0 0 16.1177 0 36C0 55.8823 16.1177 72 36 72Z"
-                                                fill="#F0F0F0"></path>
-                                            <path
-                                                d="M72.0027 36.003C72.0027 21.7304 63.6966 9.39819 51.6548 3.5752V68.4307C63.6966 62.6079 72.0027 50.2756 72.0027 36.003Z"
-                                                fill="#D80027"></path>
-                                            <path
-                                                d="M0.00146484 36.0011C0.00146484 50.2737 8.30748 62.6059 20.3493 68.4289V3.57324C8.30748 9.39624 0.00146484 21.7285 0.00146484 36.0011Z"
-                                                fill="#D80027"></path>
-                                            <path
-                                                d="M42.2626 40.6985L48.5233 37.5681L45.393 36.0029V32.8724L39.1321 36.0029L42.2626 29.742H39.1321L36.0017 25.0464L32.8712 29.742H29.7407L32.8712 36.0029L26.6103 32.8724V36.0029L23.48 37.5681L29.7407 40.6985L28.1756 43.829H34.4365V48.5246H37.5668V43.829H43.8277L42.2626 40.6985Z"
-                                                fill="#D80027"></path>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_8060_1993">
-                                                <rect width="72" height="72" fill="white"></rect>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
+        <!-- OUT TEAM -->
+        <section class="py-md-8 py-6"
+            style="background-image: url(../assets/images/mentor/mentor-glow.svg); background-repeat: no-repeat; background-size: contain">
+            <div class="container py-lg-6">
+                <!--row-->
+                <h1 class="mb-0 display-4 fw-bold">
+                    Notre équipe
+                </h1>
+                <span class="text-dark fs-5">Notre équipe est composée de professionnels passionnés et
+                    expérimentés qui travaillent ensemble pour atteindre nos objectifs communs.</span>
+            </div>
+            <div class="team-overflow">
+                <div class="position-relative d-flex overflow-x-hidden py-lg-4 pt-4">
+                    <div class="animate-marquee d-flex gap-3">
+                        <a href="#personelModal1" data-bs-toggle="modal" data-bs-target="#personelModal1" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
+                            style="width: 200px !important">
+                            <!--img-->
+                            <div class="py-2">
+                                <img src="./assets/img/personel/1.png" alt="mentor 1"
+                                    class="avatar avatar-xl rounded-circle">
+                                <!--content-->
+                                <div class="mt-3">
+                                    <h5 class="">Prof Ibrahima SAKHO</h5>
+                                    <span class="text-dark">Fondateur et Président Directeur Général du CAFTANA</span>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-8 col-lg-6 col-12">
-                        <div class="px-xl-8 my-lg-6">
-                            <div class="mb-5">
-                                <span class="fw-semibold text-primary">Testimonials</span>
-                                <h2 class="h1 mt-3 mb-0">What Our Student Says</h2>
-                                <p class="mb-0">Here’s what our clients have to say about their experiences with us:</p>
-                            </div>
-                            <div class="position-relative">
-                                <div class="tns-outer" id="tns1-ow">
-                                    <div class="tns-liveregion tns-visually-hidden" aria-live="polite" aria-atomic="true">slide
-                                        <span class="current">9</span> of 5</div>
-                                    <div id="tns1-mw" class="tns-ovh">
-                                        <div class="tns-inner" id="tns1-iw">
-                                            <div class="sliderTestimonialFourth  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
-                                                id="tns1" style="transform: translate3d(-72.7273%, 0px, 0px);">
-                                                <div class="item tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-3 mb-3">
-                                                                <img src="../../assets/images/avatar/avatar-9.jpg" alt=""
-                                                                    class="avatar avatar-lg rounded-circle">
-                                                                <div>
-                                                                    <h3 class="h4 mb-0">Nilarj Misty</h3>
-                                                                    <p class="d-flex gap-2 mb-0">
-                                                                        <small>Georgia State University</small>
-        
-                                                                        <small class="text-dark fw-semibold">Atlanta</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <p class="mb-0">"I was impressed with the IELTS course. The detailed
-                                                                study materials and interactive classes helped me improve my
-                                                                score significantly."</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-3 mb-3">
-                                                                <img src="../../assets/images/avatar/avatar-8.jpg" alt=""
-                                                                    class="avatar avatar-lg rounded-circle">
-                                                                <div>
-                                                                    <h3 class="h4 mb-0">Kevos Maziz</h3>
-                                                                    <p class="d-flex gap-2 mb-0">
-                                                                        <small>Georgia State University</small>
-        
-                                                                        <small class="text-dark fw-semibold">Atlanta</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <p class="mb-0">"I was impressed with the IELTS course. The detailed
-                                                                study materials and interactive classes helped me improve my
-                                                                score significantly."</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-3 mb-3">
-                                                                <img src="../../assets/images/avatar/avatar-6.jpg" alt=""
-                                                                    class="avatar avatar-lg rounded-circle">
-                                                                <div>
-                                                                    <h3 class="h4 mb-0">Simon Detol</h3>
-                                                                    <p class="d-flex gap-2 mb-0">
-                                                                        <small>Georgia State University</small>
-        
-                                                                        <small class="text-dark fw-semibold">Atlanta</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <p class="mb-0">"I was impressed with the IELTS course. The detailed
-                                                                study materials and interactive classes helped me improve my
-                                                                score significantly."</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- item -->
-                                                <div class="item tns-item" id="tns1-item0" aria-hidden="true" tabindex="-1">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-3 mb-3">
-                                                                <img src="../../assets/images/avatar/avatar-1.jpg" alt=""
-                                                                    class="avatar avatar-lg rounded-circle">
-                                                                <div>
-                                                                    <h3 class="h4 mb-0">Shawn Beltran</h3>
-                                                                    <p class="d-flex gap-2 mb-0">
-                                                                        <small>Columbia University</small>
-        
-                                                                        <small class="text-dark fw-semibold">New York</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <p class="mb-0">"The personalized support I received was invaluable.
-                                                                Thanks to the expert guidance and resources, I scored above my
-                                                                target on the TOEFL!"</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- item -->
-                                                <div class="item tns-item" id="tns1-item1" aria-hidden="true" tabindex="-1">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-3 mb-3">
-                                                                <img src="../../assets/images/avatar/avatar-3.jpg" alt=""
-                                                                    class="avatar avatar-lg rounded-circle">
-                                                                <div>
-                                                                    <h3 class="h4 mb-0">Liya Pickett</h3>
-                                                                    <p class="d-flex gap-2 mb-0">
-                                                                        <small>Georgia State University</small>
-        
-                                                                        <small class="text-dark fw-semibold">Atlanta</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <p class="mb-0">"I was impressed with the IELTS course. The detailed
-                                                                study materials and interactive classes helped me improve my
-                                                                score significantly."</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- item -->
-                                                <div class="item tns-item" id="tns1-item2" aria-hidden="true" tabindex="-1">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-3 mb-3">
-                                                                <img src="../../assets/images/avatar/avatar-9.jpg" alt=""
-                                                                    class="avatar avatar-lg rounded-circle">
-                                                                <div>
-                                                                    <h3 class="h4 mb-0">Nilarj Misty</h3>
-                                                                    <p class="d-flex gap-2 mb-0">
-                                                                        <small>Georgia State University</small>
-        
-                                                                        <small class="text-dark fw-semibold">Atlanta</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <p class="mb-0">"I was impressed with the IELTS course. The detailed
-                                                                study materials and interactive classes helped me improve my
-                                                                score significantly."</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- item -->
-                                                <div class="item tns-item" id="tns1-item3" aria-hidden="true" tabindex="-1">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-3 mb-3">
-                                                                <img src="../../assets/images/avatar/avatar-8.jpg" alt=""
-                                                                    class="avatar avatar-lg rounded-circle">
-                                                                <div>
-                                                                    <h3 class="h4 mb-0">Kevos Maziz</h3>
-                                                                    <p class="d-flex gap-2 mb-0">
-                                                                        <small>Georgia State University</small>
-        
-                                                                        <small class="text-dark fw-semibold">Atlanta</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <p class="mb-0">"I was impressed with the IELTS course. The detailed
-                                                                study materials and interactive classes helped me improve my
-                                                                score significantly."</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- item -->
-                                                <div class="item tns-item" id="tns1-item4" aria-hidden="true" tabindex="-1">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-3 mb-3">
-                                                                <img src="../../assets/images/avatar/avatar-6.jpg" alt=""
-                                                                    class="avatar avatar-lg rounded-circle">
-                                                                <div>
-                                                                    <h3 class="h4 mb-0">Simon Detol</h3>
-                                                                    <p class="d-flex gap-2 mb-0">
-                                                                        <small>Georgia State University</small>
-        
-                                                                        <small class="text-dark fw-semibold">Atlanta</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <p class="mb-0">"I was impressed with the IELTS course. The detailed
-                                                                study materials and interactive classes helped me improve my
-                                                                score significantly."</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item tns-item tns-slide-cloned tns-slide-active">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-3 mb-3">
-                                                                <img src="../../assets/images/avatar/avatar-1.jpg" alt=""
-                                                                    class="avatar avatar-lg rounded-circle">
-                                                                <div>
-                                                                    <h3 class="h4 mb-0">Shawn Beltran</h3>
-                                                                    <p class="d-flex gap-2 mb-0">
-                                                                        <small>Columbia University</small>
-        
-                                                                        <small class="text-dark fw-semibold">New York</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <p class="mb-0">"The personalized support I received was invaluable.
-                                                                Thanks to the expert guidance and resources, I scored above my
-                                                                target on the TOEFL!"</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-3 mb-3">
-                                                                <img src="../../assets/images/avatar/avatar-3.jpg" alt=""
-                                                                    class="avatar avatar-lg rounded-circle">
-                                                                <div>
-                                                                    <h3 class="h4 mb-0">Liya Pickett</h3>
-                                                                    <p class="d-flex gap-2 mb-0">
-                                                                        <small>Georgia State University</small>
-        
-                                                                        <small class="text-dark fw-semibold">Atlanta</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <p class="mb-0">"I was impressed with the IELTS course. The detailed
-                                                                study materials and interactive classes helped me improve my
-                                                                score significantly."</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-3 mb-3">
-                                                                <img src="../../assets/images/avatar/avatar-9.jpg" alt=""
-                                                                    class="avatar avatar-lg rounded-circle">
-                                                                <div>
-                                                                    <h3 class="h4 mb-0">Nilarj Misty</h3>
-                                                                    <p class="d-flex gap-2 mb-0">
-                                                                        <small>Georgia State University</small>
-        
-                                                                        <small class="text-dark fw-semibold">Atlanta</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <p class="mb-0">"I was impressed with the IELTS course. The detailed
-                                                                study materials and interactive classes helped me improve my
-                                                                score significantly."</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        </a>
+                        <a href="#personelModal2" data-bs-toggle="modal" data-bs-target="#personelModal2" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
+                            style="width: 200px !important">
+                            <!--img-->
+                            <div class="py-2">
+                                <img src="./assets/img/personel/2.png" alt="mentor 2"
+                                    class="avatar avatar-xl rounded-circle">
+                                <!--content-->
+                                <div class="mt-3">
+                                    <h5 class="">Dr Magatte DIAGNE</h5>
+                                    <span class="text-dark">Vice-présidente du CAFTANA</span>
                                 </div>
-                                <ul class="controls-testimonial controls justify-content-start"
-                                    id="sliderTestimonialFourthControls" aria-label="Carousel Navigation" tabindex="0">
-                                    <li class="prev ms-0" aria-controls="tns1" tabindex="-1" data-controls="prev">
-                                        <i class="fe fe-chevron-left"></i>
-                                    </li>
-                                    <li class="next ms-2" aria-controls="tns1" tabindex="-1" data-controls="next">
-                                        <i class="fe fe-chevron-right"></i>
-                                    </li>
-                                </ul>
                             </div>
-                        </div>
+                        </a>
+                        <a href="#personelModal3" data-bs-toggle="modal" data-bs-target="#personelModal3" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
+                            style="width: 200px !important">
+                            <!--img-->
+                            <div class="py-2">
+                                <img src="./assets/img/personel/3.png" alt="mentor 3"
+                                    class="avatar avatar-xl rounded-circle">
+                                <!--content-->
+                                <div class="mt-3">
+                                    <h5 class="">Prof Mamadou SOUMBOUNDOU</h5>
+                                    <span class="text-dark">Président de la Commission Recherche Innovation</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#personelModal4" data-bs-toggle="modal" data-bs-target="#personelModal4" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
+                            style="width: 200px !important">
+                            <!--img-->
+                            <div class="p-3">
+                                <img src="./assets/img/personel/4.png" alt="mentor 4"
+                                    class="avatar avatar-xl rounded-circle">
+                                <!--content-->
+                                <div class="mt-3">
+                                    <h5 class="">Dr Maïmouna MANÉ</h5>
+                                    <span class="text-dark">Vice-présidente du CAFTANA</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#personelModal5" data-bs-toggle="modal" data-bs-target="#personelModal5" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
+                            style="width: 200px !important">
+                            <!--img-->
+                            <div class="p-3">
+                                <img src="./assets/img/personel/5.png" alt="mentor 5"
+                                    class="avatar avatar-xl rounded-circle">
+                                <!--content-->
+                                <div class="mt-3">
+                                    <h5 class="">Dr Yawo Atsu Constantino FIAGAN</h5>
+                                    <span class="text-dark">Vice-présidente du CAFTANA</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#personelModal6" data-bs-toggle="modal" data-bs-target="#personelModal6" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
+                            style="width: 200px !important">
+                            <!--img-->
+                            <div class="p-3">
+                                <img src="./assets/img/personel/6.png" alt="mentor 6"
+                                    class="avatar avatar-xl rounded-circle">
+                                <!--content-->
+                                <div class="mt-3">
+                                    <h5 class="">Dr Lamine Boubacar KONATÉ</h5>
+                                    <span class="text-dark">Vice-président de la Commission Recherche Innovation</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#personelModal7" data-bs-toggle="modal" data-bs-target="#personelModal7" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
+                            style="width: 200px !important">
+                            <!--img-->
+                            <div class="p-3">
+                                <img src="./assets/img/personel/7.png" alt="mentor 7"
+                                    class="avatar avatar-xl rounded-circle">
+                                <!--content-->
+                                <div class="mt-3">
+                                    <h5 class="">Mme Ndèye Lama KAMARA</h5>
+                                    <span class="text-dark">Secrétaire Générale Adjointe du CAFTANA</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#personelModal8" data-bs-toggle="modal" data-bs-target="#personelModal8" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
+                            style="width: 200px !important">
+                            <!--img-->
+                            <div class="p-3">
+                                <img src="./assets/img/personel/8.png" alt="mentor 8"
+                                    class="avatar avatar-xl rounded-circle">
+                                <!--content-->
+                                <div class="mt-3">
+                                    <h5 class="">Dr Momar Talla GNINGEN</h5>
+                                    <span class="text-dark">Trésorier Général du CAFTANA</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#personelModal9" data-bs-toggle="modal" data-bs-target="#personelModal9" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
+                            style="width: 200px !important">
+                            <!--img-->
+                            <div class="py-3">
+                                <img src="./assets/img/personel/9.png" alt="mentor 9"
+                                    class="avatar avatar-xl rounded-circle">
+                                <!--content-->
+                                <div class="mt-3">
+                                    <h5 class="">Dr Kodjo Joël Fabrice N’GUESSAN</h5>
+                                    <span class="text-dark">Vice-président de la Commission chargée des relations
+                                        internationales</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#personelModal10" data-bs-toggle="modal" data-bs-target="#personelModal10" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
+                            style="width: 200px !important">
+                            <!--img-->
+                            <div class="p-3">
+                                <img src="./assets/img/personel/10.png" alt="mentor 10"
+                                    class="avatar avatar-xl rounded-circle">
+                                <!--content-->
+                                <div class="mt-3">
+                                    <h5 class="">Dr Ali TRAORÉ</h5>
+                                    <span class="text-dark">Membre actif du CAFTANA</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#personelModal11" data-bs-toggle="modal" data-bs-target="#personelModal11" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
+                            style="width: 200px !important">
+                            <!--img-->
+                            <div class="p-3">
+                                <img src="./assets/img/personel/11.png" alt="mentor 11"
+                                    class="avatar avatar-xl rounded-circle">
+                                <!--content-->
+                                <div class="mt-3">
+                                    <h5 class="">Mr Djibril DIOP</h5>
+                                    <span class="text-dark">Président de la commission chargée des relations avec le
+                                        monde professionnel</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#personelModal12" data-bs-toggle="modal" data-bs-target="#personelModal12" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
+                            style="width: 200px !important">
+                            <!--img-->
+                            <div class="p-3">
+                                <img src="./assets/img/personel/12.png" alt="mentor 12"
+                                    class="avatar avatar-xl rounded-circle">
+                                <!--content-->
+                                <div class="mt-3">
+                                    <h5 class="">Mr Babacar BODIAN</h5>
+                                    <span class="text-dark">Vice-président de la commission chargée des relations avec
+                                        le monde professionnel</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#personelModal13" data-bs-toggle="modal" data-bs-target="#personelModal13" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
+                            style="width: 200px !important">
+                            <!--img-->
+                            <div class="p-3">
+                                <img src="./assets/img/personel/13.png" alt="mentor 13"
+                                    class="avatar avatar-xl rounded-circle">
+                                <!--content-->
+                                <div class="mt-3">
+                                    <h5 class="">Dr Abdourahmane DIALLO</h5>
+                                    <span class="text-dark">Président de la commission chargée de l’animation
+                                        pédagogique et scientifique</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#personelModal14" data-bs-toggle="modal" data-bs-target="#personelModal14" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
+                            style="width: 200px !important">
+                            <!--img-->
+                            <div class="p-3">
+                                <img src="./assets/img/personel/14.png" alt="mentor 14"
+                                    class="avatar avatar-xl rounded-circle">
+                                <!--content-->
+                                <div class="mt-3">
+                                    <h5 class="">Dr Jean Kouhissoré BADIANE</h5>
+                                    <span class="text-dark">Vice-président de la commission chargée de l'animation
+                                        pédagogique et scientifique</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#personelModal15" data-bs-toggle="modal" data-bs-target="#personelModal15" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
+                            style="width: 200px !important">
+                            <!--img-->
+                            <div class="p-3">
+                                <img src="./assets/img/personel/15.png" alt="mentor 15"
+                                    class="avatar avatar-xl rounded-circle">
+                                <!--content-->
+                                <div class="mt-3">
+                                    <h5 class="">Dr Babacar DIOP</h5>
+                                    <span class="text-dark">Président de la commission chargée des relations avec le
+                                        monde universitaire</span>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
-      
-        <!-- OUT TEAM -->
-        <div id="team" class="container content-space-2 content-space-lg-3">
-            <!-- Heading -->
-            <div class="w-md-75 text-center mx-md-auto mb-9">
-                <h2 class="h1">Notre équipe</h2>
-                <p>Une équipe passionnée et engagée, unie par l’innovation et la volonté de vous offrir le meilleur.</p>
-            </div>
-            <!-- End Heading -->
-
-            <div class="row gx-3 mb-5">
-                <div class="col-sm-4 col-lg-3 mb-3">
-                    <!-- Card -->
-                    <div class="card card-transition h-100">
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <div class="avatar avatar-lg avatar-circle mb-4">
-                                    <img class="avatar-img" src="./assets/img/personel/1.png" alt="Image Description">
-                                </div>
-                                
-                                <div>
-                                    <span class="card-subtitle ">Prof Ibrahima SAKHO</span>
-                                    <span class="text-dark">Fondateur du CAFTANA et Président Directeur Général du
-                                    CAFTANA</span>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <!-- footer -->
-                        <div class="card-footer">
-                            <button class="btn btn-primary rounded-pill w-100 " href="#" data-bs-toggle="modal"
-                                data-bs-target="#personelModal1">
-                                Voir la bio
-                            </button>
-                        </div>
-                    </div>
-                    <!-- End Card -->
-                </div>
-                <!-- End Col -->
-
-                <div class="col-sm-4 col-lg-3 mb-3">
-                    <!-- Card -->
-                    <div class="card card-transition h-100">
-                        <div class="card-body">
-                            <div class="avatar avatar-lg avatar-circle mb-4">
-                                <img class="avatar-img" src="./assets/img/personel/2.png" alt="Image Description">
-                            </div>
-                            <span class="card-subtitle">Vice-présidente du CAFTANA</span>
-                            <h4 class="card-title">Dr Magatte DIAGNE</h4>
-
-                        </div>
-                        <!-- footer -->
-                        <div class="card-footer">
-                            <button class="btn btn-primary rounded-pill w-100 " href="#" data-bs-toggle="modal"
-                                data-bs-target="#personelModal2">
-                                Voir la bio
-                            </button>
-                        </div>
-                    </div>
-                    <!-- End Card -->
-                </div>
-                <!-- End Col -->
-
-                <div class="col-sm-4 col-lg-3 mb-3">
-                    <!-- Card -->
-                    <div class="card card-transition h-100">
-                        <div class="card-body">
-                            <div class="avatar avatar-lg avatar-circle mb-4">
-                                <img class="avatar-img" src="./assets/img/personel/3.png" alt="Image Description">
-                            </div>
-
-                            <span class="card-subtitle">Président de la Commission Recherche Innovation (CREI) du
-                                CAFTANA</span>
-                            <h4 class="card-title">Prof Mamadou SOUMBOUNDOU</h4>
-
-                        </div>
-                        <!-- footer -->
-                        <div class="card-footer">
-                            <button class="btn btn-primary rounded-pill w-100 " href="#" data-bs-toggle="modal"
-                                data-bs-target="#personelModal3">
-                                Voir la bio
-                            </button>
-                        </div>
-
-                    </div>
-                    <!-- End Card -->
-                </div>
-                <!-- End Col -->
-
-                <div class="col-sm-4 col-lg-3 mb-3">
-                    <!-- Card -->
-                    <div class="card card-transition h-100">
-                        <div class="card-body">
-                            <div class="avatar avatar-lg avatar-circle mb-4">
-                                <img class="avatar-img" src="./assets/img/personel/4.png" alt="Image Description">
-                            </div>
-
-                            <span class="card-subtitle">Secrétaire Générale du CAFTANA</span>
-                            <h4 class="card-title">
-                                Dr Maïmouna MANÉ
-                            </h4>
-
-                        </div>
-                        <!-- footer -->
-                        <div class="card-footer">
-                            <button class="btn btn-primary rounded-pill w-100 " href="#" data-bs-toggle="modal"
-                                data-bs-target="#personelModal4">
-                                Voir la bio
-                            </button>
-                        </div>
-
-                    </div>
-                    <!-- End Card -->
-                </div>
-                <!-- End Col -->
-
-                <div class="col-sm-4 col-lg-3 mb-3">
-                    <!-- Card -->
-                    <div class="card card-transition h-100">
-                        <div class="card-body">
-                            <div class="avatar avatar-lg avatar-circle mb-4">
-                                <img class="avatar-img" src="./assets/img/personel/5.png" alt="Image Description">
-                            </div>
-
-                            <span class="card-subtitle">Président de la Commission Recherche Innovation (CREI) du
-                                CAFTANA</span>
-                            <h4 class="card-title">
-                                Dr Yawo Atsu Constantino FIAGAN
-                            </h4>
-
-                        </div>
-                        <!-- footer -->
-                        <div class="card-footer">
-                            <button class="btn btn-primary rounded-pill w-100 " href="#" data-bs-toggle="modal"
-                                data-bs-target="#personelModal5">
-                                Voir la bio
-                            </button>
-                        </div>
-                    </div>
-                    <!-- End Card -->
-                </div>
-            </div>
-            <!-- End Row -->
-        </div>
         <!-- END OUT TEAM -->
 
         <!-- MODALS -->
@@ -1172,24 +938,273 @@
                         <div class="avatar avatar-lg avatar-circle mb-4">
                             <img class="avatar-img" src="./assets/img/personel/5.png" alt="Image Description">
                         </div>
-                        <span class="card-subtitle">Président de la Commission Recherche Innovation (CREI) du
-                            CAFTANA</span>
-                        <h4 class="card-title">Dr Yawo Atsu Constantino FIAGAN - 🇹🇬 Togolais</h4>
+                        <span class="card-subtitle">Membre actif du CAFTANA</span>
+                        <h4 class="card-title">Dr Ali TRAORÉ - 🇹🇬 Togolais</h4>
                         <p class="card-text">
                             Docteur en physique médicale option radiothérapie (Université Libre de Bruxelles, 2024)
                             Stagiaire en Radiothérapie au GZA Hospital, Sint-Augustinus, Iridium Netwerk, Anvers,
                             Belgique.
                             Coordinateur du projet de l’Agence Internationale de l’Énergie Atomique (AIEA) portant sur
-                            la mise en place de
-                            l'autorité de régulation des sources nucléaires et radioactives, et aussi des équipements à
-                            rayonnements ionisant au
-                            Togo.
+                            la mise en place de l'autorité de régulation des sources nucléaires et radioactives, et
+                            aussi des équipements à
+                            rayonnements ionisant au Togo.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- PERSONEL 6 -->
+        <div class="modal fade" id="personelModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-close">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar avatar-lg avatar-circle mb-4">
+                            <img class="avatar-img" src="./assets/img/personel/6.png" alt="Image Description">
+                        </div>
+                        <span class="card-subtitle">Vice-président de la Commission Recherche Innovation (CREI) du CAFTANA</span>
+                        <h4 class="card-title">Dr Lamine Boubacar KONATÉ - 🇸🇳 Sénégalais</h4>
+                        <p class="card-text">
+                            Docteur ingénieur en génie électrique (Ecole Centrale de Lyon, 2016)
+                            Responsable du laboratoire de spectrométrie gamma de l’Institut de Technologie Nucléaire Appliquée (Université Cheikh
+                            Anta Diop)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERSONEL 7 -->
+        <div class="modal fade" id="personelModal7" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-close">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar avatar-lg avatar-circle mb-4">
+                            <img class="avatar-img" src="./assets/img/personel/7.png" alt="Image Description">
+                        </div>
+                        <span class="card-subtitle">Secrétaire Générale Adjointe du CAFTANA</span>
+                        <h4 class="card-title">Mme Ndèye Lama KAMARA - 🇸🇳 Sénégalaise</h4>
+                        <p class="card-text">
+                            Ingénieure Biomédicale (Université Polytechnique de l’Ouest Africain, 2022)
+                            Doctorante en physique médicale, Université Iba Der Thiam
+                            Responsable projet équipement de mesure et contrôle qualité des installations à Technologies Services Dakar
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERSONEL 8 -->
+        <div class="modal fade" id="personelModal8" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-close">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar avatar-lg avatar-circle mb-4">
+                            <img class="avatar-img" src="./assets/img/personel/8.png" alt="Image Description">
+                        </div>
+                        <span class="card-subtitle">Trésorier Général du CAFTANA</span>
+                        <h4 class="card-title">Dr Momar Talla GNING - 🇸🇳 Sénégalais</h4>
+                        <p class="card-text">
+                            Docteur en Physique Atomique et Nucléaire (Université Iba Der Thiam, 2021)
+                            Professeur de Sciences Physiques, Lycée Diakhao Sine de Fatick
+                            Enseignant-vacataire, Université du Sine Sakoum Hadji Ibrahima Niass (USSEIN).
+        
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERSONEL 9 -->
+        <div class="modal fade" id="personelModal9" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-close">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar avatar-lg avatar-circle mb-4">
+                            <img class="avatar-img" src="./assets/img/personel/9.png" alt="Image Description">
+                        </div>
+                        <span class="card-subtitle">Vice-président de la Commission chargée des relations
+                            internationales (CRI) du CAFTANA</span>
+                        <h4 class="card-title">Dr Kodjo Joël Fabrice N’GUESSAN - 🇨🇮 Ivoirien</h4>
+                        <p class="card-text">
+                            Vice-président de la Commission chargée des relations internationales (CRI) du CAFTANA
+                            Docteur en physique médicale option radiothérapie (Université Iba Der Thiam, 2024)
+                            Conseiller en radioprotection au Centre International de Cancérologie de Lomé (TOGO)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERSONEL 10 -->
+        <div class="modal fade" id="personelModal10" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-close">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar avatar-lg avatar-circle mb-4">
+                            <img class="avatar-img" src="./assets/img/personel/10.png" alt="Image Description">
+                        </div>
+                        <span class="card-subtitle">Membre actif du CAFTANA</span>
+                        <h4 class="card-title">Dr Ali TRAORÉ- 🇸🇳 Sénégalais</h4>
+                        <p class="card-text">
+                            Dr en physique médicale (Universidad Complutense de Madrid, Espagne, 2019)
+                            Responsable Pédagogique Institut Sciences et Technologies Avancées de l’Université
+                            Polytechnique de l’Ouest Africain </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERSONEL 11 -->
+        <div class="modal fade" id="personelModal11" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-close">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar avatar-lg avatar-circle mb-4">
+                            <img class="avatar-img" src="./assets/img/personel/11.png" alt="Image Description">
+                        </div>
+                        <span class="card-subtitle">Président de la commission chargée des relations avec le monde
+                            professionnel (CREMOP) du CAFTANA</span>
+                        <h4 class="card-title">Mr Djibril DIOP- 🇸🇳 Sénégalais</h4>
+                        <p class="card-text">
+                            Ingénieure Biomédicale (Université Polytechnique de l’Ouest Africain, 2020)
+                            Doctorante en physique médicale, Université Iba Der Thiam
+                            Employé de la société internationale Médical Technologie of Sénégal (MTS) by BESTHEALTH du
+                            Maroc pour l’entretien, la
+                            maintenance des équipements d’oncologie et les appareils de dosimétries du Sénégal.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERSONEL 12 -->
+        <div class="modal fade" id="personelModal12" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-close">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar avatar-lg avatar-circle mb-4">
+                            <img class="avatar-img" src="./assets/img/personel/12.png" alt="Image Description">
+                        </div>
+                        <span class="card-subtitle">Vice-président de la commission chargée des relations avec le monde
+                            professionnel (CREMOP) du CAFTANA</span>
+                        <h4 class="card-title">Mr Babacar BODIAN- 🇸🇳 Sénégalais</h4>
+                        <p class="card-text">
+                            Ingénieure Biomédicale en formation (Université Polytechnique de l’Ouest Africain)
+                            Employé à Medical Technology of Senegal (MTS) chargé de la maintenance des accélérateurs de
+                            particules et des
+                            équipements de laboratoire.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERSONEL 13 -->
+        <div class="modal fade" id="personelModal13" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-close">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar avatar-lg avatar-circle mb-4">
+                            <img class="avatar-img" src="./assets/img/personel/13.png" alt="Image Description">
+                        </div>
+                        <span class="card-subtitle">Président de la commission chargée de l’animation pédagogique et
+                            scientifique (CAPES) du CAFTANA</span>
+                        <h4 class="card-title">Dr Abdourahmane DIALLO- 🇸🇳 Sénégalais</h4>
+                        <p class="card-text">
+                            Docteur en Physique Atomique et Nucléaire (Université Assane Seck de Ziguinchor, 2020)
+                            Enseignant-Chercheur, institut Supérieur de Technologie de Mamou, Guinée
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERSONEL 14 -->
+        <div class="modal fade" id="personelModal14" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-close">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar avatar-lg avatar-circle mb-4">
+                            <img class="avatar-img" src="./assets/img/personel/14.png" alt="Image Description">
+                        </div>
+                        <span class="card-subtitle">Vice-président de la commission chargée de l’animation pédagogique
+                            et scientifique (CAPES) du CAFTANA</span>
+                        <h4 class="card-title">Dr Jean Kouhissoré BADIANE- 🇸🇳 Sénégalais</h4>
+                        <p class="card-text">
+                            Docteur en Physique Atomique et Nucléaire (Université Assane Seck de Ziguinchor, 2019)
+                            Enseignant-Chercheur, institut Supérieur de Technologie de Mamou, Guinée
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- PERSONEL 15 -->
+        <div class="modal fade" id="personelModal15" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-close">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar avatar-lg avatar-circle mb-4">
+                            <img class="avatar-img" src="./assets/img/personel/15.png" alt="Image Description">
+                        </div>
+                        <span class="card-subtitle">Président de la commission chargée des relations avec le monde
+                            universitaire (CREMU) du CAFTANA</span>
+                        <h4 class="card-title">Dr Babou DIOP- 🇸🇳 Sénégalais</h4>
+                        <p class="card-text">
+                            Docteur en Physique Atomique et Nucléaire (Université Cheikh Anta Diop, 2018)
+                            Professeur de Sciences Physiques, Lycée Blaise Diagne de Dakar
+                            Enseignant-vacataire, Université Cheikh Anta Diop & Université Alioune Diop de Bambey
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- END MODALS -->
 
@@ -1203,7 +1218,7 @@
                     </p>
                 </div>
                 <!-- End Heading -->
-            
+
                 <div class="overflow-hidden ">
                     <div class="row gx-lg-7">
                         <div class="col-sm-6 col-lg-4 mb-5">
@@ -1221,10 +1236,11 @@
                             <!-- End Card -->
                         </div>
                         <!-- End Col -->
-            
+
                         <div class="col-sm-6 col-lg-4 mb-5">
                             <!-- Card -->
-                            <a class="card card-flush h-100 aos-init aos-animate" href="#" data-aos="fade-up" data-aos-delay="150">
+                            <a class="card card-flush h-100 aos-init aos-animate" href="#" data-aos="fade-up"
+                                data-aos-delay="150">
                                 <img class="card-img" src="./assets/img/480x320/img34.jpg" alt="Image Description">
                                 <div class="card-body">
                                     <span class="card-subtitle text-body">Lorem ipsum dolor sit amet</span>
@@ -1237,10 +1253,11 @@
                             <!-- End Card -->
                         </div>
                         <!-- End Col -->
-            
+
                         <div class="col-sm-6 col-lg-4 mb-5">
                             <!-- Card -->
-                            <a class="card card-flush h-100 aos-init aos-animate" href="#" data-aos="fade-up" data-aos-delay="200">
+                            <a class="card card-flush h-100 aos-init aos-animate" href="#" data-aos="fade-up"
+                                data-aos-delay="200">
                                 <img class="card-img" src="./assets/img/480x320/img35.jpg" alt="Image Description">
                                 <div class="card-body">
                                     <span class="card-subtitle text-body">Lorem ipsum dolor sit amet</span>
@@ -1502,11 +1519,21 @@
         <!-- End SVG Background Shape -->
     </footer>
 
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="./assets/libs/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./assets/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="./assets/libs/typed.js/dist/typed.umd.js"></script>
     <!-- ========== END SECONDARY CONTENTS ========== -->
 
     <!-- JS Implementing Plugins -->
+    <script src="./assets/libs/tiny-slider/dist/min/tiny-slider.js"></script>
+    <script src="./assets/vendor/tnsSlider.js"></script>
+    <script src="./assets/vendor/typed.js"></script>
     <script src="./assets/js/vendor.min.js"></script>
     <script src="./assets/vendor/aos/dist/aos.js"></script>
+
 
     <!-- JS Front -->
     <script src="./assets/js/theme.min.js"></script>
