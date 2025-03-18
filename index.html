@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="">
+<html lang="fr" dir="">
 
 <head>
     <!-- Required Meta Tags Always Come First -->
@@ -29,6 +29,61 @@
     <link href="./assets/libs/tiny-slider/dist/tiny-slider.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/libs/glightbox/dist/css/glightbox.min.css" />
 
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker enregistré avec succès:', registration.scope);
+
+                        // Préchargement d'images supplémentaires si nécessaire
+                        if (registration.active) {
+                            const additionalImages = [
+                                // Vous pouvez ajouter des images supplémentaires ici qui ne sont pas 
+                                // dans la liste principale du service worker
+                            ];
+
+                            if (additionalImages.length > 0) {
+                                registration.active.postMessage({
+                                    type: 'CACHE_IMAGES',
+                                    images: additionalImages
+                                });
+                            }
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Erreur lors de l\'enregistrement du Service Worker:', error);
+                    });
+            });
+        }
+        // Fonction pour précharger les images importantes
+        function preloadImportantImages() {
+            const imagesToPreload = [
+                'assets/img/catana-hero-1.jpg',
+                'assets/img/catana-hero-2.jpg',
+                'assets/img/valeur-1.png',
+                'assets/img/valeur-2.png',
+                'assets/img/valeur-3.png',
+            ];
+
+            imagesToPreload.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        }
+
+        // Exécuter le préchargement après le chargement initial
+        window.addEventListener('load', () => {
+            // Utiliser requestIdleCallback si disponible, sinon setTimeout
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(() => {
+                    preloadImportantImages();
+                });
+            } else {
+                setTimeout(preloadImportantImages, 1000);
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -75,9 +130,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#faq">FAQ</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#projects">Projets</a>
-                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="./prepa-bac-tana.html">
+                                    Prépa Bac TANA
+                                </a>
+                            </li> -->
                             <li class="nav-item">
                                 <a class="nav-link" href="#partnerships">Partenariats</a>
                             </li>
@@ -584,7 +641,7 @@
 
 
         <!-- OUT TEAM -->
-        <section class="py-md-8 py-6"
+        <section class="text-center py-3 my-6"
             style="background-image: url(../assets/images/mentor/mentor-glow.svg); background-repeat: no-repeat; background-size: contain">
             <div class="container py-lg-6">
                 <!--row-->
@@ -594,213 +651,256 @@
                 <span class="text-dark fs-5">Notre équipe est composée de professionnels passionnés et
                     expérimentés qui travaillent ensemble pour atteindre nos objectifs communs.</span>
             </div>
-            <div class="team-overflow">
-                <div class="position-relative d-flex overflow-x-hidden py-lg-4 pt-4">
-                    <div class="animate-marquee d-flex gap-3">
-                        <a href="#personelModal1" data-bs-toggle="modal" data-bs-target="#personelModal1" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
-                            style="width: 200px !important">
-                            <!--img-->
-                            <div class="py-2">
-                                <img src="./assets/img/personel/1.png" alt="mentor 1"
-                                    class="avatar avatar-xl rounded-circle">
-                                <!--content-->
-                                <div class="mt-3">
-                                    <h5 class="">Prof Ibrahima SAKHO</h5>
-                                    <span class="text-dark">Fondateur et Président Directeur Général du CAFTANA</span>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#personelModal2" data-bs-toggle="modal" data-bs-target="#personelModal2" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
-                            style="width: 200px !important">
-                            <!--img-->
-                            <div class="py-2">
-                                <img src="./assets/img/personel/2.png" alt="mentor 2"
-                                    class="avatar avatar-xl rounded-circle">
-                                <!--content-->
-                                <div class="mt-3">
-                                    <h5 class="">Dr Magatte DIAGNE</h5>
-                                    <span class="text-dark">Vice-présidente du CAFTANA</span>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#personelModal3" data-bs-toggle="modal" data-bs-target="#personelModal3" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
-                            style="width: 200px !important">
-                            <!--img-->
-                            <div class="py-2">
-                                <img src="./assets/img/personel/3.png" alt="mentor 3"
-                                    class="avatar avatar-xl rounded-circle">
-                                <!--content-->
-                                <div class="mt-3">
-                                    <h5 class="">Prof Mamadou SOUMBOUNDOU</h5>
-                                    <span class="text-dark">Président de la Commission Recherche Innovation</span>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#personelModal4" data-bs-toggle="modal" data-bs-target="#personelModal4" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
-                            style="width: 200px !important">
-                            <!--img-->
-                            <div class="p-3">
-                                <img src="./assets/img/personel/4.png" alt="mentor 4"
-                                    class="avatar avatar-xl rounded-circle">
-                                <!--content-->
-                                <div class="mt-3">
-                                    <h5 class="">Dr Maïmouna MANÉ</h5>
-                                    <span class="text-dark">Vice-présidente du CAFTANA</span>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#personelModal5" data-bs-toggle="modal" data-bs-target="#personelModal5" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
-                            style="width: 200px !important">
-                            <!--img-->
-                            <div class="p-3">
-                                <img src="./assets/img/personel/5.png" alt="mentor 5"
-                                    class="avatar avatar-xl rounded-circle">
-                                <!--content-->
-                                <div class="mt-3">
-                                    <h5 class="">Dr Yawo Atsu Constantino FIAGAN</h5>
-                                    <span class="text-dark">Vice-présidente du CAFTANA</span>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#personelModal6" data-bs-toggle="modal" data-bs-target="#personelModal6" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
-                            style="width: 200px !important">
-                            <!--img-->
-                            <div class="p-3">
-                                <img src="./assets/img/personel/6.png" alt="mentor 6"
-                                    class="avatar avatar-xl rounded-circle">
-                                <!--content-->
-                                <div class="mt-3">
-                                    <h5 class="">Dr Lamine Boubacar KONATÉ</h5>
-                                    <span class="text-dark">Vice-président de la Commission Recherche Innovation</span>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#personelModal7" data-bs-toggle="modal" data-bs-target="#personelModal7" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
-                            style="width: 200px !important">
-                            <!--img-->
-                            <div class="p-3">
-                                <img src="./assets/img/personel/7.png" alt="mentor 7"
-                                    class="avatar avatar-xl rounded-circle">
-                                <!--content-->
-                                <div class="mt-3">
-                                    <h5 class="">Mme Ndèye Lama KAMARA</h5>
-                                    <span class="text-dark">Secrétaire Générale Adjointe du CAFTANA</span>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#personelModal8" data-bs-toggle="modal" data-bs-target="#personelModal8" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
-                            style="width: 200px !important">
-                            <!--img-->
-                            <div class="p-3">
-                                <img src="./assets/img/personel/8.png" alt="mentor 8"
-                                    class="avatar avatar-xl rounded-circle">
-                                <!--content-->
-                                <div class="mt-3">
-                                    <h5 class="">Dr Momar Talla GNINGEN</h5>
-                                    <span class="text-dark">Trésorier Général du CAFTANA</span>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#personelModal9" data-bs-toggle="modal" data-bs-target="#personelModal9" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
-                            style="width: 200px !important">
-                            <!--img-->
-                            <div class="py-3">
-                                <img src="./assets/img/personel/9.png" alt="mentor 9"
-                                    class="avatar avatar-xl rounded-circle">
-                                <!--content-->
-                                <div class="mt-3">
-                                    <h5 class="">Dr Kodjo Joël Fabrice N’GUESSAN</h5>
-                                    <span class="text-dark">Vice-président de la Commission chargée des relations
-                                        internationales</span>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#personelModal10" data-bs-toggle="modal" data-bs-target="#personelModal10" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
-                            style="width: 200px !important">
-                            <!--img-->
-                            <div class="p-3">
-                                <img src="./assets/img/personel/10.png" alt="mentor 10"
-                                    class="avatar avatar-xl rounded-circle">
-                                <!--content-->
-                                <div class="mt-3">
-                                    <h5 class="">Dr Ali TRAORÉ</h5>
-                                    <span class="text-dark">Membre actif du CAFTANA</span>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#personelModal11" data-bs-toggle="modal" data-bs-target="#personelModal11" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
-                            style="width: 200px !important">
-                            <!--img-->
-                            <div class="p-3">
-                                <img src="./assets/img/personel/11.png" alt="mentor 11"
-                                    class="avatar avatar-xl rounded-circle">
-                                <!--content-->
-                                <div class="mt-3">
-                                    <h5 class="">Mr Djibril DIOP</h5>
-                                    <span class="text-dark">Président de la commission chargée des relations avec le
-                                        monde professionnel</span>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#personelModal12" data-bs-toggle="modal" data-bs-target="#personelModal12" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
-                            style="width: 200px !important">
-                            <!--img-->
-                            <div class="p-3">
-                                <img src="./assets/img/personel/12.png" alt="mentor 12"
-                                    class="avatar avatar-xl rounded-circle">
-                                <!--content-->
-                                <div class="mt-3">
-                                    <h5 class="">Mr Babacar BODIAN</h5>
-                                    <span class="text-dark">Vice-président de la commission chargée des relations avec
-                                        le monde professionnel</span>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#personelModal13" data-bs-toggle="modal" data-bs-target="#personelModal13" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
-                            style="width: 200px !important">
-                            <!--img-->
-                            <div class="p-3">
-                                <img src="./assets/img/personel/13.png" alt="mentor 13"
-                                    class="avatar avatar-xl rounded-circle">
-                                <!--content-->
-                                <div class="mt-3">
-                                    <h5 class="">Dr Abdourahmane DIALLO</h5>
-                                    <span class="text-dark">Président de la commission chargée de l’animation
-                                        pédagogique et scientifique</span>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#personelModal14" data-bs-toggle="modal" data-bs-target="#personelModal14" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
-                            style="width: 200px !important">
-                            <!--img-->
-                            <div class="p-3">
-                                <img src="./assets/img/personel/14.png" alt="mentor 14"
-                                    class="avatar avatar-xl rounded-circle">
-                                <!--content-->
-                                <div class="mt-3">
-                                    <h5 class="">Dr Jean Kouhissoré BADIANE</h5>
-                                    <span class="text-dark">Vice-président de la commission chargée de l'animation
-                                        pédagogique et scientifique</span>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#personelModal15" data-bs-toggle="modal" data-bs-target="#personelModal15" class="bg-white text-center shadow-sm text-wrap rounded-4 w-100 border card-lift border"
-                            style="width: 200px !important">
-                            <!--img-->
-                            <div class="p-3">
-                                <img src="./assets/img/personel/15.png" alt="mentor 15"
-                                    class="avatar avatar-xl rounded-circle">
-                                <!--content-->
-                                <div class="mt-3">
-                                    <h5 class="">Dr Babacar DIOP</h5>
-                                    <span class="text-dark">Président de la commission chargée des relations avec le
-                                        monde universitaire</span>
-                                </div>
-                            </div>
-                        </a>
+            <div class="row row-cols-2 row-cols-lg-5 g-4 gap-2 justify-content-center p-0 m-0">
+                <div href="#personelModal1" data-bs-toggle="modal" data-bs-target="#personelModal1"
+                    class="col  bg-white text-center shadow-sm text-wrap rounded-4  border card-lift border">
+                    <!--img-->
+                    <div class="py-2">
+                        <img src="./assets/img/personel/1.png" alt="mentor 1" class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Prof Ibrahima SAKHO</h5>
+                            <span class="text-dark">Fondateur et Président Directeur Général </span>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div href="#personelModal2" data-bs-toggle="modal" data-bs-target="#personelModal2"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="py-2">
+                        <img src="./assets/img/personel/2.png" alt="mentor 2" class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Dr Magatte DIAGNE</h5>
+                            <span class="text-dark">Vice-présidente </span>
+                        </div>
+                    </div>
+                </div>
+                <div href="#personelModal3" data-bs-toggle="modal" data-bs-target="#personelModal3"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="py-2">
+                        <img src="./assets/img/personel/3.png" alt="mentor 3" class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Prof Mamadou SOUMBOUNDOU</h5>
+                            <span class="text-dark">Président de la Commission Recherche Innovation</span>
+                        </div>
+                    </div>
+                </div>
+                <div href="#personelModal4" data-bs-toggle="modal" data-bs-target="#personelModal4"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="p-3">
+                        <img src="./assets/img/personel/4.png" alt="mentor 4" class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Dr Maïmouna MANÉ</h5>
+                            <span class="text-dark">Vice-présidente </span>
+                        </div>
+                    </div>
+                </div>
+                <div href="#personelModal5" data-bs-toggle="modal" data-bs-target="#personelModal5"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="p-3">
+                        <img src="./assets/img/personel/5.png" alt="mentor 5" class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Dr Yawo Atsu Constantino FIAGAN</h5>
+                            <span class="text-dark">Vice-présidente </span>
+                        </div>
+                    </div>
+                </div>
+                <div href="#personelModal6" data-bs-toggle="modal" data-bs-target="#personelModal6"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="p-3">
+                        <img src="./assets/img/personel/6.png" alt="mentor 6" class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Dr Lamine Boubacar KONATÉ</h5>
+                            <span class="text-dark">Vice-président de la Commission Recherche Innovation</span>
+                        </div>
+                    </div>
+                </div>
+                <div href="#personelModal7" data-bs-toggle="modal" data-bs-target="#personelModal7"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="p-3">
+                        <img src="./assets/img/personel/7.png" alt="mentor 7" class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Dr Mme Ndèye Lama KAMARA</h5>
+                            <span class="text-dark">Secrétaire Générale Adjointe </span>
+                        </div>
+                    </div>
+                </div>
+                <div href="#personelModal8" data-bs-toggle="modal" data-bs-target="#personelModal8"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="p-3">
+                        <img src="./assets/img/personel/8.png" alt="mentor 8" class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Dr Momar Talla GNINGEN</h5>
+                            <span class="text-dark">Trésorier Général </span>
+                        </div>
+                    </div>
+                </div>
+                <div href="#personelModal9" data-bs-toggle="modal" data-bs-target="#personelModal9"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="py-3">
+                        <img src="./assets/img/personel/9.png" alt="mentor 9" class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Dr Kodjo Joël Fabrice N’GUESSAN</h5>
+                            <span class="text-dark">Vice-président de la Commission chargée des relations
+                                internationales</span>
+                        </div>
+                    </div>
+                </div>
+                <div href="#personelModal10" data-bs-toggle="modal" data-bs-target="#personelModal10"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="p-3">
+                        <img src="./assets/img/personel/10.png" alt="mentor 10" class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Dr Ali TRAORÉ</h5>
+                            <span class="text-dark">Membre actif </span>
+                        </div>
+                    </div>
+                </div>
+                <div href="#personelModal11" data-bs-toggle="modal" data-bs-target="#personelModal11"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="p-3">
+                        <img src="./assets/img/personel/11.png" alt="mentor 11" class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Mr Djibril DIOP</h5>
+                            <span class="text-dark">Président de la commission chargée des relations avec le
+                                monde professionnel</span>
+                        </div>
+                    </div>
+                </div>
+                <div href="#personelModal12" data-bs-toggle="modal" data-bs-target="#personelModal12"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="p-3">
+                        <img src="./assets/img/personel/12.png" alt="mentor 12" class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Mr Babacar BODIAN</h5>
+                            <span class="text-dark">Vice-président de la commission chargée des relations avec
+                                le monde professionnel</span>
+                        </div>
+                    </div>
+                </div>
+                <div href="#personelModal13" data-bs-toggle="modal" data-bs-target="#personelModal13"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="p-3">
+                        <img src="./assets/img/personel/13.png" alt="mentor 13" class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Dr Abdourahmane DIALLO</h5>
+                            <span class="text-dark">Président de la commission chargée de l’animation
+                                pédagogique et scientifique</span>
+                        </div>
+                    </div>
+                </div>
+                <div href="#personelModal14" data-bs-toggle="modal" data-bs-target="#personelModal14"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="p-3">
+                        <img src="./assets/img/personel/14.png" alt="mentor 14" class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Dr Jean Kouhissoré BADIANE</h5>
+                            <span class="text-dark">Vice-président de la commission chargée de l'animation
+                                pédagogique et scientifique</span>
+                        </div>
+                    </div>
+                </div>
+                <div href="#personelModal15" data-bs-toggle="modal" data-bs-target="#personelModal15"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="p-3">
+                        <img src="./assets/img/personel/15.png" alt="mentor 15" class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Dr Babacar DIOP</h5>
+                            <span class="text-dark">Président de la commission chargée des relations avec le
+                                monde universitaire</span>
+                        </div>
+                    </div>
+                </div>
+                <div href="#personelModal16" data-bs-toggle="modal" data-bs-target="#personelModal16"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="p-3">
+                        <img src="https://placehold.co/600x400?text=Dr+Babou+DIOP" alt="mentor 16"
+                            class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Dr Babou DIOP</h5>
+                            <span class="text-dark">Président de la commission chargée des relations avec le monde
+                                scolaire (CREMOS) </span>
+                        </div>
+                    </div>
+                </div>
+                <div href="#personelModal17" data-bs-toggle="modal" data-bs-target="#personelModal17"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="p-3">
+                        <img src="https://placehold.co/600x400?text=Dr+Malick+SOW" alt="mentor 17"
+                            class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Dr Cheikh Tidiane BOP</h5>
+                            <span class="text-dark">Président de la commission chargée des relations avec le monde
+                                universitaire (CREMU) </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div href="#personelModal19" data-bs-toggle="modal" data-bs-target="#personelModal19"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="p-3">
+                        <img src="https://placehold.co/600x400?text=Prof+Mohamed+LAZREK" alt="mentor 19"
+                            class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Prof Mohamed LAZREK</h5>
+                            <span class="text-dark">
+                                Professeur émérite et agrégé en sciences physique
+                                Président de la commission chargée des relations avec le monde arabe (CREMA)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div href="#personelModal20" data-bs-toggle="modal" data-bs-target="#personelModal20"
+                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <!--img-->
+                    <div class="p-3">
+                        <img src="https://placehold.co/600x400?text=Dr.+Papa+Lat+Tabara+SOW" alt="mentor 20"
+                            class="avatar avatar-xl rounded-circle">
+                        <!--content-->
+                        <div class="mt-3">
+                            <h5 class="">Dr. Papa Lat Tabara SOW</h5>
+                            <span class="text-dark">
+                                Dr en Physique des lasers et spectroscopie moléculaire de haute résolution (Université
+                                Paris 13, 2016)
+                                Vice-président de la commission chargée des relations avec le monde scolaire (CREMOS)
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- END OUT TEAM -->
@@ -818,9 +918,9 @@
                         <div class="avatar avatar-lg avatar-circle mb-4">
                             <img class="avatar-img" src="./assets/img/personel/1.png" alt="Image Description">
                         </div>
-                        <span class="card-subtitle">Fondateur du CAFTANA</span>
+                        <span class="card-subtitle">Fondateur </span>
                         <h4 class="card-title">Prof Ibrahima SAKHO - 🇸🇳 Sénégalais</h4>
-                        <p class="card-text">Président Directeur Général du CAFTANA
+                        <p class="card-text">Président Directeur Général 
                             Docteur d’État en Physique Atomique et Nucléaire (Université Cheikh Anta Diop, 2013)
                             Enseignant-Chercheur-Ecrivain, UFR Sciences et Technologies, Université Iba Der Thiam
                             Ancien Conseiller Technique à la Primature chargé de la promotion des disciplines
@@ -846,7 +946,7 @@
                         <div class="avatar avatar-lg avatar-circle mb-4">
                             <img class="avatar-img" src="./assets/img/personel/2.png" alt="Image Description">
                         </div>
-                        <span class="card-subtitle">Vice-présidente du CAFTANA</span>
+                        <span class="card-subtitle">Vice-présidente </span>
                         <h4 class="card-title">Dr Magatte DIAGNE - 🇸🇳 Sénégalaise</h4>
                         <p class="card-text">
                             Docteur de 3e cycle Physique des matériaux (Université Cheikh Anta Diop, 2005)
@@ -872,8 +972,7 @@
                         <div class="avatar avatar-lg avatar-circle mb-4">
                             <img class="avatar-img" src="./assets/img/personel/3.png" alt="Image Description">
                         </div>
-                        <span class="card-subtitle">Président de la Commission Recherche Innovation (CREI) du
-                            CAFTANA</span>
+                        <span class="card-subtitle">Président de la Commission Recherche Innovation</span>
                         <h4 class="card-title">Prof Mamadou SOUMBOUNDOU - 🇸🇳 Sénégalaise</h4>
                         <p class="card-text">
                             Docteur en radiobiologie Cellulaire et Moléculaire (Université Claude Bernard de Lyon1,
@@ -909,12 +1008,15 @@
                         <div class="avatar avatar-lg avatar-circle mb-4">
                             <img class="avatar-img" src="./assets/img/personel/4.png" alt="Image Description">
                         </div>
-                        <span class="card-subtitle">Secrétaire Générale du CAFTANA</span>
+                        <span class="card-subtitle">Secrétaire Générale </span>
                         <h4 class="card-title">Dr Maïmouna MANÉ - 🇸🇳 Sénégalaise</h4>
                         <p class="card-text">
-                            Doctorat d’État en médecine spécialisée en Radiothérapie-Oncologie (Université Cheikh Anta Diop, 2012)
-                            Cheffe du Service d’Oncologie-Radiothérapie au Centre Hospitalier National Cheikh Ahmadou Khadim de Touba
-                            Coordonnatrice du Projet National SEN6026 de l’Agence Internationale de l’Énergie Atomique (AIEA)
+                            Doctorat d’État en médecine spécialisée en Radiothérapie-Oncologie (Université Cheikh Anta
+                            Diop, 2012)
+                            Cheffe du Service d’Oncologie-Radiothérapie au Centre Hospitalier National Cheikh Ahmadou
+                            Khadim de Touba
+                            Coordonnatrice du Projet National SEN6026 de l’Agence Internationale de l’Énergie Atomique
+                            (AIEA)
                         </p>
                     </div>
                 </div>
@@ -934,7 +1036,7 @@
                         <div class="avatar avatar-lg avatar-circle mb-4">
                             <img class="avatar-img" src="./assets/img/personel/5.png" alt="Image Description">
                         </div>
-                        <span class="card-subtitle">Membre actif du CAFTANA</span>
+                        <span class="card-subtitle">Membre actif </span>
                         <h4 class="card-title">Dr Ali TRAORÉ - 🇹🇬 Togolais</h4>
                         <p class="card-text">
                             Docteur en physique médicale option radiothérapie (Université Libre de Bruxelles, 2024)
@@ -962,11 +1064,13 @@
                         <div class="avatar avatar-lg avatar-circle mb-4">
                             <img class="avatar-img" src="./assets/img/personel/6.png" alt="Image Description">
                         </div>
-                        <span class="card-subtitle">Vice-président de la Commission Recherche Innovation (CREI) du CAFTANA</span>
+                        <span class="card-subtitle">Vice-président de la Commission Recherche Innovation (CREI) du
+                            CAFTANA</span>
                         <h4 class="card-title">Dr Lamine Boubacar KONATÉ - 🇸🇳 Sénégalais</h4>
                         <p class="card-text">
                             Docteur ingénieur en génie électrique (Ecole Centrale de Lyon, 2016)
-                            Responsable du laboratoire de spectrométrie gamma de l’Institut de Technologie Nucléaire Appliquée (Université Cheikh
+                            Responsable du laboratoire de spectrométrie gamma de l’Institut de Technologie Nucléaire
+                            Appliquée (Université Cheikh
                             Anta Diop)
                         </p>
                     </div>
@@ -986,12 +1090,13 @@
                         <div class="avatar avatar-lg avatar-circle mb-4">
                             <img class="avatar-img" src="./assets/img/personel/7.png" alt="Image Description">
                         </div>
-                        <span class="card-subtitle">Secrétaire Générale Adjointe du CAFTANA</span>
+                        <span class="card-subtitle">Secrétaire Générale Adjointe </span>
                         <h4 class="card-title">Mme Ndèye Lama KAMARA - 🇸🇳 Sénégalaise</h4>
                         <p class="card-text">
                             Ingénieure Biomédicale (Université Polytechnique de l’Ouest Africain, 2022)
                             Doctorante en physique médicale, Université Iba Der Thiam
-                            Responsable projet équipement de mesure et contrôle qualité des installations à Technologies Services Dakar
+                            Responsable projet équipement de mesure et contrôle qualité des installations à Technologies
+                            Services Dakar
                         </p>
                     </div>
                 </div>
@@ -1010,13 +1115,13 @@
                         <div class="avatar avatar-lg avatar-circle mb-4">
                             <img class="avatar-img" src="./assets/img/personel/8.png" alt="Image Description">
                         </div>
-                        <span class="card-subtitle">Trésorier Général du CAFTANA</span>
+                        <span class="card-subtitle">Trésorier Général </span>
                         <h4 class="card-title">Dr Momar Talla GNING - 🇸🇳 Sénégalais</h4>
                         <p class="card-text">
                             Docteur en Physique Atomique et Nucléaire (Université Iba Der Thiam, 2021)
                             Professeur de Sciences Physiques, Lycée Diakhao Sine de Fatick
                             Enseignant-vacataire, Université du Sine Sakoum Hadji Ibrahima Niass (USSEIN).
-        
+
                         </p>
                     </div>
                 </div>
@@ -1036,10 +1141,10 @@
                             <img class="avatar-img" src="./assets/img/personel/9.png" alt="Image Description">
                         </div>
                         <span class="card-subtitle">Vice-président de la Commission chargée des relations
-                            internationales (CRI) du CAFTANA</span>
+                            internationales (CRI) </span>
                         <h4 class="card-title">Dr Kodjo Joël Fabrice N’GUESSAN - 🇨🇮 Ivoirien</h4>
                         <p class="card-text">
-                            Vice-président de la Commission chargée des relations internationales (CRI) du CAFTANA
+                            Vice-président de la Commission chargée des relations internationales (CRI) 
                             Docteur en physique médicale option radiothérapie (Université Iba Der Thiam, 2024)
                             Conseiller en radioprotection au Centre International de Cancérologie de Lomé (TOGO)
                         </p>
@@ -1060,7 +1165,7 @@
                         <div class="avatar avatar-lg avatar-circle mb-4">
                             <img class="avatar-img" src="./assets/img/personel/10.png" alt="Image Description">
                         </div>
-                        <span class="card-subtitle">Membre actif du CAFTANA</span>
+                        <span class="card-subtitle">Membre actif </span>
                         <h4 class="card-title">Dr Ali TRAORÉ- 🇸🇳 Sénégalais</h4>
                         <p class="card-text">
                             Dr en physique médicale (Universidad Complutense de Madrid, Espagne, 2019)
@@ -1084,7 +1189,7 @@
                             <img class="avatar-img" src="./assets/img/personel/11.png" alt="Image Description">
                         </div>
                         <span class="card-subtitle">Président de la commission chargée des relations avec le monde
-                            professionnel (CREMOP) du CAFTANA</span>
+                            professionnel (CREMOP) </span>
                         <h4 class="card-title">Mr Djibril DIOP- 🇸🇳 Sénégalais</h4>
                         <p class="card-text">
                             Ingénieure Biomédicale (Université Polytechnique de l’Ouest Africain, 2020)
@@ -1112,7 +1217,7 @@
                             <img class="avatar-img" src="./assets/img/personel/12.png" alt="Image Description">
                         </div>
                         <span class="card-subtitle">Vice-président de la commission chargée des relations avec le monde
-                            professionnel (CREMOP) du CAFTANA</span>
+                            professionnel (CREMOP) </span>
                         <h4 class="card-title">Mr Babacar BODIAN- 🇸🇳 Sénégalais</h4>
                         <p class="card-text">
                             Ingénieure Biomédicale en formation (Université Polytechnique de l’Ouest Africain)
@@ -1139,7 +1244,7 @@
                             <img class="avatar-img" src="./assets/img/personel/13.png" alt="Image Description">
                         </div>
                         <span class="card-subtitle">Président de la commission chargée de l’animation pédagogique et
-                            scientifique (CAPES) du CAFTANA</span>
+                            scientifique (CAPES) </span>
                         <h4 class="card-title">Dr Abdourahmane DIALLO- 🇸🇳 Sénégalais</h4>
                         <p class="card-text">
                             Docteur en Physique Atomique et Nucléaire (Université Assane Seck de Ziguinchor, 2020)
@@ -1164,7 +1269,7 @@
                             <img class="avatar-img" src="./assets/img/personel/14.png" alt="Image Description">
                         </div>
                         <span class="card-subtitle">Vice-président de la commission chargée de l’animation pédagogique
-                            et scientifique (CAPES) du CAFTANA</span>
+                            et scientifique (CAPES) </span>
                         <h4 class="card-title">Dr Jean Kouhissoré BADIANE- 🇸🇳 Sénégalais</h4>
                         <p class="card-text">
                             Docteur en Physique Atomique et Nucléaire (Université Assane Seck de Ziguinchor, 2019)
@@ -1190,10 +1295,38 @@
                             <img class="avatar-img" src="./assets/img/personel/15.png" alt="Image Description">
                         </div>
                         <span class="card-subtitle">Président de la commission chargée des relations avec le monde
-                            universitaire (CREMU) du CAFTANA</span>
+                            universitaire (CREMU) </span>
+                        <h4 class="card-title">Dr Babacar DIOP- 🇸🇳 Sénégalais</h4>
+                        <p class="card-text">
+                            Docteur en Physique Atomique et Nucléaire (Université Cheikh Anta Diop, 2018)
+                            Professeur de Sciences Physiques, Lycée Blaise Diagne de Dakar
+                            Enseignant-vacataire, Université Cheikh Anta Diop & Université Alioune Diop de Bambey
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERSONEL 16 -->
+        <div class="modal fade" id="personelModal16" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-close">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar avatar-lg avatar-circle mb-4">
+                            <img class="avatar-img" src="./assets/img/personel/16.png" alt="Image Description">
+                        </div>
+                        <span class="card-subtitle">Président de la commission chargée des relations avec le monde
+                            scolaire (CREMOS) </span>
                         <h4 class="card-title">Dr Babou DIOP- 🇸🇳 Sénégalais</h4>
                         <p class="card-text">
                             Docteur en Physique Atomique et Nucléaire (Université Cheikh Anta Diop, 2018)
+                            Spécialités : photoionisation résonantes des systèmes atomiques neutres et multichargés dédiée au diagnostic des plasmas
+                            astrophysiques et des plasmas de laboratoire,
                             Professeur de Sciences Physiques, Lycée Blaise Diagne de Dakar
                             Enseignant-vacataire, Université Cheikh Anta Diop & Université Alioune Diop de Bambey
                         </p>
@@ -1202,23 +1335,103 @@
             </div>
         </div>
 
+        <!-- PERSONEL 18 -->
+        <div class="modal fade" id="personelModal18" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-close">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar avatar-lg avatar-circle mb-4">
+                            <img class="avatar-img" src="./assets/img/personel/18.png" alt="Image Description">
+                        </div>
+                        <span class="card-subtitle">Vice-président de la commission chargée des relations avec le monde
+                            universitaire (CREMU) </span>
+                        <h4 class="card-title">Dr Cheikh Tidiane Bop - 🇸🇳 Sénégalais</h4>
+                        <p class="card-text">
+                            Spécialité : Structure Electronique, Collisions Inélastiques, Modélisation Astrophysique, Collisions Réactives,
+                            Collisions de type électron-molécule et atome-atome
+                            Chercheur postdoctoral Département Physique Khalifa University, Abu Dhabi, UAE
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERSONEL 19 -->
+        <div class="modal fade" id="personelModal19" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-close">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar avatar-lg avatar-circle mb-4">
+                            <img class="avatar-img" src="./assets/img/personel/19.png" alt="Image Description">
+                        </div>
+                        <span class="card-subtitle">Président de la commission chargée des relations avec le monde arabe
+                            (CREMA) .</span>
+                        <h4 class="card-title">Prof Mohamed LAZREK Professeur émérite agrégé - 🇹🇳 Tunisien</h4>
+                        <p class="card-text">
+                        Professeur émérite et agrégé en sciences physique depuis l'école normale de Cachan,
+                        Spécialités : ordinateurs biologiques ; transfert des charges dans la molécule d'ADN, Chercheur à l'institut Laue et
+                        Langevin,
+                        Participation depuis l'année 2023 dans le cadre de participer au projet des CPGE de Thiès après 25 ans d'expérience
+                        comme enseignant aux classes préparatoire aux grandes écoles d'ingénieurs. Responsable du module mécanique quantique
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERSONEL 20 -->
+        <div class="modal fade" id="personelModal20" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-close">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar avatar-lg avatar-circle mb-4">
+                            <img class="avatar-img" src="./assets/img/personel/20.png" alt="Image Description">
+                        </div>
+                        <span class="card-subtitle">Vice-président de la commission chargée des relations avec le monde
+                            scolaire (CREMOS)  </span>
+                        <h4 class="card-title">Dr. Papa Lat Tabara SOW - 🇸🇳 Sénégalais</h4>
+                        <p class="card-text">
+                        Enseignant-Chercheur, UFR SATIC, Université Alioune Diop de Bambey
+                        Spécialités : spectroscopie moléculaire de haute résolution, physique atomique, optique laser, métrologie des fréquences
+                        Responsable du Master Interuniversitaire d’Energies Renouvelables (MIER)
+                        Membre de l’équipe Energies Renouvelables, Matériaux et Lasers. Je continue mes activités de recherches en spectroscopie
+                        laser en collaboration avec le Laboratoire de Physique des Lasers de l’Université Paris Sorbonne Nord.
+                        Membre de l’équipe de l’Université Alioune DIOP qui travaille sur le projet « Réseau d’autonomisation énergétique des
+                        femmes du Baol (RAEFB)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
         <!-- END MODALS -->
 
         <!-- OUR PROJECTS -->
-        <section class="bg-light my-lg-5 my-xl-5 my-sm-2 my-md-2">
+        <!-- <section class="bg-light my-lg-5 my-xl-5 my-sm-2 my-md-2">
             <div id="projects" class="container content-space-2 content-space-lg-3">
-                <!-- Heading -->
                 <div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5">
                     <h2>Nos projets</h2>
                     <p>Découvrez nos projets réalisés dans le cadre de nos collaborations avec nos partenaires.
                     </p>
                 </div>
-                <!-- End Heading -->
 
                 <div class="overflow-hidden ">
                     <div class="row gx-lg-7">
                         <div class="col-sm-6 col-lg-4 mb-5">
-                            <!-- Card -->
                             <a class="card card-flush h-100 aos-init aos-animate" href="#" data-aos="fade-up">
                                 <img class="card-img" src="./assets/img/480x320/img33.jpg" alt="Image Description">
                                 <div class="card-body">
@@ -1229,12 +1442,9 @@
                                         Sequi ad numquam enim reiciendis nulla laboriosam!</p>
                                 </div>
                             </a>
-                            <!-- End Card -->
                         </div>
-                        <!-- End Col -->
 
                         <div class="col-sm-6 col-lg-4 mb-5">
-                            <!-- Card -->
                             <a class="card card-flush h-100 aos-init aos-animate" href="#" data-aos="fade-up"
                                 data-aos-delay="150">
                                 <img class="card-img" src="./assets/img/480x320/img34.jpg" alt="Image Description">
@@ -1246,12 +1456,9 @@
                                         Sequi ad numquam enim reiciendis nulla laboriosam!</p>
                                 </div>
                             </a>
-                            <!-- End Card -->
                         </div>
-                        <!-- End Col -->
 
                         <div class="col-sm-6 col-lg-4 mb-5">
-                            <!-- Card -->
                             <a class="card card-flush h-100 aos-init aos-animate" href="#" data-aos="fade-up"
                                 data-aos-delay="200">
                                 <img class="card-img" src="./assets/img/480x320/img35.jpg" alt="Image Description">
@@ -1263,14 +1470,11 @@
                                         Sequi ad numquam enim reiciendis nulla laboriosam!</p>
                                 </div>
                             </a>
-                            <!-- End Card -->
                         </div>
-                        <!-- End Col -->
                     </div>
-                    <!-- End Row -->
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- End OUR PROJECTS -->
 
         <!-- PARTENARIATS -->
