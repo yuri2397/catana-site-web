@@ -2,80 +2,144 @@
 <html lang="fr" dir="">
 
 <head>
-    <!-- Required Meta Tags Always Come First -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Required Meta Tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="CAFTANA - Centre Africain de Technologie Atomique et Nucléaire Appliquée est une organisation dédiée à la promotion des technologies atomiques et nucléaires pour le développement durable en Afrique" />
+    <meta name="keywords"
+        content="CAFTANA, technologie nucléaire, physique médicale, énergie propre, Afrique, radiothérapie, recherche nucléaire, développement durable" />
+    <meta name="author" content="CAFTANA" />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="CAFTANA | Centre Africain de Technologie Atomique et Nucléaire Appliquée" />
+    <meta property="og:description"
+        content="Organisation dédiée à la promotion des technologies atomiques et nucléaires pour le développement durable en Afrique" />
+    <meta property="og:image" content="./assets/img/logo.png" />
+    <meta property="og:url" content="https://caftana.org" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CAFTANA | Centre Africain de Technologie Atomique et Nucléaire Appliquée" />
+    <meta name="twitter:description"
+        content="Technologies atomiques et nucléaires au service du développement durable en Afrique" />
+    <meta name="twitter:image" content="./assets/img/logo.png" />
 
     <!-- Title -->
     <title>CAFTANA | Centre Africain de Technologie Atomique et Nucléaire Appliquée</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="./favicon.png">
+    <link rel="shortcut icon" href="./favicon.png" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://caftana.org" />
 
     <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
     <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="./assets/css/vendor.min.css">
+    <link rel="stylesheet" href="./assets/css/vendor.min.css" />
     <link href="./assets/fonts/feather/feather.css" rel="stylesheet" />
-
-    <link rel="stylesheet" href="./assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./assets/vendor/aos/dist/aos.css">
+    <link rel="stylesheet" href="./assets/vendor/bootstrap-icons/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="./assets/vendor/aos/dist/aos.css" />
 
     <!-- CSS Front Template -->
-    <link rel="stylesheet" href="./assets/css/theme.min.css?v=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-
+    <link rel="stylesheet" href="./assets/css/theme.min.css?v=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <link href="./assets/libs/tiny-slider/dist/tiny-slider.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/libs/glightbox/dist/css/glightbox.min.css" />
 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Centre Africain de Technologie Atomique et Nucléaire Appliquée",
+          "alternateName": "CAFTANA",
+          "url": "https://caftana.sn",
+          "logo": "https://caftana.sn/assets/img/logo.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "contact@caftana.sn"
+          },
+          "sameAs": [
+            "https://www.facebook.com/caftana",
+            "https://www.twitter.com/caftana",
+            "https://www.linkedin.com/company/caftana"
+          ],
+          "description": "Organisation dédiée à la promotion des technologies atomiques et nucléaires pour le développement durable en Afrique"
+        }
+        </script>
+    <style>
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./service-worker.js')
-                    .then(registration => {
-                        console.log('Service Worker enregistré avec succès:', registration.scope);
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("./service-worker.js")
+                    .then((registration) => {
+                        console.log(
+                            "Service Worker enregistré avec succès:",
+                            registration.scope
+                        );
 
                         // Préchargement d'images supplémentaires si nécessaire
                         if (registration.active) {
                             const additionalImages = [
-                                // Vous pouvez ajouter des images supplémentaires ici qui ne sont pas 
+                                // Vous pouvez ajouter des images supplémentaires ici qui ne sont pas
                                 // dans la liste principale du service worker
                             ];
 
                             if (additionalImages.length > 0) {
                                 registration.active.postMessage({
-                                    type: 'CACHE_IMAGES',
-                                    images: additionalImages
+                                    type: "CACHE_IMAGES",
+                                    images: additionalImages,
                                 });
                             }
                         }
                     })
-                    .catch(error => {
-                        console.error('Erreur lors de l\'enregistrement du Service Worker:', error);
+                    .catch((error) => {
+                        console.error(
+                            "Erreur lors de l'enregistrement du Service Worker:",
+                            error
+                        );
                     });
             });
         }
         // Fonction pour précharger les images importantes
         function preloadImportantImages() {
             const imagesToPreload = [
-                'assets/img/catana-hero-1.jpg',
-                'assets/img/catana-hero-2.jpg',
-                'assets/img/valeur-1.png',
-                'assets/img/valeur-2.png',
-                'assets/img/valeur-3.png',
+                "assets/img/catana-hero-1.jpg",
+                "assets/img/catana-hero-2.jpg",
+                "assets/img/valeur-1.png",
+                "assets/img/valeur-2.png",
+                "assets/img/valeur-3.png",
             ];
 
-            imagesToPreload.forEach(src => {
+            imagesToPreload.forEach((src) => {
                 const img = new Image();
                 img.src = src;
             });
         }
 
         // Exécuter le préchargement après le chargement initial
-        window.addEventListener('load', () => {
+        window.addEventListener("load", () => {
             // Utiliser requestIdleCallback si disponible, sinon setTimeout
-            if ('requestIdleCallback' in window) {
+            if ("requestIdleCallback" in window) {
                 requestIdleCallback(() => {
                     preloadImportantImages();
                 });
@@ -93,13 +157,11 @@
             "fixMoment": 1000,
             "fixEffect": "slide"
           }'>
-
-
         <div class="container">
             <nav class="js-mega-menu navbar-nav-wrap">
                 <!-- Default Logo -->
                 <a class="navbar-brand" href="#home" aria-label="Front">
-                    <img class="navbar-brand-logo" src="./assets/img/logo.png" alt="Logo">
+                    <img class="navbar-brand-logo" src="./assets/img/logo.png" alt="Logo" />
                     <span class="navbar-brand-text">CAFTANA</span>
                 </a>
                 <!-- End Default Logo -->
@@ -142,8 +204,6 @@
                                 <a class="nav-link" href="#news">Actualités</a>
                             </li>
 
-
-
                             <!-- Button -->
                             <li class="nav-item">
                                 <a class="btn btn-light btn-transition" href="#contact">Contactez-nous</a>
@@ -168,13 +228,17 @@
                 <div class="swiper-wrapper">
                     <!-- Slide -->
                     <div class="swiper-slide gradient-y-overlay-sm-gray-900 bg-img-start"
-                        style="background-image: url(./assets/img/catana-hero-1.jpg);">
+                        style="background-image: url(./assets/img/catana-hero-1.jpg)">
                         <div
                             class="container d-md-flex align-items-md-center vh-md-70 content-space-t-4 content-space-b-3 content-space-md-0">
-                            <div class="w-75 w-lg-50">
-                                <h3 class="text-white">L’innovation au service de l’Afrique</h3>
-                                <h1 class="display-4 text-white mb-0">L’énergie nucléaire pour un avenir durable en
-                                    Afrique</h1>
+                            <div class="w-75 w-lg-70">
+                                <h3 class="text-white">
+                                    L’innovation au service de l’Afrique
+                                </h3>
+                                <h1 class="display-5 text-white mb-0">
+                                    Les Technologies Atomiques et Nucléaires Appliquées au
+                                    service du développement durable en Afrique
+                                </h1>
                             </div>
                         </div>
                     </div>
@@ -182,13 +246,17 @@
 
                     <!-- Slide -->
                     <div class="swiper-slide gradient-y-overlay-sm-gray-900 bg-img-start"
-                        style="background-image: url(./assets/img/catana-hero-2.jpg);">
+                        style="background-image: url(./assets/img/catana-hero-3.jpg)">
                         <div
                             class="container d-md-flex align-items-md-center vh-md-70 content-space-t-4 content-space-b-3 content-space-md-0">
-                            <div class="w-75 w-lg-50">
-                                <h3 class="text-white">Une technologie au service de la santé, de l’agriculture et de
-                                    l’environnement</h3>
-                                <h2 class="display-4 text-white mb-0">Les applications de la technologie nucléaire</h2>
+                            <div class="overlay"></div>
+                            <div class="w-75 w-lg-75" style="z-index: 1">
+                                <h3 class="text-white">Innovations et recherches</h3>
+                                <h2 class="display-6 text-white mb-0">
+                                    Nous investissons dans la recherche fondamentale et
+                                    appliquée en physique atomique, en physique nucléaire et en
+                                    physique médicale.
+                                </h2>
                             </div>
                         </div>
                     </div>
@@ -214,8 +282,9 @@
                                     <div class="col-md-4">
                                         <span class="fs-3 fw-semibold">01.</span>
                                         <h3 class="text-primary">Énergie propre et durable</h3>
-                                        <p class="mb-0">L’énergie nucléaire réduit l’empreinte carbone et garantit une
-                                            production stable et fiable.
+                                        <p class="mb-0">
+                                            L’énergie nucléaire réduit l’empreinte carbone et
+                                            garantit une production stable et fiable.
                                         </p>
                                     </div>
                                     <!-- End Col -->
@@ -227,8 +296,10 @@
                                 class="col-md-5 d-none d-md-inline-block bg-dark position-absolute top-0 end-0 bottom-0">
                                 <div class="position-absolute top-50 translate-middle-y p-7">
                                     <h3 class="text-white">Innovation et recherche</h3>
-                                    <p class="text-white-70 mb-0">Nous investissons dans la recherche pour rendre
-                                        l’énergie nucléaire plus sûre et accessible.</p>
+                                    <p class="text-white-70 mb-0">
+                                        Nous investissons dans la recherche pour rendre l’énergie
+                                        nucléaire plus sûre et accessible.
+                                    </p>
                                 </div>
                             </div>
                             <!-- End Col -->
@@ -244,8 +315,11 @@
                                     <div class="col-md-4">
                                         <span class="fs-3 fw-semibold">02.</span>
                                         <h3 class="text-primary">Santé et radiothérapie</h3>
-                                        <p class="mb-0">Les avancées en médecine nucléaire permettent un diagnostic
-                                            précis et des traitements efficaces contre le cancer.</p>
+                                        <p class="mb-0">
+                                            Les avancées en médecine nucléaire permettent un
+                                            diagnostic précis et des traitements efficaces contre le
+                                            cancer.
+                                        </p>
                                     </div>
                                     <!-- End Col -->
                                 </div>
@@ -256,289 +330,99 @@
                                 class="col-md-5 d-none d-md-inline-block bg-primary position-absolute top-0 end-0 bottom-0">
                                 <div class="position-absolute top-50 translate-middle-y p-7">
                                     <h3 class="text-white">Agriculture et environnement</h3>
-                                    <p class="text-white-70 mb-0">Des techniques innovantes pour améliorer les
-                                        rendements agricoles et protéger l’écosystème.</p>
+                                    <p class="text-white-70 mb-0">
+                                        Des techniques innovantes pour améliorer les rendements
+                                        agricoles et protéger l’écosystème.
+                                    </p>
                                 </div>
                             </div>
                             <!-- End Col -->
                         </div>
                     </div>
                     <!-- End Slide -->
-
-
                 </div>
             </div>
             <!-- End Thumbs Slider -->
         </div>
 
-        <!-- ABOUT -->
-        <div id="about" class="container content-space-t-2 content-space-t-lg-3">
-            <div class="w-lg-75 text-center mx-lg-auto">
-                <!-- Heading -->
-                <div class="w-md-75 text-center mx-md-auto mb-9">
-                    <h2 class="h1">À propos de CAFTANA</h2>
-                    <p>
-                        Nous sommes une organisation sans but lucratif qui œuvre pour le développement durable en
-                        Afrique par la mise à profit
-                        des technologies atomiques et nucléaires appliquées (TANA)
-                    </p>
-                </div>
-                <!-- End Heading -->
-            </div>
-            <!-- End Row -->
-        </div>
-        <!-- END ABOUT -->
-
-        <!-- OUR MISSION -->
-        <div class="bg-light">
-            <div class=" container rounded-3 content-space-2 content-space-lg-3">
-                <div class="row justify-content-lg-between align-items-lg-center">
-                    <div class="col-lg-5 mb-9 mb-lg-0">
-                        <div class="mb-3">
-                            <h2 class="h1">Notre mission : Innover pour un avenir durable</h2>
-                        </div>
-
-                        <p>Le Centre Africain de Technologie Atomique et Nucléaire Appliquée (CAFTANA) a pour objectif
-                            de promouvoir les filières
-                            scientifiques et les TANA dans les établissements moyens-secondaires et universitaires
-                            africains. Nous travaillons à
-                            améliorer la production d’énergétique non polluante, la santé, l’agriculture et la
-                            protection de l’environnement grâce
-                            aux TANA
-                        </p>
-
-                    </div>
-                    <!-- End Col -->
-
-                    <div class="col-lg-6 col-xl-5">
-                        <!-- SVG Element -->
-                        <div class="position-relative mx-auto" style="max-width: 28rem; min-height: 30rem;">
-                            <figure class="position-absolute top-0 end-0 zi-2 me-10 aos-init aos-animate"
-                                data-aos="fade-up">
-                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 450 450"
-                                    width="165" height="165">
-                                    <g>
-                                        <defs>
-                                            <path id="circleImgID2" d="M225,448.7L225,448.7C101.4,448.7,1.3,348.5,1.3,225l0,0C1.2,101.4,101.4,1.3,225,1.3l0,0
-                                          c123.6,0,223.7,100.2,223.7,223.7l0,0C448.7,348.6,348.5,448.7,225,448.7z">
-                                            </path>
-                                        </defs>
-                                        <clipPath id="circleImgID1">
-                                            <use xlink:href="#circleImgID2"></use>
-                                        </clipPath>
-                                        <g clip-path="url(#circleImgID1)">
-                                            <image xlink:href="./assets/img/valeur-1.png" width="100%" height="100%"
-                                                preserveAspectRatio="xMidYMid slice"></image>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </figure>
-
-                            <figure class="position-absolute top-0 start-0 aos-init aos-animate" data-aos="fade-up"
-                                data-aos-delay="300">
-                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 335.2 335.2"
-                                    width="120" height="120">
-                                    <circle fill="none" stroke="#377dff" stroke-width="75" cx="167.6" cy="167.6"
-                                        r="130.1">
-                                    </circle>
-                                </svg>
-                            </figure>
-
-                            <figure class="d-none d-sm-block position-absolute top-0 start-0 mt-10 aos-init aos-animate"
-                                data-aos="fade-up" data-aos-delay="200">
-                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 515 515"
-                                    width="200" height="200">
-                                    <g>
-                                        <defs>
-                                            <path id="circleImgID4" d="M260,515h-5C114.2,515,0,400.8,0,260v-5C0,114.2,114.2,0,255,0h5c140.8,0,255,114.2,255,255v5
-                                          C515,400.9,400.8,515,260,515z"></path>
-                                        </defs>
-                                        <clipPath id="circleImgID3">
-                                            <use xlink:href="#circleImgID4"></use>
-                                        </clipPath>
-                                        <g clip-path="url(#circleImgID3)">
-                                            <image width="100%" height="100%" class="rounded-circle"
-                                                xlink:href="./assets/img/valeur-2.png"
-                                                style="width: 100%; height: 100%; object-fit: fill;"
-                                                transform="matrix(1 0 0 1 1.639390e-02 2.880859e-02)"></image>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </figure>
-
-                            <figure class="position-absolute top-0 end-0 aos-init aos-animate"
-                                style="margin-top: 11rem; margin-right: 13rem;" data-aos="fade-up" data-aos-delay="250">
-                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 67 67" width="25"
-                                    height="25">
-                                    <circle fill="#00C9A7" cx="33.5" cy="33.5" r="33.5"></circle>
-                                </svg>
-                            </figure>
-
-                            <figure class="position-absolute top-0 end-0 me-3 aos-init aos-animate"
-                                style="margin-top: 8rem;" data-aos="fade-up" data-aos-delay="350">
-                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 141 141" width="50"
-                                    height="50">
-                                    <circle fill="#FFC107" cx="70.5" cy="70.5" r="70.5"></circle>
-                                </svg>
-                            </figure>
-
-                            <figure class="position-absolute bottom-0 end-0 aos-init aos-animate" data-aos="fade-up"
-                                data-aos-delay="400">
-                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 770.4 770.4"
-                                    width="280" height="280">
-                                    <g>
-                                        <defs>
-                                            <path id="circleImgID6" d="M385.2,770.4L385.2,770.4c212.7,0,385.2-172.5,385.2-385.2l0,0C770.4,172.5,597.9,0,385.2,0l0,0
-                                          C172.5,0,0,172.5,0,385.2l0,0C0,597.9,172.4,770.4,385.2,770.4z"></path>
-                                        </defs>
-                                        <clipPath id="circleImgID5">
-                                            <use xlink:href="#circleImgID6"></use>
-                                        </clipPath>
-                                        <g clip-path="url(#circleImgID5)">
-                                            <image width="100%" height="100%" xlink:href="./assets/img/valeur-3.jpg"
-                                                preserveAspectRatio="xMidYMid slice"></image>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </figure>
-                        </div>
-                        <!-- End SVG Element -->
-                    </div>
-                    <!-- End Col -->
-                </div>
-                <!-- End Row -->
-            </div>
-        </div>
-        <!-- END OUR MISSION -->
 
         <!-- OUR VALUES -->
-        <div class="container bg-white content-space-t-2 content-space-t-lg-3">
-            <div class="w-md-75 text-center mx-md-auto mb-9">
-                <h2 class="h1">Les valeurs qui nous guident</h2>
-                <p>
-                    Des principes forts qui guident chacune de nos actions pour vous offrir confiance, qualité et
-                    innovation.
-                </p>
-            </div>
-            <div class="row justify-content-lg-center">
-                <div class="col-md-6 col-lg-5 mb-3 mb-md-7">
-                    <!-- Icon Blocks -->
-                    <div class="d-flex pe-lg-5 aos-init aos-animate" data-aos="fade-up">
-                        <div class="flex-shrink-0">
-                            <span class="svg-icon text-primary">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6 21C6 21.6 6.4 22 7 22H17C17.6 22 18 21.6 18 21V20H6V21Z" fill="#035A4B">
-                                    </path>
-                                    <path opacity="0.3" d="M17 2H7C6.4 2 6 2.4 6 3V20H18V3C18 2.4 17.6 2 17 2Z"
-                                        fill="#035A4B">
-                                    </path>
-                                    <path d="M12 4C11.4 4 11 3.6 11 3V2H13V3C13 3.6 12.6 4 12 4Z" fill="#035A4B"></path>
-                                </svg>
-
-                            </span>
+        <section class="py-lg-8 py-5">
+            <div class="container px-lg-6 my-lg-8">
+                <div class="row align-items-center gy-4 gy-lg-0">
+                    <div class="col-lg-5">
+                        <div class="row align-items-end g-3 mb-3">
+                            <div class="col-6">
+                                <img src="./assets/img/valeur-2.png" alt=""
+                                    class="img-fluid rounded-3 w-100">
+                            </div>
+                            <div class="col-6">
+                                <img src="./assets/img/valeur-1.png" alt=""
+                                    class="img-fluid rounded-3 w-100">
+                            </div>
                         </div>
-                        <div class="flex-grow-1 ms-4">
-                            <h4>Innovation</h4>
-                            <p>Nous explorons les dernières avancées pour apporter des solutions adaptées aux défis
-                                africains.
+                        <img src="./assets/img/valeur-3.jpg" alt=""
+                            class="img-fluid rounded-3 w-100">
+                    </div>
+                    <div class="col-lg-6 col-12 ms-lg-8">
+                        <div class="mb-5">
+                            <h2 class="h1 my-3">Innover pour un avenir durable</h2>
+                            <p class="mb-0 text-justify">
+
                             </p>
                         </div>
-                    </div>
-                    <!-- End Icon Blocks -->
-                </div>
-                <!-- End Col -->
-
-                <div class="col-md-6 col-lg-5 mb-3 mb-md-7">
-                    <!-- Icon Blocks -->
-                    <div class="d-flex ps-lg-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-
-                        <div class="flex-shrink-0">
-                            <span class="svg-icon text-primary">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        <div class="mb-3">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M4 4L11.6314 2.56911C11.875 2.52343 12.125 2.52343 12.3686 2.56911L20 4V11.9033C20 15.696 18.0462 19.2211 14.83 21.2313L12.53 22.6687C12.2057 22.8714 11.7943 22.8714 11.47 22.6687L9.17001 21.2313C5.95382 19.2211 4 15.696 4 11.9033L4 4Z"
-                                        fill="#035A4B"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M11.175 14.75C10.9354 14.75 10.6958 14.6542 10.5042 14.4625L8.58749 12.5458C8.20415 12.1625 8.20415 11.5875 8.58749 11.2042C8.97082 10.8208 9.59374 10.8208 9.92915 11.2042L11.175 12.45L14.3375 9.2875C14.7208 8.90417 15.2958 8.90417 15.6792 9.2875C16.0625 9.67083 16.0625 10.2458 15.6792 10.6292L11.8458 14.4625C11.6542 14.6542 11.4146 14.75 11.175 14.75Z"
-                                        fill="#035A4B"></path>
-                                </svg>
-
-                            </span>
-                        </div>
-                        <div class="flex-grow-1 ms-4">
-                            <h4>Sécurité</h4>
-                            <p>La sûreté nucléaire est au cœur de nos préoccupations pour protéger l’environnement et
-                                les populations.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- End Icon Blocks -->
-                </div>
-                <!-- End Col -->
-
-                <div class="w-100"></div>
-
-                <div class="col-md-6 col-lg-5 mb-3 mb-md-7 mb-lg-0">
-                    <!-- Icon Blocks -->
-                    <div class="d-flex pe-lg-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-                        <div class="flex-shrink-0">
-                            <span class="svg-icon text-primary">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.2"
+                                        d="M16.5 12.3037C16.5 13.1937 16.2361 14.0638 15.7416 14.8038C15.2471 15.5438 14.5443 16.1206 13.7221 16.4612C12.8998 16.8018 11.995 16.8909 11.1221 16.7172C10.2492 16.5436 9.44736 16.115 8.81802 15.4857C8.18869 14.8564 7.7601 14.0545 7.58647 13.1816C7.41283 12.3087 7.50195 11.4039 7.84254 10.5816C8.18314 9.75937 8.75991 9.05656 9.49994 8.5621C10.24 8.06763 11.11 7.80371 12 7.80371C13.1935 7.80371 14.3381 8.27782 15.182 9.12173C16.0259 9.96564 16.5 11.1102 16.5 12.3037Z"
+                                        fill="#3271e6"></path>
                                     <path
-                                        d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z"
-                                        fill="#035A4B"></path>
-                                    <path opacity="0.3"
-                                        d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z"
-                                        fill="#035A4B"></path>
+                                        d="M20.8004 8.09997C21.8412 10.2767 22.0387 12.7617 21.355 15.0755C20.6713 17.3893 19.1547 19.3678 17.098 20.6292C15.0413 21.8906 12.5902 22.3454 10.2179 21.9059C7.84557 21.4664 5.72013 20.1637 4.25179 18.2492C2.78344 16.3348 2.0763 13.9443 2.26682 11.5391C2.45735 9.13396 3.53204 6.88461 5.28348 5.22522C7.03492 3.56583 9.33895 2.61402 11.7509 2.55349C14.1628 2.49296 16.5117 3.32801 18.3442 4.89747L20.4695 2.77122C20.6102 2.63049 20.8011 2.55143 21.0001 2.55143C21.1991 2.55143 21.39 2.63049 21.5307 2.77122C21.6715 2.91195 21.7505 3.10282 21.7505 3.30184C21.7505 3.50087 21.6715 3.69174 21.5307 3.83247L12.5307 12.8325C12.39 12.9732 12.1991 13.0523 12.0001 13.0523C11.8011 13.0523 11.6102 12.9732 11.4695 12.8325C11.3288 12.6917 11.2497 12.5009 11.2497 12.3018C11.2497 12.1028 11.3288 11.9119 11.4695 11.7712L14.0682 9.17247C13.3639 8.70668 12.5231 8.49221 11.6817 8.56379C10.8404 8.63538 10.0478 8.98881 9.43231 9.56689C8.81683 10.145 8.41446 10.9139 8.29034 11.7491C8.16622 12.5843 8.32762 13.437 8.7484 14.169C9.16919 14.9011 9.82473 15.4697 10.6089 15.7829C11.3931 16.096 12.26 16.1354 13.0693 15.8945C13.8786 15.6536 14.5829 15.1467 15.0683 14.4557C15.5536 13.7647 15.7915 12.9302 15.7435 12.0872C15.738 11.9887 15.7519 11.89 15.7845 11.7969C15.8171 11.7038 15.8677 11.618 15.9334 11.5445C15.9991 11.4709 16.0787 11.411 16.1676 11.3682C16.2564 11.3254 16.3529 11.3005 16.4514 11.295C16.6503 11.2838 16.8455 11.3521 16.994 11.4848C17.0676 11.5505 17.1275 11.6301 17.1703 11.719C17.2131 11.8079 17.238 11.9043 17.2435 12.0028C17.3119 13.196 16.9711 14.3769 16.2774 15.3501C15.5838 16.3234 14.5788 17.0309 13.4285 17.3556C12.2783 17.6804 11.0517 17.6029 9.95148 17.1361C8.85123 16.6692 7.94322 15.8409 7.3775 14.7881C6.81178 13.7353 6.62223 12.521 6.84017 11.3458C7.05811 10.1707 7.67049 9.10504 8.57611 8.32509C9.48173 7.54514 10.6264 7.09753 11.8208 7.05626C13.0153 7.01499 14.1881 7.38251 15.1454 8.09809L17.2782 5.96528C15.7152 4.66759 13.7279 3.99312 11.6979 4.07141C9.66793 4.14971 7.73844 4.97524 6.28003 6.38947C4.82163 7.80369 3.93715 9.70688 3.79646 11.7335C3.65578 13.7601 4.26881 15.7673 5.51782 17.3694C6.76683 18.9716 8.56375 20.0558 10.5634 20.4138C12.5631 20.7719 14.6246 20.3785 16.3519 19.3092C18.0792 18.2399 19.3506 16.5701 19.9218 14.6206C20.493 12.6711 20.3238 10.5792 19.4467 8.74684C19.3609 8.56733 19.3499 8.36108 19.4162 8.17349C19.4825 7.98589 19.6206 7.83231 19.8001 7.74653C19.9796 7.66075 20.1859 7.6498 20.3735 7.71608C20.5611 7.78236 20.7146 7.92045 20.8004 8.09997Z"
+                                        fill="#3271e6"></path>
                                 </svg>
 
-                            </span>
+                                <h3 class="mb-0">Notre Mission</h3>
+                            </div>
+                            <p class="mb-0">
+                                Le CAFTANA a pour mission la promotion les filières scientifiques et des technologies
+                                Atomiques et Nucléaires Appliquées
+                                dans les établissements moyens-secondaires et universitaires africains. Nous travaillons
+                                à améliorer la production
+                                d’énergie non polluante, la santé, l’agriculture et la protection de l’environnement
+                                grâce aux TANA.
+                            </p>
                         </div>
-                        <div class="flex-grow-1 ms-4">
-                            <h4>Développement durable</h4>
-                            <p>Nous encourageons une utilisation responsable des ressources nucléaires pour garantir un
-                                avenir prospère.</p>
-                        </div>
-                    </div>
-                    <!-- End Icon Blocks -->
-                </div>
-                <!-- End Col -->
-
-                <div class="col-md-6 col-lg-5">
-                    <!-- Icon Blocks -->
-                    <div class="d-flex ps-lg-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
-                        <div class="flex-shrink-0">
-                            <span class="svg-icon text-primary">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        <div class="mb-3">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M4.85714 1H11.7364C12.0911 1 12.4343 1.12568 12.7051 1.35474L17.4687 5.38394C17.8057 5.66895 18 6.08788 18 6.5292V19.0833C18 20.8739 17.9796 21 16.1429 21H4.85714C3.02045 21 3 20.8739 3 19.0833V2.91667C3 1.12612 3.02045 1 4.85714 1ZM7 13C7 12.4477 7.44772 12 8 12H15C15.5523 12 16 12.4477 16 13C16 13.5523 15.5523 14 15 14H8C7.44772 14 7 13.5523 7 13ZM8 16C7.44772 16 7 16.4477 7 17C7 17.5523 7.44772 18 8 18H11C11.5523 18 12 17.5523 12 17C12 16.4477 11.5523 16 11 16H8Z"
-                                        fill="#035A4B"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M6.85714 3H14.7364C15.0911 3 15.4343 3.12568 15.7051 3.35474L20.4687 7.38394C20.8057 7.66895 21 8.08788 21 8.5292V21.0833C21 22.8739 20.9796 23 19.1429 23H6.85714C5.02045 23 5 22.8739 5 21.0833V4.91667C5 3.12612 5.02045 3 6.85714 3ZM7 13C7 12.4477 7.44772 12 8 12H15C15.5523 12 16 12.4477 16 13C16 13.5523 15.5523 14 15 14H8C7.44772 14 7 13.5523 7 13ZM8 16C7.44772 16 7 16.4477 7 17C7 17.5523 7.44772 18 8 18H11C11.5523 18 12 17.5523 12 17C12 16.4477 11.5523 16 11 16H8Z"
-                                        fill="#035A4B"></path>
+                                    <path opacity="0.2"
+                                        d="M12 5.55371C4.5 5.55371 1.5 12.3037 1.5 12.3037C1.5 12.3037 4.5 19.0537 12 19.0537C19.5 19.0537 22.5 12.3037 22.5 12.3037C22.5 12.3037 19.5 5.55371 12 5.55371ZM12 16.0537C11.2583 16.0537 10.5333 15.8338 9.91661 15.4217C9.29993 15.0097 8.81928 14.424 8.53545 13.7388C8.25162 13.0536 8.17736 12.2996 8.32205 11.5721C8.46675 10.8447 8.8239 10.1765 9.34835 9.65206C9.8728 9.12761 10.541 8.77046 11.2684 8.62577C11.9958 8.48107 12.7498 8.55533 13.4351 8.83916C14.1203 9.12299 14.706 9.60364 15.118 10.2203C15.5301 10.837 15.75 11.562 15.75 12.3037C15.75 13.2983 15.3549 14.2521 14.6517 14.9554C13.9484 15.6586 12.9946 16.0537 12 16.0537Z"
+                                        fill="#3271e6"></path>
+                                    <path
+                                        d="M23.1853 12C23.1525 11.9259 22.3584 10.1643 20.5931 8.39902C18.2409 6.04684 15.27 4.80371 12 4.80371C8.72999 4.80371 5.75905 6.04684 3.40687 8.39902C1.64155 10.1643 0.843741 11.9287 0.814679 12C0.772035 12.0959 0.75 12.1997 0.75 12.3046C0.75 12.4096 0.772035 12.5134 0.814679 12.6093C0.847491 12.6834 1.64155 14.444 3.40687 16.2093C5.75905 18.5606 8.72999 19.8037 12 19.8037C15.27 19.8037 18.2409 18.5606 20.5931 16.2093C22.3584 14.444 23.1525 12.6834 23.1853 12.6093C23.2279 12.5134 23.25 12.4096 23.25 12.3046C23.25 12.1997 23.2279 12.0959 23.1853 12ZM12 18.3037C9.11437 18.3037 6.59343 17.2546 4.50655 15.1865C3.65028 14.335 2.92179 13.364 2.34374 12.3037C2.92164 11.2433 3.65014 10.2723 4.50655 9.4209C6.59343 7.35277 9.11437 6.30371 12 6.30371C14.8856 6.30371 17.4066 7.35277 19.4934 9.4209C20.3514 10.2721 21.0815 11.2431 21.6609 12.3037C20.985 13.5656 18.0403 18.3037 12 18.3037ZM12 7.80371C11.11 7.80371 10.2399 8.06763 9.49993 8.5621C8.7599 9.05656 8.18313 9.75937 7.84253 10.5816C7.50194 11.4039 7.41282 12.3087 7.58646 13.1816C7.76009 14.0545 8.18867 14.8564 8.81801 15.4857C9.44735 16.115 10.2492 16.5436 11.1221 16.7172C11.995 16.8909 12.8998 16.8018 13.7221 16.4612C14.5443 16.1206 15.2471 15.5438 15.7416 14.8038C16.2361 14.0638 16.5 13.1937 16.5 12.3037C16.4988 11.1106 16.0242 9.96675 15.1806 9.1231C14.337 8.27946 13.1931 7.80495 12 7.80371ZM12 15.3037C11.4066 15.3037 10.8266 15.1278 10.3333 14.7981C9.83993 14.4685 9.45542 13.9999 9.22835 13.4518C9.00129 12.9036 8.94188 12.3004 9.05764 11.7184C9.17339 11.1365 9.45911 10.6019 9.87867 10.1824C10.2982 9.76283 10.8328 9.47711 11.4147 9.36135C11.9967 9.2456 12.5999 9.30501 13.148 9.53207C13.6962 9.75913 14.1648 10.1437 14.4944 10.637C14.824 11.1303 15 11.7104 15 12.3037C15 13.0994 14.6839 13.8624 14.1213 14.425C13.5587 14.9876 12.7956 15.3037 12 15.3037Z"
+                                        fill="#3271e6"></path>
                                 </svg>
 
-                            </span>
-                        </div>
-                        <div class="flex-grow-1 ms-4">
-                            <h4>Collaboration</h4>
-                            <p>Nous travaillons avec des institutions, des gouvernements et des chercheurs pour
-                                renforcer l’expertise en Afrique.</p>
+                                <h3 class="mb-0">Notre Vision</h3>
+                            </div>
+
+                            <p class="mb-0">
+                                Notre ambition est de faire des TANA un levier essentiel pour le progrès, en démocratisant leur accès dans les
+                                établissements d’enseignement et en favorisant la recherche et l’innovation pour un continent plus autonome, prospère et
+                                respectueux de l’environnement.
+
+                            </p>
                         </div>
                     </div>
-                    <!-- End Icon Blocks -->
                 </div>
-                <!-- End Col -->
             </div>
-            <!-- End Row -->
-        </div>
+        </section>
         <!-- END VALUES -->
-        <br>
-        <br>
+        <br />
+        <br />
         <!-- FAQ -->
         <div id="faq" class="container content-space-2 content-space-lg-2 bg-light rounded rounded-3">
             <!-- Heading -->
@@ -561,11 +445,12 @@
                         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingBasicsOne"
                             data-bs-parent="#accordionFAQ" style="">
                             <div class="accordion-body">
-                                CAFTANA (Centrale Africaine de Technologie Atomique et Nucléaire Appliquée) est une
-                                organisation dédiée à la promotion et
-                                à l’utilisation pacifique de l’énergie nucléaire en Afrique. Nous travaillons dans les
-                                domaines de l’énergie, de la
-                                santé, de l’agriculture et de l’environnement pour un développement durable.
+                                CAFTANA (Centrale Africaine de Technologie Atomique et
+                                Nucléaire Appliquée) est une organisation dédiée à la
+                                promotion et à l’utilisation pacifique de l’énergie nucléaire
+                                en Afrique. Nous travaillons dans les domaines de l’énergie,
+                                de la santé, de l’agriculture et de l’environnement pour un
+                                développement durable.
                             </div>
                         </div>
                     </div>
@@ -582,16 +467,22 @@
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingBasicsTwo"
                             data-bs-parent="#accordionFAQ" style="">
                             <div class="accordion-body">
-                                La technologie nucléaire a de nombreuses applications, notamment :
+                                La technologie nucléaire a de nombreuses applications,
+                                notamment :
                                 <ul class="list-checked list-checked-primary mt-5">
-                                    <li class="list-checked-item">Médecine : Radiothérapie, imagerie médicale,
-                                        diagnostic avancé.</li>
-                                    <li class="list-checked-item">Agriculture : Amélioration des cultures, conservation
-                                        des aliments.</li>
-                                    <li class="list-checked-item">Environnement : Surveillance des ressources
-                                        naturelles, gestion des déchets.</li>
+                                    <li class="list-checked-item">
+                                        Médecine : Radiothérapie, imagerie médicale, diagnostic
+                                        avancé.
+                                    </li>
+                                    <li class="list-checked-item">
+                                        Agriculture : Amélioration des cultures, conservation des
+                                        aliments.
+                                    </li>
+                                    <li class="list-checked-item">
+                                        Environnement : Surveillance des ressources naturelles,
+                                        gestion des déchets.
+                                    </li>
                                 </ul>
-
                             </div>
                         </div>
                     </div>
@@ -608,9 +499,10 @@
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingBasicsThree"
                             data-bs-parent="#accordionFAQ" style="">
                             <div class="accordion-body">
-                                L’énergie nucléaire produit très peu de CO₂ comparée aux énergies fossiles. De plus, des
-                                solutions modernes permettent
-                                une gestion efficace et sécurisée des déchets radioactifs. </div>
+                                L’énergie nucléaire produit très peu de CO₂ comparée aux
+                                énergies fossiles. De plus, des solutions modernes permettent
+                                une gestion efficace et sécurisée des déchets radioactifs.
+                            </div>
                         </div>
                     </div>
                     <!-- End Accordion Item -->
@@ -620,15 +512,17 @@
                         <div class="accordion-header" id="headingBasicsFour">
                             <a class="accordion-button" role="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                                Comment CAFTANA contribue-t-elle au développement de l’Afrique ?
+                                Comment CAFTANA contribue-t-elle au développement de l’Afrique
+                                ?
                             </a>
                         </div>
                         <div id="collapseFour" class="accordion-collapse collapse show"
                             aria-labelledby="headingBasicsFour" data-bs-parent="#accordionFAQ" style="">
                             <div class="accordion-body">
-                                CAFTANA investit dans la recherche et le développement, forme des experts locaux et
-                                collabore avec des institutions pour
-                                renforcer l’indépendance énergétique et technologique du continent.
+                                CAFTANA investit dans la recherche et le développement, forme
+                                des experts locaux et collabore avec des institutions pour
+                                renforcer l’indépendance énergétique et technologique du
+                                continent.
                             </div>
                         </div>
                     </div>
@@ -639,268 +533,368 @@
         </div>
         <!-- End FAQ -->
 
-
         <!-- OUT TEAM -->
-        <section class="text-center py-3 my-6"
-            style="background-image: url(../assets/images/mentor/mentor-glow.svg); background-repeat: no-repeat; background-size: contain">
+        <section class="text-center py-3 my-6" style="
+          background-image: url(../assets/images/mentor/mentor-glow.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+        ">
             <div class="container py-lg-6">
                 <!--row-->
-                <h1 class="mb-0 display-4 fw-bold">
-                    Notre équipe
-                </h1>
+                <h1 class="mb-0 display-4 fw-bold">Notre équipe</h1>
                 <span class="text-dark fs-5">Notre équipe est composée de professionnels passionnés et
-                    expérimentés qui travaillent ensemble pour atteindre nos objectifs communs.</span>
+                    expérimentés qui travaillent ensemble pour atteindre des objectifs
+                    communs.</span>
             </div>
             <div class="row row-cols-2 row-cols-lg-5 g-4 gap-2 justify-content-center p-0 m-0">
+                <!-- PERSONEL 1 -->
                 <div href="#personelModal1" data-bs-toggle="modal" data-bs-target="#personelModal1"
-                    class="col  bg-white text-center shadow-sm text-wrap rounded-4  border card-lift border">
-                    <!--img-->
-                    <div class="py-2">
-                        <img src="./assets/img/personel/1.png" alt="mentor 1" class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Prof Ibrahima SAKHO</h5>
-                            <span class="text-dark">Fondateur et Président Directeur Général </span>
-                        </div>
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/1.png" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Prof Ibrahima SAKHO</h4>
+                        <p class="mb-0">
+                            Docteur d’État en Physique Atomique et Nucléaire
+                        </p>
                     </div>
-                </div>
-                <div href="#personelModal2" data-bs-toggle="modal" data-bs-target="#personelModal2"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="py-2">
-                        <img src="./assets/img/personel/2.png" alt="mentor 2" class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Dr Magatte DIAGNE</h5>
-                            <span class="text-dark">Vice-présidente </span>
-                        </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Fondateur et Président Directeur Général
                     </div>
-                </div>
-                <div href="#personelModal3" data-bs-toggle="modal" data-bs-target="#personelModal3"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="py-2">
-                        <img src="./assets/img/personel/3.png" alt="mentor 3" class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Prof Mamadou SOUMBOUNDOU</h5>
-                            <span class="text-dark">Président de la Commission Recherche Innovation</span>
-                        </div>
-                    </div>
-                </div>
-                <div href="#personelModal4" data-bs-toggle="modal" data-bs-target="#personelModal4"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="p-3">
-                        <img src="./assets/img/personel/4.png" alt="mentor 4" class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Dr Maïmouna MANÉ</h5>
-                            <span class="text-dark">Vice-présidente </span>
-                        </div>
-                    </div>
-                </div>
-                <div href="#personelModal5" data-bs-toggle="modal" data-bs-target="#personelModal5"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="p-3">
-                        <img src="./assets/img/personel/5.png" alt="mentor 5" class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Dr Yawo Atsu Constantino FIAGAN</h5>
-                            <span class="text-dark">Vice-présidente </span>
-                        </div>
-                    </div>
-                </div>
-                <div href="#personelModal6" data-bs-toggle="modal" data-bs-target="#personelModal6"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="p-3">
-                        <img src="./assets/img/personel/6.png" alt="mentor 6" class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Dr Lamine Boubacar KONATÉ</h5>
-                            <span class="text-dark">Vice-président de la Commission Recherche Innovation</span>
-                        </div>
-                    </div>
-                </div>
-                <div href="#personelModal7" data-bs-toggle="modal" data-bs-target="#personelModal7"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="p-3">
-                        <img src="./assets/img/personel/7.png" alt="mentor 7" class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Dr Mme Ndèye Lama KAMARA</h5>
-                            <span class="text-dark">Secrétaire Générale Adjointe </span>
-                        </div>
-                    </div>
-                </div>
-                <div href="#personelModal8" data-bs-toggle="modal" data-bs-target="#personelModal8"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="p-3">
-                        <img src="./assets/img/personel/8.png" alt="mentor 8" class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Dr Momar Talla GNINGEN</h5>
-                            <span class="text-dark">Trésorier Général </span>
-                        </div>
-                    </div>
-                </div>
-                <div href="#personelModal9" data-bs-toggle="modal" data-bs-target="#personelModal9"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="py-3">
-                        <img src="./assets/img/personel/9.png" alt="mentor 9" class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Dr Kodjo Joël Fabrice N’GUESSAN</h5>
-                            <span class="text-dark">Vice-président de la Commission chargée des relations
-                                internationales</span>
-                        </div>
-                    </div>
-                </div>
-                <div href="#personelModal10" data-bs-toggle="modal" data-bs-target="#personelModal10"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="p-3">
-                        <img src="./assets/img/personel/10.png" alt="mentor 10" class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Dr Ali TRAORÉ</h5>
-                            <span class="text-dark">Membre actif </span>
-                        </div>
-                    </div>
-                </div>
-                <div href="#personelModal11" data-bs-toggle="modal" data-bs-target="#personelModal11"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="p-3">
-                        <img src="./assets/img/personel/11.png" alt="mentor 11" class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Mr Djibril DIOP</h5>
-                            <span class="text-dark">Président de la commission chargée des relations avec le
-                                monde professionnel</span>
-                        </div>
-                    </div>
-                </div>
-                <div href="#personelModal12" data-bs-toggle="modal" data-bs-target="#personelModal12"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="p-3">
-                        <img src="./assets/img/personel/12.png" alt="mentor 12" class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Mr Babacar BODIAN</h5>
-                            <span class="text-dark">Vice-président de la commission chargée des relations avec
-                                le monde professionnel</span>
-                        </div>
-                    </div>
-                </div>
-                <div href="#personelModal13" data-bs-toggle="modal" data-bs-target="#personelModal13"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="p-3">
-                        <img src="./assets/img/personel/13.png" alt="mentor 13" class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Dr Abdourahmane DIALLO</h5>
-                            <span class="text-dark">Président de la commission chargée de l’animation
-                                pédagogique et scientifique</span>
-                        </div>
-                    </div>
-                </div>
-                <div href="#personelModal14" data-bs-toggle="modal" data-bs-target="#personelModal14"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="p-3">
-                        <img src="./assets/img/personel/14.png" alt="mentor 14" class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Dr Jean Kouhissoré BADIANE</h5>
-                            <span class="text-dark">Vice-président de la commission chargée de l'animation
-                                pédagogique et scientifique</span>
-                        </div>
-                    </div>
-                </div>
-                <div href="#personelModal15" data-bs-toggle="modal" data-bs-target="#personelModal15"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="p-3">
-                        <img src="./assets/img/personel/15.png" alt="mentor 15" class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Dr Babacar DIOP</h5>
-                            <span class="text-dark">Président de la commission chargée des relations avec le
-                                monde universitaire</span>
-                        </div>
-                    </div>
-                </div>
-                <div href="#personelModal16" data-bs-toggle="modal" data-bs-target="#personelModal16"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="p-3">
-                        <img src="https://placehold.co/600x400?text=Dr+Babou+DIOP" alt="mentor 16"
-                            class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Dr Babou DIOP</h5>
-                            <span class="text-dark">Président de la commission chargée des relations avec le monde
-                                scolaire (CREMOS) </span>
-                        </div>
-                    </div>
-                </div>
-                <div href="#personelModal17" data-bs-toggle="modal" data-bs-target="#personelModal17"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="p-3">
-                        <img src="https://placehold.co/600x400?text=Dr+Malick+SOW" alt="mentor 17"
-                            class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Dr Cheikh Tidiane BOP</h5>
-                            <span class="text-dark">Président de la commission chargée des relations avec le monde
-                                universitaire (CREMU) </span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div href="#personelModal19" data-bs-toggle="modal" data-bs-target="#personelModal19"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="p-3">
-                        <img src="https://placehold.co/600x400?text=Prof+Mohamed+LAZREK" alt="mentor 19"
-                            class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Prof Mohamed LAZREK</h5>
-                            <span class="text-dark">
-                                Professeur émérite et agrégé en sciences physique
-                                Président de la commission chargée des relations avec le monde arabe (CREMA)
-                            </span>
-                        </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇸🇳 Sénégal</span>
                     </div>
                 </div>
 
-                <div href="#personelModal20" data-bs-toggle="modal" data-bs-target="#personelModal20"
-                    class="col bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
-                    <!--img-->
-                    <div class="p-3">
-                        <img src="https://placehold.co/600x400?text=Dr.+Papa+Lat+Tabara+SOW" alt="mentor 20"
-                            class="avatar avatar-xl rounded-circle">
-                        <!--content-->
-                        <div class="mt-3">
-                            <h5 class="">Dr. Papa Lat Tabara SOW</h5>
-                            <span class="text-dark">
-                                Dr en Physique des lasers et spectroscopie moléculaire de haute résolution (Université
-                                Paris 13, 2016)
-                                Vice-président de la commission chargée des relations avec le monde scolaire (CREMOS)
-                            </span>
-                        </div>
+                <!-- PERSONEL 2 -->
+                <div href="#personelModal2" data-bs-toggle="modal" data-bs-target="#personelModal2"
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/2.png" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Dr Magatte DIAGNE</h4>
+                        <p class="mb-0">
+                            Docteur en Physique des matériaux radiothérapeute
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Vice-présidente
+                    </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇸🇳 Sénégalaise</span>
                     </div>
                 </div>
+
+                <!-- PERSONEL 3 -->
+                <div href="#personelModal3" data-bs-toggle="modal" data-bs-target="#personelModal3"
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/3.png" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Prof Mamadou SOUMBOUNDOU</h4>
+                        <p class="mb-0">
+                            Docteur en radiobiologie
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Président de la Commission Recherche Innovation
+                    </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇸🇳 Sénégalaise</span>
+                    </div>
+                </div>
+
+                <!-- PERSONEL 4 -->
+                <div href="#personelModal4" data-bs-toggle="modal" data-bs-target="#personelModal4"
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/4.png" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Dr Maïmouna MANÉ</h4>
+                        <p class="mb-0">
+                            Docteur d’état en médecine Radiothérapeute-oncologue
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Secrétaire Générale
+                    </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇸🇳 Sénégalaise</span>
+                    </div>
+                </div>
+
+
+                <!-- PERSONEL 5 -->
+                <div href="#personelModal5" data-bs-toggle="modal" data-bs-target="#personelModal5"
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/5.png" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Dr Yawo Atsu Constantino FIAGAN</h4>
+                        <p class="mb-0">
+                            Docteur en physique médicale
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Président de la Commission chargée des relations internationales (CRI)
+                    </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇹🇬 Togolais</span>
+                    </div>
+                </div>
+
+
+                <!-- PERSONEL 6 -->
+                <div href="#personelModal6" data-bs-toggle="modal" data-bs-target="#personelModal6"
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/6.png" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Dr Lamine Boubacar KONATÉ</h4>
+                        <p class="mb-0">
+                            Docteur ingénieur en génie électrique
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Vice-président de la commission recherche et innovation (CRI)
+                    </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇸🇳 Sénégalais</span>
+                    </div>
+                </div>
+
+                <!-- PERSONEL 7 -->
+                <div href="#personelModal7" data-bs-toggle="modal" data-bs-target="#personelModal7"
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/7.png" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Mme Ndèye Lama KAMARA</h4>
+                        <p class="mb-0">
+                            Ingénieure Biomédicale et Doctorante en physique médicale
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Secrétaire Générale Adjointe
+                    </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇸🇳 Sénégalaise</span>
+                    </div>
+                </div>
+
+                <!-- PERSONEL 8 -->
+                <div href="#personelModal8" data-bs-toggle="modal" data-bs-target="#personelModal8"
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/8.png" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Dr Momar Talla GNING</h4>
+                        <p class="mb-0">
+                            Docteur en Physique Atomique et Nucléaire
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Trésorier Général
+                    </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇸🇳 Sénégalais</span>
+                    </div>
+                </div>
+
+                <!-- PERSONEL 9 -->
+                <div href="#personelModal9" data-bs-toggle="modal" data-bs-target="#personelModal9"
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/9.png" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Dr Kodjo Joël Fabrice N’GUESSAN</h4>
+                        <p class="mb-0">
+                            Docteur en physique médicale
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Vice-président de la Commission chargée des relations internationales (CRI)
+                    </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇨🇮 Ivoirien</span>
+                    </div>
+                </div>
+
+                <!-- PERSONEL 10 -->
+                <div href="#personelModal10" data-bs-toggle="modal" data-bs-target="#personelModal10"
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/10.png" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Dr Ali TRAORÉ</h4>
+                        <p class="mb-0">
+                            Docteur en physique médicale
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Membre actif du CAFTANA
+                    </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇸🇳 Sénégalais</span>
+                    </div>
+                </div>
+
+
+                <!-- PERSONEL 11 -->
+                <div href="#personelModal11" data-bs-toggle="modal" data-bs-target="#personelModal11"
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/11.png" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Mr Djibril DIOP</h4>
+                        <p class="mb-0">
+                            Ingénieure Biomédicale
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Président de la commission chargée des relations avec le monde professionnel
+                    </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇸🇳 Sénégalais</span>
+                    </div>
+                </div>
+
+                <!-- PERSONEL 12 -->
+                <div href="#personelModal12" data-bs-toggle="modal" data-bs-target="#personelModal12"
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/12.png" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Mr Babacar BODIAN</h4>
+                        <p class="mb-0">
+                            Ingénieure Biomédicale
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Vice-président de la commission chargée des relations avec le monde professionnel
+                    </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇸🇳 Sénégalais</span>
+                    </div>
+                </div>
+
+                <!-- PERSONEL 13 -->
+                <div href="#personelModal13" data-bs-toggle="modal" data-bs-target="#personelModal13"
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/13.png" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Dr Abdourahmane DIALLO</h4>
+                        <p class="mb-0">
+                            Docteur en Physique Atomique et Nucléaire
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Président de la commission chargée de l’animation pédagogique et scientifique (CAPES)
+                    </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇸🇳 Sénégalais</span>
+                    </div>
+                </div>
+
+                <!-- PERSONEL 14 -->
+                <div href="#personelModal14" data-bs-toggle="modal" data-bs-target="#personelModal14"
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/14.png" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Dr Jean Kouhissoré BADIANE</h4>
+                        <p class="mb-0">
+                            Docteur en Physique Atomique et Nucléaire
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Vice-président de la commission chargée de l’animation pédagogique et scientifique (CAPES)
+                    </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇸🇳 Sénégalais</span>
+                    </div>
+                </div>
+
+                <!-- PERSONEL 15 -->
+                <div href="#personelModal15" data-bs-toggle="modal" data-bs-target="#personelModal15"
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/15.jpeg" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Dr Babou DIOP</h4>
+                        <p class="mb-0">
+                            Docteur en Physique Atomique et Nucléaire
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Président de la commission chargée des relations avec le
+                        monde scolaire (CREMOS)
+                    </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇸🇳 Sénégalais</span>
+                    </div>
+                </div>
+
+                <!-- PERSONEL 17 -->
+                <div href="#personelModal17" data-bs-toggle="modal" data-bs-target="#personelModal17"
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/17.jpeg" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Dr Cheikh Tidiane BOP</h4>
+                        <p class="mb-0">
+                            Docteur en physique atomique et moléculaire
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Président de la commission chargée des relations avec le
+                        monde universitaire (CREMU)
+                    </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇸🇳 Sénégalais</span>
+                    </div>
+                </div>
+
+                <!-- PERSONEL 18 -->
+                <div href="#personelModal18" data-bs-toggle="modal" data-bs-target="#personelModal18"
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/18.png" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Prof Mohamed LAZRAK</h4>
+                        <p class="mb-0">
+                            Professeur émérite agrégé en sciences physiques
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Président de la commission chargée des relations avec le monde arabe (CREMA)
+                    </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇹🇳 Tunisien</span>
+                    </div>
+                </div>
+
+
+                <!-- PERSONEL 19 -->
+                <div href="#personelModal19" data-bs-toggle="modal" data-bs-target="#personelModal19"
+                    class="col p-3 bg-white text-center shadow-sm text-wrap rounded-4 border card-lift border">
+                    <div class="text-center">
+                        <img src="./assets/img/personel/19.jpeg" alt="" class="rounded-circle avatar-xl mb-3" />
+                        <h4 class="mb-0">Dr Papa Lat Tabara SOW</h4>
+                        <p class="mb-0">
+                            Docteur en Physique des lasers et spectroscopie moléculaire
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center text-dark">
+                        Vice-président de la commission chargée des relations avec le monde universitaire (CREMU)
+                    </div>
+                    <div class="text-center text-dark">
+                        <span class="badge bg-primary">🇸🇳 Sénégalais</span>
+                    </div>
+                </div>
+
             </div>
         </section>
         <!-- END OUT TEAM -->
@@ -916,17 +910,18 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/1.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/1.png" alt="Image Description" />
                         </div>
-                        <span class="card-subtitle">Fondateur </span>
-                        <h4 class="card-title">Prof Ibrahima SAKHO - 🇸🇳 Sénégalais</h4>
-                        <p class="card-text">Président Directeur Général 
-                            Docteur d’État en Physique Atomique et Nucléaire (Université Cheikh Anta Diop, 2013)
-                            Enseignant-Chercheur-Ecrivain, UFR Sciences et Technologies, Université Iba Der Thiam
-                            Ancien Conseiller Technique à la Primature chargé de la promotion des disciplines
-                            scientifiques et du suivi des classes
-                            préparatoires aux grandes écoles
+                        <h4 class="card-title">Prof Ibrahima SAKHO - Sénégalais</h4>
 
+                        <span class="card-subtitle">Fondateur </span>
+                        <p class="card-text text-justify text-dark">
+                            Président Directeur Général Docteur d’État en Physique Atomique
+                            et Nucléaire (Université Cheikh Anta Diop, 2013)
+                            Enseignant-Chercheur-Ecrivain, UFR Sciences et Technologies,
+                            Université Iba Der Thiam Ancien Conseiller Technique à la
+                            Primature chargé de la promotion des disciplines scientifiques
+                            et du suivi des classes préparatoires aux grandes écoles
                         </p>
                     </div>
                     <!-- End Body -->
@@ -944,16 +939,18 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/2.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/2.png" alt="Image Description" />
                         </div>
+                        <h4 class="card-title">Dr Magatte DIAGNE - Sénégalaise</h4>
+
                         <span class="card-subtitle">Vice-présidente </span>
-                        <h4 class="card-title">Dr Magatte DIAGNE - 🇸🇳 Sénégalaise</h4>
-                        <p class="card-text">
-                            Docteur de 3e cycle Physique des matériaux (Université Cheikh Anta Diop, 2005)
-                            Radiophysicienne médicale spécialisée en Radiothérapie, Curiethérapie, Médecine Nucléaire
-                            Radiologie et radioprotection
-                            Radiophysicienne au Centre Hospitalier National Cheikh Ahmadou Khadim de Touba
-                            Coordonnatrice de l’Agence Internationale de l’énergie atomique (AIEA) au Sénégal
+                        <p class="card-text text-justify text-dark">
+                            Docteur de 3e cycle Physique des matériaux (Université Cheikh
+                            Anta Diop, 2005) Radiophysicienne médicale spécialisée en
+                            Radiothérapie, Curiethérapie, Médecine Nucléaire Radiologie et
+                            radioprotection Radiophysicienne au Centre Hospitalier National
+                            Cheikh Ahmadou Khadim de Touba Coordonnatrice de l’Agence
+                            Internationale de l’énergie atomique (AIEA) au Sénégal
                         </p>
                     </div>
                 </div>
@@ -970,26 +967,20 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/3.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/3.png" alt="Image Description" />
                         </div>
+                        <h4 class="card-title">Prof Mamadou SOUMBOUNDOU - Sénégalaise</h4>
                         <span class="card-subtitle">Président de la Commission Recherche Innovation</span>
-                        <h4 class="card-title">Prof Mamadou SOUMBOUNDOU - 🇸🇳 Sénégalaise</h4>
-                        <p class="card-text">
-                            Docteur en radiobiologie Cellulaire et Moléculaire (Université Claude Bernard de Lyon1,
-                            2018)
-                            Maître de Conférences Agrégés en Biophysique
-                            Enseignant-Chercheur, UFR de la Santé, Université Iba Der Thiam
-                            Directeur de Recherche de l’Unité Mixte d’Exploration de Recherche et Diagnostic de l’UFR de
-                            la Santé, Université
-                            Iba
-                            Der Thiam
-                            Chef du département physico-chimique, filière pharmacie de l’UFR de la Santé, Université Iba
-                            Der Thiam
-                            Responsable du service Biologiste médical du Laboratoire de Biologie Médicale de l’Hôpital
-                            pour Enfants de
-                            Diamniadio
-
-
+                        <p class="card-text text-justify text-dark">
+                            Docteur en radiobiologie Cellulaire et Moléculaire (Université
+                            Claude Bernard de Lyon1, 2018) Maître de Conférences Agrégés en
+                            Biophysique Enseignant-Chercheur, UFR de la Santé, Université
+                            Iba Der Thiam Directeur de Recherche de l’Unité Mixte
+                            d’Exploration de Recherche et Diagnostic de l’UFR de la Santé,
+                            Université Iba Der Thiam Chef du département physico-chimique,
+                            filière pharmacie de l’UFR de la Santé, Université Iba Der Thiam
+                            Responsable du service Biologiste médical du Laboratoire de
+                            Biologie Médicale de l’Hôpital pour Enfants de Diamniadio
                         </p>
                     </div>
                 </div>
@@ -1006,22 +997,21 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/4.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/4.png" alt="Image Description" />
                         </div>
+                        <h4 class="card-title">Dr Maïmouna MANÉ - Sénégalaise</h4>
                         <span class="card-subtitle">Secrétaire Générale </span>
-                        <h4 class="card-title">Dr Maïmouna MANÉ - 🇸🇳 Sénégalaise</h4>
-                        <p class="card-text">
-                            Doctorat d’État en médecine spécialisée en Radiothérapie-Oncologie (Université Cheikh Anta
-                            Diop, 2012)
-                            Cheffe du Service d’Oncologie-Radiothérapie au Centre Hospitalier National Cheikh Ahmadou
-                            Khadim de Touba
-                            Coordonnatrice du Projet National SEN6026 de l’Agence Internationale de l’Énergie Atomique
-                            (AIEA)
+                        <p class="card-text text-justify text-dark">
+                            Doctorat d’État en médecine spécialisée en
+                            Radiothérapie-Oncologie (Université Cheikh Anta Diop, 2012)
+                            Cheffe du Service d’Oncologie-Radiothérapie au Centre
+                            Hospitalier National Cheikh Ahmadou Khadim de Touba
+                            Coordonnatrice du Projet National SEN6026 de l’Agence
+                            Internationale de l’Énergie Atomique (AIEA)
                         </p>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!-- PERSONEL 5 -->
@@ -1034,18 +1024,22 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/5.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/5.png" alt="Image Description" />
                         </div>
-                        <span class="card-subtitle">Membre actif </span>
-                        <h4 class="card-title">Dr Ali TRAORÉ - 🇹🇬 Togolais</h4>
-                        <p class="card-text">
-                            Docteur en physique médicale option radiothérapie (Université Libre de Bruxelles, 2024)
-                            Stagiaire en Radiothérapie au GZA Hospital, Sint-Augustinus, Iridium Netwerk, Anvers,
-                            Belgique.
-                            Coordinateur du projet de l’Agence Internationale de l’Énergie Atomique (AIEA) portant sur
-                            la mise en place de l'autorité de régulation des sources nucléaires et radioactives, et
-                            aussi des équipements à
-                            rayonnements ionisant au Togo.
+                        <h4 class="card-title">
+                            Dr Yawo Atsu Constantino FIAGAN - Togolais
+                        </h4>
+                        <span class="card-subtitle">Président de la Commission chargée des relations
+                            internationales (CRI)</span>
+
+                        <p class="card-text text-justify text-dark">
+                            Docteur en physique médicale option radiothérapie (Université
+                            Libre de Bruxelles, 2024) Stagiaire en Radiothérapie au GZA
+                            Hospital, Sint-Augustinus, Iridium Netwerk, Anvers, Belgique.
+                            Coordinateur du projet de l’Agence Internationale de l’Énergie
+                            Atomique (AIEA) portant sur la mise en place de l'autorité de
+                            régulation des sources nucléaires et radioactives, et aussi des
+                            équipements à rayonnements ionisant au Togo.
                         </p>
                     </div>
                 </div>
@@ -1062,15 +1056,16 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/6.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/6.png" alt="Image Description" />
                         </div>
+                        <h4 class="card-title">Dr Lamine Boubacar KONATÉ - Sénégalais</h4>
+
                         <span class="card-subtitle">Vice-président de la Commission Recherche Innovation (CREI) du
                             CAFTANA</span>
-                        <h4 class="card-title">Dr Lamine Boubacar KONATÉ - 🇸🇳 Sénégalais</h4>
-                        <p class="card-text">
-                            Docteur ingénieur en génie électrique (Ecole Centrale de Lyon, 2016)
-                            Responsable du laboratoire de spectrométrie gamma de l’Institut de Technologie Nucléaire
-                            Appliquée (Université Cheikh
+                        <p class="card-text text-justify text-dark">
+                            Docteur ingénieur en génie électrique (Ecole Centrale de Lyon,
+                            2016) Responsable du laboratoire de spectrométrie gamma de
+                            l’Institut de Technologie Nucléaire Appliquée (Université Cheikh
                             Anta Diop)
                         </p>
                     </div>
@@ -1088,15 +1083,15 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/7.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/7.png" alt="Image Description" />
                         </div>
+                        <h4 class="card-title">Mme Ndèye Lama KAMARA - Sénégalaise</h4>
                         <span class="card-subtitle">Secrétaire Générale Adjointe </span>
-                        <h4 class="card-title">Mme Ndèye Lama KAMARA - 🇸🇳 Sénégalaise</h4>
-                        <p class="card-text">
-                            Ingénieure Biomédicale (Université Polytechnique de l’Ouest Africain, 2022)
-                            Doctorante en physique médicale, Université Iba Der Thiam
-                            Responsable projet équipement de mesure et contrôle qualité des installations à Technologies
-                            Services Dakar
+                        <p class="card-text text-justify text-dark">
+                            Ingénieure Biomédicale (Université Polytechnique de l’Ouest
+                            Africain, 2022) Doctorante en physique médicale, Université Iba
+                            Der Thiam Responsable projet équipement de mesure et contrôle
+                            qualité des installations à Technologies Services Dakar
                         </p>
                     </div>
                 </div>
@@ -1113,15 +1108,15 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/8.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/8.png" alt="Image Description" />
                         </div>
+                        <h4 class="card-title">Dr Momar Talla GNING - Sénégalais</h4>
                         <span class="card-subtitle">Trésorier Général </span>
-                        <h4 class="card-title">Dr Momar Talla GNING - 🇸🇳 Sénégalais</h4>
-                        <p class="card-text">
-                            Docteur en Physique Atomique et Nucléaire (Université Iba Der Thiam, 2021)
-                            Professeur de Sciences Physiques, Lycée Diakhao Sine de Fatick
-                            Enseignant-vacataire, Université du Sine Sakoum Hadji Ibrahima Niass (USSEIN).
-
+                        <p class="card-text text-justify text-dark">
+                            Docteur en Physique Atomique et Nucléaire (Université Iba Der
+                            Thiam, 2021) Professeur de Sciences Physiques, Lycée Diakhao
+                            Sine de Fatick Enseignant-vacataire, Université du Sine Sakoum
+                            Hadji Ibrahima Niass (USSEIN).
                         </p>
                     </div>
                 </div>
@@ -1138,15 +1133,21 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/9.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/9.png" alt="Image Description" />
                         </div>
+                        <h4 class="card-title">
+                            Dr Kodjo Joël Fabrice N’GUESSAN - Ivoirien
+                        </h4>
                         <span class="card-subtitle">Vice-président de la Commission chargée des relations
-                            internationales (CRI) </span>
-                        <h4 class="card-title">Dr Kodjo Joël Fabrice N’GUESSAN - 🇨🇮 Ivoirien</h4>
-                        <p class="card-text">
-                            Vice-président de la Commission chargée des relations internationales (CRI) 
-                            Docteur en physique médicale option radiothérapie (Université Iba Der Thiam, 2024)
-                            Conseiller en radioprotection au Centre International de Cancérologie de Lomé (TOGO)
+                            internationales (CRI)
+                        </span>
+
+                        <p class="card-text text-justify text-dark">
+                            Vice-président de la Commission chargée des relations
+                            internationales (CRI) Docteur en physique médicale option
+                            radiothérapie (Université Iba Der Thiam, 2024) Conseiller en
+                            radioprotection au Centre International de Cancérologie de Lomé
+                            (TOGO)
                         </p>
                     </div>
                 </div>
@@ -1163,14 +1164,16 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/10.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/10.png" alt="Image Description" />
                         </div>
+                        <h4 class="card-title">Dr Ali TRAORÉ- Sénégalais</h4>
                         <span class="card-subtitle">Membre actif </span>
-                        <h4 class="card-title">Dr Ali TRAORÉ- 🇸🇳 Sénégalais</h4>
-                        <p class="card-text">
-                            Dr en physique médicale (Universidad Complutense de Madrid, Espagne, 2019)
-                            Responsable Pédagogique Institut Sciences et Technologies Avancées de l’Université
-                            Polytechnique de l’Ouest Africain </p>
+                        <p class="card-text text-justify text-dark">
+                            Dr en physique médicale (Universidad Complutense de Madrid,
+                            Espagne, 2019) Responsable Pédagogique Institut Sciences et
+                            Technologies Avancées de l’Université Polytechnique de l’Ouest
+                            Africain
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1186,18 +1189,20 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/11.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/11.png" alt="Image Description" />
                         </div>
-                        <span class="card-subtitle">Président de la commission chargée des relations avec le monde
-                            professionnel (CREMOP) </span>
-                        <h4 class="card-title">Mr Djibril DIOP- 🇸🇳 Sénégalais</h4>
-                        <p class="card-text">
-                            Ingénieure Biomédicale (Université Polytechnique de l’Ouest Africain, 2020)
-                            Doctorante en physique médicale, Université Iba Der Thiam
-                            Employé de la société internationale Médical Technologie of Sénégal (MTS) by BESTHEALTH du
-                            Maroc pour l’entretien, la
-                            maintenance des équipements d’oncologie et les appareils de dosimétries du Sénégal.
+                        <h4 class="card-title">Mr Djibril DIOP- Sénégalais</h4>
 
+                        <span class="card-subtitle">Président de la commission chargée des relations avec le monde
+                            professionnel (CREMOP)
+                        </span>
+                        <p class="card-text text-justify text-dark">
+                            Ingénieure Biomédicale (Université Polytechnique de l’Ouest
+                            Africain, 2020) Doctorante en physique médicale, Université Iba
+                            Der Thiam Employé de la société internationale Médical
+                            Technologie of Sénégal (MTS) by BESTHEALTH du Maroc pour
+                            l’entretien, la maintenance des équipements d’oncologie et les
+                            appareils de dosimétries du Sénégal.
                         </p>
                     </div>
                 </div>
@@ -1214,17 +1219,18 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/12.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/12.png" alt="Image Description" />
                         </div>
-                        <span class="card-subtitle">Vice-président de la commission chargée des relations avec le monde
-                            professionnel (CREMOP) </span>
-                        <h4 class="card-title">Mr Babacar BODIAN- 🇸🇳 Sénégalais</h4>
-                        <p class="card-text">
-                            Ingénieure Biomédicale en formation (Université Polytechnique de l’Ouest Africain)
-                            Employé à Medical Technology of Senegal (MTS) chargé de la maintenance des accélérateurs de
-                            particules et des
-                            équipements de laboratoire.
+                        <h4 class="card-title">Mr Babacar BODIAN- Sénégalais</h4>
 
+                        <span class="card-subtitle">Vice-président de la commission chargée des relations avec le
+                            monde professionnel (CREMOP)
+                        </span>
+                        <p class="card-text text-justify text-dark">
+                            Ingénieure Biomédicale en formation (Université Polytechnique de
+                            l’Ouest Africain) Employé à Medical Technology of Senegal (MTS)
+                            chargé de la maintenance des accélérateurs de particules et des
+                            équipements de laboratoire.
                         </p>
                     </div>
                 </div>
@@ -1241,15 +1247,17 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/13.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/13.png" alt="Image Description" />
                         </div>
-                        <span class="card-subtitle">Président de la commission chargée de l’animation pédagogique et
-                            scientifique (CAPES) </span>
-                        <h4 class="card-title">Dr Abdourahmane DIALLO- 🇸🇳 Sénégalais</h4>
-                        <p class="card-text">
-                            Docteur en Physique Atomique et Nucléaire (Université Assane Seck de Ziguinchor, 2020)
-                            Enseignant-Chercheur, institut Supérieur de Technologie de Mamou, Guinée
+                        <h4 class="card-title">Dr Abdourahmane DIALLO- Sénégalais</h4>
 
+                        <span class="card-subtitle">Président de la commission chargée de l’animation pédagogique
+                            et scientifique (CAPES)
+                        </span>
+                        <p class="card-text text-justify text-dark">
+                            Docteur en Physique Atomique et Nucléaire (Université Assane
+                            Seck de Ziguinchor, 2020) Enseignant-Chercheur, institut
+                            Supérieur de Technologie de Mamou, Guinée
                         </p>
                     </div>
                 </div>
@@ -1266,21 +1274,22 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/14.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/14.png" alt="Image Description" />
                         </div>
-                        <span class="card-subtitle">Vice-président de la commission chargée de l’animation pédagogique
-                            et scientifique (CAPES) </span>
-                        <h4 class="card-title">Dr Jean Kouhissoré BADIANE- 🇸🇳 Sénégalais</h4>
-                        <p class="card-text">
-                            Docteur en Physique Atomique et Nucléaire (Université Assane Seck de Ziguinchor, 2019)
-                            Enseignant-Chercheur, institut Supérieur de Technologie de Mamou, Guinée
+                        <h4 class="card-title">Dr Jean Kouhissoré BADIANE- Sénégalais</h4>
 
+                        <span class="card-subtitle">Vice-président de la commission chargée de l’animation
+                            pédagogique et scientifique (CAPES)
+                        </span>
+                        <p class="card-text text-justify text-dark">
+                            Docteur en Physique Atomique et Nucléaire (Université Assane
+                            Seck de Ziguinchor, 2019) Enseignant-Chercheur, institut
+                            Supérieur de Technologie de Mamou, Guinée
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-
 
         <!-- PERSONEL 15 -->
         <div class="modal fade" id="personelModal15" tabindex="-1" role="dialog" aria-hidden="true">
@@ -1292,16 +1301,18 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/15.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/15.png" alt="Image Description" />
                         </div>
-                        <span class="card-subtitle">Président de la commission chargée des relations avec le monde
-                            universitaire (CREMU) </span>
-                        <h4 class="card-title">Dr Babacar DIOP- 🇸🇳 Sénégalais</h4>
-                        <p class="card-text">
-                            Docteur en Physique Atomique et Nucléaire (Université Cheikh Anta Diop, 2018)
-                            Professeur de Sciences Physiques, Lycée Blaise Diagne de Dakar
-                            Enseignant-vacataire, Université Cheikh Anta Diop & Université Alioune Diop de Bambey
+                        <h4 class="card-title">Dr Babacar DIOP- Sénégalais</h4>
 
+                        <span class="card-subtitle">Président de la commission chargée des relations avec le monde
+                            universitaire (CREMU)
+                        </span>
+                        <p class="card-text text-justify text-dark">
+                            Docteur en Physique Atomique et Nucléaire (Université Cheikh
+                            Anta Diop, 2018) Professeur de Sciences Physiques, Lycée Blaise
+                            Diagne de Dakar Enseignant-vacataire, Université Cheikh Anta
+                            Diop & Université Alioune Diop de Bambey
                         </p>
                     </div>
                 </div>
@@ -1318,17 +1329,48 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/16.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/16.png" alt="Image Description" />
                         </div>
+                        <h4 class="card-title">Dr Babou DIOP- Sénégalais</h4>
+
                         <span class="card-subtitle">Président de la commission chargée des relations avec le monde
-                            scolaire (CREMOS) </span>
-                        <h4 class="card-title">Dr Babou DIOP- 🇸🇳 Sénégalais</h4>
-                        <p class="card-text">
-                            Docteur en Physique Atomique et Nucléaire (Université Cheikh Anta Diop, 2018)
-                            Spécialités : photoionisation résonantes des systèmes atomiques neutres et multichargés dédiée au diagnostic des plasmas
-                            astrophysiques et des plasmas de laboratoire,
+                            scolaire (CREMOS)
+                        </span>
+                        <p class="card-text text-justify text-dark">
+                            Docteur en Physique Atomique et Nucléaire (Université Cheikh
+                            Anta Diop, 2018) Spécialités : photoionisation résonantes des
+                            systèmes atomiques neutres et multichargés dédiée au diagnostic
+                            des plasmas astrophysiques et des plasmas de laboratoire,
                             Professeur de Sciences Physiques, Lycée Blaise Diagne de Dakar
-                            Enseignant-vacataire, Université Cheikh Anta Diop & Université Alioune Diop de Bambey
+                            Enseignant-vacataire, Université Cheikh Anta Diop & Université
+                            Alioune Diop de Bambey
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERSONEL 17 -->
+        <div class="modal fade" id="personelModal17" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-close">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar avatar-lg avatar-circle mb-4">
+                            <img class="avatar-img" src="./assets/img/personel/18.png" alt="Image Description" />
+                        </div>
+                        <h4 class="card-title">Dr Cheikh Tidiane Bop - Sénégalais</h4>
+                        <span class="card-subtitle">Président de la commission chargée des relations avec le monde
+                            universitaire (CREMU)
+                        </span>
+                        <p class="card-text text-justify text-dark">
+                            Spécialité : Structure Electronique, Collisions Inélastiques,
+                            Modélisation Astrophysique, Collisions Réactives, Collisions de
+                            type électron-molécule et atome-atome Chercheur postdoctoral
+                            Département Physique Khalifa University, Abu Dhabi, UAE
                         </p>
                     </div>
                 </div>
@@ -1345,15 +1387,17 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/18.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/19.png" alt="Image Description" />
                         </div>
-                        <span class="card-subtitle">Vice-président de la commission chargée des relations avec le monde
-                            universitaire (CREMU) </span>
-                        <h4 class="card-title">Dr Cheikh Tidiane Bop - 🇸🇳 Sénégalais</h4>
-                        <p class="card-text">
-                            Spécialité : Structure Electronique, Collisions Inélastiques, Modélisation Astrophysique, Collisions Réactives,
-                            Collisions de type électron-molécule et atome-atome
-                            Chercheur postdoctoral Département Physique Khalifa University, Abu Dhabi, UAE
+                        <h4 class="card-title">Professeur Mohamed LAZRAK - Tunisien</h4>
+
+                        <span class="card-subtitle">Président de la commission chargée des relations avec le monde arabe
+                        </span>
+                        <p class="card-text text-justify text-dark">
+                            Spécialité : Structure Electronique, Collisions Inélastiques,
+                            Modélisation Astrophysique, Collisions Réactives, Collisions de
+                            type électron-molécule et atome-atome Chercheur postdoctoral
+                            Département Physique Khalifa University, Abu Dhabi, UAE
                         </p>
                     </div>
                 </div>
@@ -1370,195 +1414,64 @@
                     </div>
                     <div class="modal-body">
                         <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/19.png" alt="Image Description">
+                            <img class="avatar-img" src="./assets/img/personel/19.png" alt="Image Description" />
                         </div>
-                        <span class="card-subtitle">Président de la commission chargée des relations avec le monde arabe
-                            (CREMA) .</span>
-                        <h4 class="card-title">Prof Mohamed LAZREK Professeur émérite agrégé - 🇹🇳 Tunisien</h4>
-                        <p class="card-text">
-                        Professeur émérite et agrégé en sciences physique depuis l'école normale de Cachan,
-                        Spécialités : ordinateurs biologiques ; transfert des charges dans la molécule d'ADN, Chercheur à l'institut Laue et
-                        Langevin,
-                        Participation depuis l'année 2023 dans le cadre de participer au projet des CPGE de Thiès après 25 ans d'expérience
-                        comme enseignant aux classes préparatoire aux grandes écoles d'ingénieurs. Responsable du module mécanique quantique
+                        <h4 class="card-title">
+                            Dr. Papa Lat Tabara SOW - Sénégalais
+                        </h4>
+                        <span class="card-subtitle">Dr en Physique des lasers et spectroscopie moléculaire de haute
+                            résolution</span>
+                        <p class="card-text text-justify text-dark">
+                            Vice-président de la commission chargée des relations avec le monde scolaire
                         </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- PERSONEL 20 -->
-        <div class="modal fade" id="personelModal20" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <!-- Header -->
-                    <div class="modal-close">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="avatar avatar-lg avatar-circle mb-4">
-                            <img class="avatar-img" src="./assets/img/personel/20.png" alt="Image Description">
-                        </div>
-                        <span class="card-subtitle">Vice-président de la commission chargée des relations avec le monde
-                            scolaire (CREMOS)  </span>
-                        <h4 class="card-title">Dr. Papa Lat Tabara SOW - 🇸🇳 Sénégalais</h4>
-                        <p class="card-text">
-                        Enseignant-Chercheur, UFR SATIC, Université Alioune Diop de Bambey
-                        Spécialités : spectroscopie moléculaire de haute résolution, physique atomique, optique laser, métrologie des fréquences
-                        Responsable du Master Interuniversitaire d’Energies Renouvelables (MIER)
-                        Membre de l’équipe Energies Renouvelables, Matériaux et Lasers. Je continue mes activités de recherches en spectroscopie
-                        laser en collaboration avec le Laboratoire de Physique des Lasers de l’Université Paris Sorbonne Nord.
-                        Membre de l’équipe de l’Université Alioune DIOP qui travaille sur le projet « Réseau d’autonomisation énergétique des
-                        femmes du Baol (RAEFB)
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <!-- END MODALS -->
-
-        <!-- OUR PROJECTS -->
-        <!-- <section class="bg-light my-lg-5 my-xl-5 my-sm-2 my-md-2">
-            <div id="projects" class="container content-space-2 content-space-lg-3">
-                <div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5">
-                    <h2>Nos projets</h2>
-                    <p>Découvrez nos projets réalisés dans le cadre de nos collaborations avec nos partenaires.
-                    </p>
-                </div>
-
-                <div class="overflow-hidden ">
-                    <div class="row gx-lg-7">
-                        <div class="col-sm-6 col-lg-4 mb-5">
-                            <a class="card card-flush h-100 aos-init aos-animate" href="#" data-aos="fade-up">
-                                <img class="card-img" src="./assets/img/480x320/img33.jpg" alt="Image Description">
-                                <div class="card-body">
-                                    <span class="card-subtitle text-body">Lorem ipsum dolor sit amet</span>
-                                    <h4 class="card-title text-inherit">Lorem ipsum dolor sit amet</h4>
-                                    <p class="card-text text-body">Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit.
-                                        Sequi ad numquam enim reiciendis nulla laboriosam!</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-sm-6 col-lg-4 mb-5">
-                            <a class="card card-flush h-100 aos-init aos-animate" href="#" data-aos="fade-up"
-                                data-aos-delay="150">
-                                <img class="card-img" src="./assets/img/480x320/img34.jpg" alt="Image Description">
-                                <div class="card-body">
-                                    <span class="card-subtitle text-body">Lorem ipsum dolor sit amet</span>
-                                    <h4 class="card-title text-inherit">Lorem ipsum dolor sit amet</h4>
-                                    <p class="card-text text-body">Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit.
-                                        Sequi ad numquam enim reiciendis nulla laboriosam!</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-sm-6 col-lg-4 mb-5">
-                            <a class="card card-flush h-100 aos-init aos-animate" href="#" data-aos="fade-up"
-                                data-aos-delay="200">
-                                <img class="card-img" src="./assets/img/480x320/img35.jpg" alt="Image Description">
-                                <div class="card-body">
-                                    <span class="card-subtitle text-body">Lorem ipsum dolor sit amet</span>
-                                    <h4 class="card-title text-inherit">Lorem ipsum dolor sit amet</h4>
-                                    <p class="card-text text-body">Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit.
-                                        Sequi ad numquam enim reiciendis nulla laboriosam!</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!-- End OUR PROJECTS -->
-
-        <!-- PARTENARIATS -->
-        <div id="partnerships" class="overflow-hidden">
-            <div class="container content-space-b-2">
-                <div class="row justify-content-lg-center align-items-md-center">
-                    <div class="col-md-5 mb-10 mb-md-0">
-                        <div class="position-relative">
-                            <img class="img-fluid rounded-2" src="./assets/img/partner-1.jpg" alt="Image Description">
-
-                            <!-- SVG Shape -->
-                            <div class="position-absolute bottom-0 start-0 zi-n1 mb-n7 ms-n7" style="width: 12rem;">
-                                <img class="img-fluid" src="./assets/svg/components/dots-lg.svg"
-                                    alt="Image Description">
-                            </div>
-                            <!-- End SVG Shape -->
-                        </div>
-                    </div>
-                    <!-- End Col -->
-
-                    <div class="col-md-6 col-lg-5">
-                        <div class="ps-md-6">
-                            <div class="mb-4">
-                                <h2>Partenaires</h2>
-                            </div>
-
-                            <!-- Blockquote -->
-                            <figure>
-                                <blockquote class="blockquote blockquote-lg">" Lorem ipsum dolor sit amet
-                                    consectetur
-                                    adipisicing elit. Quisquam, quos. "</blockquote>
-
-                                <figcaption class="blockquote-footer">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-                                    <span class="blockquote-footer-source">Lorem ipsum dolor sit amet</span>
-                                </figcaption>
-                            </figure>
-                            <!-- End Blockquote -->
-                        </div>
-                    </div>
-                    <!-- End Col -->
-                </div>
-                <!-- End Row -->
-            </div>
-        </div>
-        <!-- END PARTENARIATS -->
-
-        <div class="container pb-3 pb-lg-5">
-            <div class="w-lg-75 mx-lg-auto">
+        <section class="py-5 py-lg-8 bg-light"
+            style="background-image: url(../../assets/images/landing-immigration/map.svg); background-position: right; background-repeat: no-repeat">
+            <div class="container py-lg-8">
                 <div class="row">
-                    <div class="col text-center py-3">
-                        <img class="avatar avatar-lg avatar-4x3" src="./assets/svg/brands/capsule-dark.svg" alt="Logo">
+                    <div class="col-12">
+                        <div class="text-center mb-lg-8 mb-4">
+                            <span class="fw-semibold text-primary">
+                                Nos partenaires
+                            </span>
+                            <h2 class="h1 mt-3 mb-0">
+                                Ensemble pour un avenir durable
+                            </h2>
+                            <p class="mb-0">
+                                Le CAFTANA collabore avec des institutions académiques, des centres de recherche et des organisations engagées pour
+                                promouvoir les technologies atomiques et nucléaires appliquées en Afrique. Ces partenariats stratégiques renforcent la
+                                formation, la recherche et l’innovation dans des domaines clés tels que l’énergie, la santé, l’agriculture et
+                                l’environnement.
+                            </p>
+                        </div>
                     </div>
-                    <!-- End Col -->
-
-                    <div class="col text-center py-3">
-                        <img class="avatar avatar-lg avatar-4x3" src="./assets/svg/brands/fitbit-dark.svg" alt="Logo">
-                    </div>
-                    <!-- End Col -->
-
-                    <div class="col text-center py-3">
-                        <img class="avatar avatar-lg avatar-4x3" src="./assets/svg/brands/forbes-dark.svg" alt="Logo">
-                    </div>
-                    <!-- End Col -->
-
-                    <div class="col text-center py-3">
-                        <img class="avatar avatar-lg avatar-4x3" src="./assets/svg/brands/mailchimp-dark.svg"
-                            alt="Logo">
-                    </div>
-                    <!-- End Col -->
-
-                    <div class="col text-center py-3">
-                        <img class="avatar avatar-lg avatar-4x3" src="./assets/svg/brands/layar-dark.svg" alt="Logo">
-                    </div>
-                    <!-- End Col -->
                 </div>
-                <!-- End Row -->
+                <div class="row gy-4 gy-xl-0">
+                    <div class="col-xl-4 col-md-6">
+                        <div class="card card-lift h-100 text-center text-lg-start">
+                            <div class="card-body">
+                                    <img src="https://placehold.co/600x400?text=Issa Sakho" alt="" class="rounded-circle mx-auto "  width="100" height="100">
+
+                                <h3>Prof. Issa SAKHO</h3>
+                                <p>
+                                    Docteur en Géologie Marine-littorale de l'Université de Rouen Normandie
+                                    Ancien Directeur de l'Incubation et du Service à la Communauté
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
     <!-- ========== END MAIN CONTENT ========== -->
 
     <!-- Go To -->
-    <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;" data-hs-go-to-options='{
+    <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden" data-hs-go-to-options='{
        "offsetTop": 700,
        "position": {
          "init": {
@@ -1574,22 +1487,25 @@
      }'>
         <i class="bi-chevron-up"></i>
     </a>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <footer id="contact" class="bg-dark position-relative ">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <footer id="contact" class="bg-dark position-relative">
         <div class="container content-space-b-1 position-relative z-2">
             <div class="row justify-content-lg-between mb-10">
                 <div class="col-lg-5 content-space-t-2 content-space-t-lg-3 mb-7 mb-lg-0">
                     <!-- Heading -->
                     <div class="mb-7">
-                        <h2 class="h1 text-white">Rejoignez-nous pour construire l’avenir</h2>
-                        <p class="text-white-70">Vous souhaitez en savoir plus sur nos projets ou contribuer à notre
-                            mission ? Contactez-nous dès aujourd’hui !
+                        <h2 class="h1 text-white">
+                            Rejoignez-nous pour construire l’avenir
+                        </h2>
+                        <p class="text-white-70">
+                            Vous souhaitez en savoir plus sur nos projets ou contribuer à
+                            notre mission ? Contactez-nous dès aujourd’hui !
                         </p>
                     </div>
                     <!-- End Heading -->
@@ -1634,7 +1550,7 @@
                                             </label>
                                             <input type="text" class="form-control form-control-lg"
                                                 name="hireUsFormNameFirstName" id="hireUsFormFirstName"
-                                                placeholder="Prénom" aria-label="Prénom">
+                                                placeholder="Prénom" aria-label="Prénom" />
                                         </div>
                                         <!-- End Form -->
                                     </div>
@@ -1643,11 +1559,11 @@
                                     <div class="col-sm-6">
                                         <!-- Form -->
                                         <div class="mb-3">
-                                            <label class="form-label visually-hidden" for="hireUsFormLasttName">Nom
-                                                de famille</label>
+                                            <label class="form-label visually-hidden" for="hireUsFormLasttName">Nom de
+                                                famille</label>
                                             <input type="text" class="form-control form-control-lg"
                                                 name="hireUsFormNameLastName" id="hireUsFormLasttName"
-                                                placeholder="Nom de famille" aria-label="Nom de famille">
+                                                placeholder="Nom de famille" aria-label="Nom de famille" />
                                         </div>
                                         <!-- End Form -->
                                     </div>
@@ -1661,7 +1577,7 @@
                                         email</label>
                                     <input type="email" class="form-control form-control-lg"
                                         name="hireUsFormNameWorkEmail" id="hireUsFormWorkEmail"
-                                        placeholder="email@site.com" aria-label="email@site.com">
+                                        placeholder="email@site.com" aria-label="email@site.com" />
                                 </div>
                                 <!-- End Form -->
 
@@ -1678,15 +1594,17 @@
                                 <div class="form-check mb-4">
                                     <input type="checkbox" class="form-check-input" id="signupFormPrivacyCheck"
                                         name="signupFormPrivacyCheck" required=""
-                                        data-msg="Please accept our Privacy Policy.">
-                                    <label class="form-check-label small" for="signupFormPrivacyCheck"> En soumettant ce
-                                        formulaire, j'ai lu et reconnu la <a href="./page-privacy.html">Politique de
-                                            confidentialité</a></label>
+                                        data-msg="Please accept our Privacy Policy." />
+                                    <label class="form-check-label small" for="signupFormPrivacyCheck">
+                                        En soumettant ce formulaire, j'ai lu et reconnu la
+                                        <a href="./page-privacy.html">Politique de confidentialité</a></label>
                                 </div>
                                 <!-- End Check -->
 
                                 <div class="d-grid mb-2">
-                                    <button type="submit" class="btn btn-primary btn-lg">Envoyer une demande</button>
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        Envoyer une demande
+                                    </button>
                                 </div>
 
                                 <div class="text-center">
@@ -1707,14 +1625,16 @@
                 </a> -->
                 <!-- End Logo -->
 
-                <p class="text-white-70 small"> Copyrights © 2024 Digita. Build by <a href="https://digita.sn"> ©
-                        Digita</a>. All rights reserved.</p>
+                <p class="text-white-70 small">
+                    Copyrights © 2024 Digita. Build by
+                    <a href="https://digita.sn"> © Digita</a>. All rights reserved.
+                </p>
             </div>
         </div>
 
         <!-- SVG Background Shape -->
         <div class="position-absolute bottom-0 start-0 end-0">
-            <img class="img-fluid" src="./assets/img/footer/isometric-light.svg" alt="Image Description">
+            <img class="img-fluid" src="./assets/img/footer/isometric-light.svg" alt="Image Description" />
         </div>
         <!-- End SVG Background Shape -->
     </footer>
@@ -1734,7 +1654,6 @@
     <script src="./assets/js/vendor.min.js"></script>
     <script src="./assets/vendor/aos/dist/aos.js"></script>
 
-
     <!-- JS Front -->
     <script src="./assets/js/theme.min.js"></script>
 
@@ -1743,55 +1662,48 @@
         (function () {
             // INITIALIZATION OF HEADER
             // =======================================================
-            new HSHeader('#header').init()
-
+            new HSHeader("#header").init();
 
             // INITIALIZATION OF MEGA MENU
             // =======================================================
-            new HSMegaMenu('.js-mega-menu', {
+            new HSMegaMenu(".js-mega-menu", {
                 desktop: {
-                    position: 'left'
-                }
-            })
-
+                    position: "left",
+                },
+            });
 
             // INITIALIZATION OF SHOW ANIMATIONS
             // =======================================================
-            new HSShowAnimation('.js-animation-link')
-
+            new HSShowAnimation(".js-animation-link");
 
             // INITIALIZATION OF BOOTSTRAP VALIDATION
             // =======================================================
-            HSBsValidation.init('.js-validate', {
-                onSubmit: data => {
-                    data.event.preventDefault()
-                    alert('Submited')
-                }
-            })
-
+            HSBsValidation.init(".js-validate", {
+                onSubmit: (data) => {
+                    data.event.preventDefault();
+                    alert("Submited");
+                },
+            });
 
             // INITIALIZATION OF BOOTSTRAP DROPDOWN
             // =======================================================
-            HSBsDropdown.init()
-
+            HSBsDropdown.init();
 
             // INITIALIZATION OF GO TO
             // =======================================================
-            new HSGoTo('.js-go-to')
-
+            new HSGoTo(".js-go-to");
 
             // INITIALIZATION OF AOS
             // =======================================================
             AOS.init({
                 duration: 650,
-                once: true
+                once: true,
             });
-
 
             // INITIALIZATION OF SWIPER
             // =======================================================
-            let activeIndex = 0
-            var sliderThumbs = new Swiper('.js-swiper-thumbs', {
+            let activeIndex = 0;
+            var sliderThumbs = new Swiper(".js-swiper-thumbs", {
                 slidesPerView: 1,
                 autoplay: false,
                 watchSlidesVisibility: true,
@@ -1799,35 +1711,35 @@
                 followFinger: false,
                 loop: true,
                 on: {
-                    'slideChangeTransitionEnd': function (event) {
-                        if (sliderMain === undefined) return
-                        sliderMain.slideTo(event.activeIndex)
-                    }
-                }
+                    slideChangeTransitionEnd: function (event) {
+                        if (sliderMain === undefined) return;
+                        sliderMain.slideTo(event.activeIndex);
+                    },
+                },
             });
 
-            var sliderMain = new Swiper('.js-swiper-main', {
-                effect: 'fade',
+            var sliderMain = new Swiper(".js-swiper-main", {
+                effect: "fade",
                 autoplay: false,
                 disableOnInteraction: true,
                 loop: true,
                 navigation: {
-                    nextEl: '.js-swiper-main-button-next',
-                    prevEl: '.js-swiper-main-button-prev',
+                    nextEl: ".js-swiper-main-button-next",
+                    prevEl: ".js-swiper-main-button-prev",
                 },
                 thumbs: {
-                    swiper: sliderThumbs
+                    swiper: sliderThumbs,
                 },
                 on: {
-                    'slideChangeTransitionEnd': function (event) {
-                        if (sliderThumbs === undefined) return
-                        sliderThumbs.slideTo(event.activeIndex)
-                    }
-                }
-            })
+                    slideChangeTransitionEnd: function (event) {
+                        if (sliderThumbs === undefined) return;
+                        sliderThumbs.slideTo(event.activeIndex);
+                    },
+                },
+            });
 
             // Clients
-            var swiper = new Swiper('.js-swiper-clients', {
+            var swiper = new Swiper(".js-swiper-clients", {
                 slidesPerView: 2,
                 breakpoints: {
                     380: {
@@ -1846,10 +1758,10 @@
             });
 
             // Card Grid
-            var swiper = new Swiper('.js-swiper-card-blocks', {
+            var swiper = new Swiper(".js-swiper-card-blocks", {
                 slidesPerView: 1,
                 pagination: {
-                    el: '.js-swiper-card-blocks-pagination',
+                    el: ".js-swiper-card-blocks-pagination",
                     dynamicBullets: true,
                     clickable: true,
                 },
@@ -1864,7 +1776,7 @@
                     },
                 },
             });
-        })()
+        })();
     </script>
 </body>
 

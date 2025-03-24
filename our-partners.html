@@ -1,0 +1,1775 @@
+
+<!DOCTYPE html>
+<html lang="fr" dir="">
+
+<head>
+
+    <!-- Required Meta Tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="CAFTANA - Centre Africain de Technologie Atomique et Nucléaire Appliquée est une organisation dédiée à la promotion des technologies atomiques et nucléaires pour le développement durable en Afrique" />
+    <meta name="keywords"
+        content="CAFTANA, technologie nucléaire, physique médicale, énergie propre, Afrique, radiothérapie, recherche nucléaire, développement durable" />
+    <meta name="author" content="CAFTANA" />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="CAFTANA | Centre Africain de Technologie Atomique et Nucléaire Appliquée" />
+    <meta property="og:description"
+        content="Organisation dédiée à la promotion des technologies atomiques et nucléaires pour le développement durable en Afrique" />
+    <meta property="og:image" content="./assets/img/logo.png" />
+    <meta property="og:url" content="https://caftana.org" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CAFTANA | Centre Africain de Technologie Atomique et Nucléaire Appliquée" />
+    <meta name="twitter:description"
+        content="Technologies atomiques et nucléaires au service du développement durable en Afrique" />
+    <meta name="twitter:image" content="./assets/img/logo.png" />
+
+    <!-- Title -->
+    <title>CAFTANA | Centre Africain de Technologie Atomique et Nucléaire Appliquée</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./favicon.png" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://caftana.org" />
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="./assets/css/vendor.min.css" />
+    <link href="./assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/vendor/bootstrap-icons/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="./assets/vendor/aos/dist/aos.css" />
+
+    <!-- CSS Front Template -->
+    <link rel="stylesheet" href="./assets/css/theme.min.css?v=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link href="./assets/libs/tiny-slider/dist/tiny-slider.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/libs/glightbox/dist/css/glightbox.min.css" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Centre Africain de Technologie Atomique et Nucléaire Appliquée",
+          "alternateName": "CAFTANA",
+          "url": "https://caftana.sn",
+          "logo": "https://caftana.sn/assets/img/logo.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "contact@caftana.sn"
+          },
+          "sameAs": [
+            "https://www.facebook.com/caftana",
+            "https://www.twitter.com/caftana",
+            "https://www.linkedin.com/company/caftana"
+          ],
+          "description": "Organisation dédiée à la promotion des technologies atomiques et nucléaires pour le développement durable en Afrique"
+        }
+        </script>
+    <style>
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("./service-worker.js")
+                    .then((registration) => {
+                        console.log(
+                            "Service Worker enregistré avec succès:",
+                            registration.scope
+                        );
+
+                        // Préchargement d'images supplémentaires si nécessaire
+                        if (registration.active) {
+                            const additionalImages = [
+                                // Vous pouvez ajouter des images supplémentaires ici qui ne sont pas
+                                // dans la liste principale du service worker
+                            ];
+
+                            if (additionalImages.length > 0) {
+                                registration.active.postMessage({
+                                    type: "CACHE_IMAGES",
+                                    images: additionalImages,
+                                });
+                            }
+                        }
+                    })
+                    .catch((error) => {
+                        console.error(
+                            "Erreur lors de l'enregistrement du Service Worker:",
+                            error
+                        );
+                    });
+            });
+        }
+        // Fonction pour précharger les images importantes
+        function preloadImportantImages() {
+            const imagesToPreload = [
+                "assets/img/catana-hero-1.jpg",
+                "assets/img/catana-hero-2.jpg",
+                "assets/img/valeur-1.png",
+                "assets/img/valeur-2.png",
+                "assets/img/valeur-3.png",
+            ];
+
+            imagesToPreload.forEach((src) => {
+                const img = new Image();
+                img.src = src;
+            });
+        }
+
+        // Exécuter le préchargement après le chargement initial
+        window.addEventListener("load", () => {
+            // Utiliser requestIdleCallback si disponible, sinon setTimeout
+            if ("requestIdleCallback" in window) {
+                requestIdleCallback(() => {
+                    preloadImportantImages();
+                });
+            } else {
+                setTimeout(preloadImportantImages, 1000);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="navbar navbar-expand-lg navbar-end navbar-absolute-top navbar-dark navbar-show-hide"
+        data-hs-header-options='{
+            "fixMoment": 1000,
+            "fixEffect": "slide"
+          }'>
+        <div class="container">
+            <nav class="js-mega-menu navbar-nav-wrap">
+                <!-- Default Logo -->
+                <a class="navbar-brand" href="#home" aria-label="Front">
+                    <img class="navbar-brand-logo" src="./assets/img/logo.png" alt="Logo" />
+                    <span class="navbar-brand-text">CAFTANA</span>
+                </a>
+                <!-- End Default Logo -->
+
+                <!-- Toggler -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-default">
+                        <i class="bi-list"></i>
+                    </span>
+                    <span class="navbar-toggler-toggled">
+                        <i class="bi-x"></i>
+                    </span>
+                </button>
+                <!-- End Toggler -->
+
+                <!-- Collapse -->
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <div class="navbar-absolute-top-scroller">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#home">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#about">À propos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#faq">FAQ</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="./prepa-bac-tana.html">
+                                    Prépa Bac TANA
+                                </a>
+                            </li> -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="./our-partners.html">Partenariats</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#news">Actualités</a>
+                            </li>
+
+                            <!-- Button -->
+                            <li class="nav-item">
+                                <a class="btn btn-light btn-transition" href="/#contact">Contactez-nous</a>
+                            </li>
+                            <!-- End Button -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- End Collapse -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== END HEADER ========== -->
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main">
+        <!-- Swiper Slider -->
+        <div id="home" class="border-bottom">
+            <!-- Main Slider -->
+            <div class="js-swiper-main swiper vh-md-70">
+                <div class="swiper-wrapper">
+                    <!-- Slide -->
+                    <div class="swiper-slide gradient-y-overlay-sm-gray-900 bg-img-start"
+                        style="background-image: url(./assets/img/catana-hero-1.jpg)">
+                        <div
+                            class="container d-md-flex align-items-md-center vh-md-70 content-space-t-4 content-space-b-3 content-space-md-0">
+                            <div class="w-75 w-lg-70">
+                                <h3 class="text-white">
+                                    L’innovation au service de l’Afrique
+                                </h3>
+                                <h1 class="display-5 text-white mb-0">
+                                    Les Technologies Atomiques et Nucléaires Appliquées au
+                                    service du développement durable en Afrique
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Slide -->
+
+                    <!-- Slide -->
+                    <div class="swiper-slide gradient-y-overlay-sm-gray-900 bg-img-start"
+                        style="background-image: url(./assets/img/catana-hero-3.jpg)">
+                        <div
+                            class="container d-md-flex align-items-md-center vh-md-70 content-space-t-4 content-space-b-3 content-space-md-0">
+                            <div class="overlay"></div>
+                            <div class="w-75 w-lg-75" style="z-index: 1">
+                                <h3 class="text-white">Innovations et recherches</h3>
+                                <h2 class="display-6 text-white mb-0">
+                                    Nous investissons dans la recherche fondamentale et
+                                    appliquée en physique atomique, en physique nucléaire et en
+                                    physique médicale.
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Slide -->
+                </div>
+
+                <!-- Arrows -->
+                <div class="d-none d-md-inline-block">
+                    <div class="js-swiper-main-button-next swiper-button-next swiper-button-next-soft-white"></div>
+                    <div class="js-swiper-main-button-prev swiper-button-prev swiper-button-prev-soft-white"></div>
+                </div>
+            </div>
+            <!-- End Main Slider -->
+
+            <!-- Thumbs Slider -->
+            <div class="js-swiper-thumbs swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide -->
+                    <div class="swiper-slide">
+                        <div class="d-flex align-items-center bg-white position-relative vh-md-30">
+                            <div class="container content-space-2">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <span class="fs-3 fw-semibold">01.</span>
+                                        <h3 class="text-primary">Énergie propre et durable</h3>
+                                        <p class="mb-0">
+                                            L’énergie nucléaire réduit l’empreinte carbone et
+                                            garantit une production stable et fiable.
+                                        </p>
+                                    </div>
+                                    <!-- End Col -->
+                                </div>
+                                <!-- End Row -->
+                            </div>
+
+                            <div
+                                class="col-md-5 d-none d-md-inline-block bg-dark position-absolute top-0 end-0 bottom-0">
+                                <div class="position-absolute top-50 translate-middle-y p-7">
+                                    <h3 class="text-white">Innovation et recherche</h3>
+                                    <p class="text-white-70 mb-0">
+                                        Nous investissons dans la recherche pour rendre l’énergie
+                                        nucléaire plus sûre et accessible.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- End Col -->
+                        </div>
+                    </div>
+                    <!-- End Slide -->
+
+                    <!-- Slide -->
+                    <div class="swiper-slide">
+                        <div class="d-flex align-items-center bg-white position-relative vh-md-30">
+                            <div class="container content-space-2">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <span class="fs-3 fw-semibold">02.</span>
+                                        <h3 class="text-primary">Santé et radiothérapie</h3>
+                                        <p class="mb-0">
+                                            Les avancées en médecine nucléaire permettent un
+                                            diagnostic précis et des traitements efficaces contre le
+                                            cancer.
+                                        </p>
+                                    </div>
+                                    <!-- End Col -->
+                                </div>
+                                <!-- End Row -->
+                            </div>
+
+                            <div
+                                class="col-md-5 d-none d-md-inline-block bg-primary position-absolute top-0 end-0 bottom-0">
+                                <div class="position-absolute top-50 translate-middle-y p-7">
+                                    <h3 class="text-white">Agriculture et environnement</h3>
+                                    <p class="text-white-70 mb-0">
+                                        Des techniques innovantes pour améliorer les rendements
+                                        agricoles et protéger l’écosystème.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- End Col -->
+                        </div>
+                    </div>
+                    <!-- End Slide -->
+                </div>
+            </div>
+            <!-- End Thumbs Slider -->
+        </div>
+
+    <div class="container">
+        <hr class="my-8">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-12 col-12 text-center">
+                <div class="mb-8">
+                    <!-- caption -->
+                    <span class="text-primary mb-3 d-block text-uppercase fw-semibold ls-xl">Testimonials</span>
+                    <h2 class="mb-2 display-4 fw-bold">Don’t just take our word for it.</h2>
+                    <p class="lead mb-0">12+ million people are already learning on Geeks</p>
+                </div>
+            </div>
+        </div>
+        <!-- row -->
+        <div class="row mb-8">
+            <!-- col -->
+            <div class="col-md-12">
+                <div class="position-relative">
+                    <!-- controls -->
+    
+                    <!-- slider -->
+                    <div class="tns-outer" id="tns5-ow">
+                        <div class="tns-liveregion tns-visually-hidden" aria-live="polite" aria-atomic="true">slide <span
+                                class="current">9 to 11</span> of 8</div>
+                        <div id="tns5-mw" class="tns-ovh">
+                            <div class="tns-inner" id="tns5-iw">
+                                <div class="sliderTestimonial  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
+                                    id="tns5" style="transform: translate3d(-50%, 0px, 0px);">
+                                    <div class="item tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+                                        <!-- card -->
+                                        <div class="card border shadow-none">
+                                            <!-- card body -->
+                                            <div class="card-body p-5">
+                                                <div class="mb-2">
+                                                    <span class="align-text-top">
+                                                        <span class="fs-6">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <!-- para -->
+                                                <p class="lead text-dark font-italic fw-medium mb-0">
+                                                    " Curabitur sollicitudin mi et sagittis egestas. Curabitur pellentesque
+                                                    nibh id enim hendrerit, at mollis neque rutrum. Sed nibh velit,
+                                                    tristique et
+                                                    dolor vitae."
+                                                </p>
+                                            </div>
+                                            <!-- card footer -->
+                                            <div class="card-footer px-5 py-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="../../assets/images/avatar/avatar-5.jpg" alt="avatar"
+                                                        class="avatar avatar-md rounded-circle">
+                                                    <div class="ms-3">
+                                                        <h4 class="mb-0">Rubik Nanda</h4>
+                                                        <p class="mb-0 small">Web Developer,UK</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+                                        <!-- card -->
+                                        <div class="card border shadow-none">
+                                            <!-- card body -->
+                                            <div class="card-body p-5">
+                                                <div class="mb-2">
+                                                    <span class="align-text-top">
+                                                        <span class="fs-6">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <!-- para -->
+                                                <p class="lead text-dark font-italic fw-medium mb-0">
+                                                    "Vestibulum in lobortis purus. Quisque sem turpis, hendrerit quis
+                                                    lacinia nec, rutrum nec velit. Nullam lobortis rhoncus tincidunt lorem
+                                                    ispun dnascetur
+                                                    ridiculus mus. "
+                                                </p>
+                                            </div>
+                                            <!-- card footer -->
+                                            <div class="card-footer px-5 py-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="../../assets/images/avatar/avatar-6.jpg" alt="avatar"
+                                                        class="avatar avatar-md rounded-circle">
+                                                    <div class="ms-3">
+                                                        <h4 class="mb-0">Barry Watson</h4>
+                                                        <p class="mb-0 small">Web Developer,UK</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+                                        <!-- card -->
+                                        <div class="card border shadow-none">
+                                            <!-- card body -->
+                                            <div class="card-body p-5">
+                                                <div class="mb-2">
+                                                    <span class="align-text-top">
+                                                        <span class="fs-6">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <!-- para -->
+                                                <p class="lead text-dark font-italic fw-medium mb-0">
+                                                    "Praesent sit amet ornare magna, vitae consequat arcu. Vestibulum at
+                                                    dictum erat, a fringilla ante. Nam et nibh ut nunc rutrum suscipit quis
+                                                    non neque.
+                                                    Nulla facilisi."
+                                                </p>
+                                            </div>
+                                            <div class="card-footer px-5 py-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="../../assets/images/avatar/avatar-7.jpg" alt="avatar"
+                                                        class="avatar avatar-md rounded-circle">
+                                                    <div class="ms-3">
+                                                        <h4 class="mb-0">Barry Watson</h4>
+                                                        <p class="mb-0 small">Web Developer,UK</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+                                        <!-- card -->
+                                        <div class="card border shadow-none">
+                                            <!-- card body -->
+                                            <div class="card-body p-5">
+                                                <div class="mb-2">
+                                                    <span class="align-text-top">
+                                                        <span class="fs-6">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <!-- para -->
+                                                <p class="lead text-dark font-italic fw-medium mb-0">
+                                                    "Sed pretium risus magna, ac efficitur nunc rutrum imperdiet. Vivamus
+                                                    sed ante sed mi fermentum tempus. Nullam finibus augue eget felis
+                                                    efficitur
+                                                    semper."
+                                                </p>
+                                            </div>
+                                            <!-- card footer -->
+                                            <div class="card-footer px-5 py-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="../../assets/images/avatar/avatar-3.jpg" alt="avatar"
+                                                        class="avatar avatar-md rounded-circle">
+                                                    <div class="ms-3">
+                                                        <h4 class="mb-0">Jean Watson</h4>
+                                                        <p class="mb-0 small">Engineering Architect</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item tns-item" id="tns5-item0" aria-hidden="true" tabindex="-1">
+                                        <!-- card -->
+                                        <div class="card border shadow-none">
+                                            <!-- card body -->
+                                            <div class="card-body p-5">
+                                                <div class="mb-2">
+                                                    <span class="align-text-top">
+                                                        <span class="fs-6">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <!-- para -->
+                                                <p class="lead text-dark font-italic fw-medium mb-0">
+                                                    "I started at stage zero. With Geeks I was able to start learning online
+                                                    and eventually build up enough knowledge and skills to transition into a
+                                                    well-paying career."
+                                                </p>
+                                            </div>
+                                            <!-- card footer -->
+                                            <div class="card-footer px-5 py-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="../../assets/images/avatar/avatar-1.jpg" alt="avatar"
+                                                        class="avatar avatar-md rounded-circle">
+                                                    <div class="ms-3">
+                                                        <h4 class="mb-0">Barry Watson</h4>
+                                                        <p class="mb-0 small">Web Developer,UK</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item tns-item" id="tns5-item1" aria-hidden="true" tabindex="-1">
+                                        <!-- card -->
+                                        <div class="card border shadow-none">
+                                            <!-- card body -->
+                                            <div class="card-body p-5">
+                                                <div class="mb-2">
+                                                    <span class="align-text-top">
+                                                        <span class="fs-6">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <!-- para -->
+                                                <p class="lead text-dark font-italic fw-medium mb-0">
+                                                    "Orci varius natoque penatibus et magnis dis parturient montes, nascetur
+                                                    ridiculus mus. Etiam vulputate euismod justo in consequat. Sed tempus
+                                                    elementum
+                                                    urnanisl et lacus. "
+                                                </p>
+                                            </div>
+                                            <!-- card footer -->
+                                            <div class="card-footer px-5 py-4">
+                                                <div class="d-flex align-items-center">
+                                                    <!-- img -->
+                                                    <img src="../../assets/images/avatar/avatar-2.jpg" alt="avatar"
+                                                        class="avatar avatar-md rounded-circle">
+                                                    <div class="ms-3">
+                                                        <h4 class="mb-0">Linda Shenoy</h4>
+                                                        <p class="mb-0 small">Developer and Bootcamp Instructor</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item tns-item" id="tns5-item2" aria-hidden="true" tabindex="-1">
+                                        <!-- card -->
+                                        <div class="card border shadow-none">
+                                            <!-- card body -->
+                                            <div class="card-body p-5">
+                                                <div class="mb-2">
+                                                    <span class="align-text-top">
+                                                        <span class="fs-6">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <!-- para -->
+                                                <p class="lead text-dark font-italic fw-medium mb-0">
+                                                    "Sed pretium risus magna, ac efficitur nunc rutrum imperdiet. Vivamus
+                                                    sed ante sed mi fermentum tempus. Nullam finibus augue eget felis
+                                                    efficitur
+                                                    semper."
+                                                </p>
+                                            </div>
+                                            <!-- card footer -->
+                                            <div class="card-footer px-5 py-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="../../assets/images/avatar/avatar-3.jpg" alt="avatar"
+                                                        class="avatar avatar-md rounded-circle">
+                                                    <div class="ms-3">
+                                                        <h4 class="mb-0">Jean Watson</h4>
+                                                        <p class="mb-0 small">Engineering Architect</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item tns-item" id="tns5-item3" aria-hidden="true" tabindex="-1">
+                                        <!-- card -->
+                                        <div class="card border shadow-none">
+                                            <!-- card body -->
+                                            <div class="card-body p-5">
+                                                <div class="mb-2">
+                                                    <span class="align-text-top">
+                                                        <span class="fs-6">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <!-- para -->
+                                                <p class="lead text-dark font-italic fw-medium mb-0">
+                                                    "Morbi quis posuere lacus. Morbi et metus sit amet tellus dapibus
+                                                    aliquam. Morbi consectetur magna vel turpis lobortis lorem iopsum dolor
+                                                    sit commodo."
+                                                </p>
+                                            </div>
+                                            <!-- card footer -->
+                                            <div class="card-footer px-5 py-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="../../assets/images/avatar/avatar-4.jpg" alt="avatar"
+                                                        class="avatar avatar-md rounded-circle">
+                                                    <div class="ms-3">
+                                                        <h4 class="mb-0">John Deo</h4>
+                                                        <p class="mb-0 small">Web Developer,UK</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item tns-item tns-slide-active" id="tns5-item4">
+                                        <!-- card -->
+                                        <div class="card border shadow-none">
+                                            <!-- card body -->
+                                            <div class="card-body p-5">
+                                                <div class="mb-2">
+                                                    <span class="align-text-top">
+                                                        <span class="fs-6">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <!-- para -->
+                                                <p class="lead text-dark font-italic fw-medium mb-0">
+                                                    " Curabitur sollicitudin mi et sagittis egestas. Curabitur pellentesque
+                                                    nibh id enim hendrerit, at mollis neque rutrum. Sed nibh velit,
+                                                    tristique et
+                                                    dolor vitae."
+                                                </p>
+                                            </div>
+                                            <!-- card footer -->
+                                            <div class="card-footer px-5 py-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="../../assets/images/avatar/avatar-5.jpg" alt="avatar"
+                                                        class="avatar avatar-md rounded-circle">
+                                                    <div class="ms-3">
+                                                        <h4 class="mb-0">Rubik Nanda</h4>
+                                                        <p class="mb-0 small">Web Developer,UK</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item tns-item tns-slide-active" id="tns5-item5">
+                                        <!-- card -->
+                                        <div class="card border shadow-none">
+                                            <!-- card body -->
+                                            <div class="card-body p-5">
+                                                <div class="mb-2">
+                                                    <span class="align-text-top">
+                                                        <span class="fs-6">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <!-- para -->
+                                                <p class="lead text-dark font-italic fw-medium mb-0">
+                                                    "Vestibulum in lobortis purus. Quisque sem turpis, hendrerit quis
+                                                    lacinia nec, rutrum nec velit. Nullam lobortis rhoncus tincidunt lorem
+                                                    ispun dnascetur
+                                                    ridiculus mus. "
+                                                </p>
+                                            </div>
+                                            <!-- card footer -->
+                                            <div class="card-footer px-5 py-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="../../assets/images/avatar/avatar-6.jpg" alt="avatar"
+                                                        class="avatar avatar-md rounded-circle">
+                                                    <div class="ms-3">
+                                                        <h4 class="mb-0">Barry Watson</h4>
+                                                        <p class="mb-0 small">Web Developer,UK</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item tns-item tns-slide-active" id="tns5-item6">
+                                        <!-- card -->
+                                        <div class="card border shadow-none">
+                                            <!-- card body -->
+                                            <div class="card-body p-5">
+                                                <div class="mb-2">
+                                                    <span class="align-text-top">
+                                                        <span class="fs-6">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <!-- para -->
+                                                <p class="lead text-dark font-italic fw-medium mb-0">
+                                                    "Praesent sit amet ornare magna, vitae consequat arcu. Vestibulum at
+                                                    dictum erat, a fringilla ante. Nam et nibh ut nunc rutrum suscipit quis
+                                                    non neque.
+                                                    Nulla facilisi."
+                                                </p>
+                                            </div>
+                                            <div class="card-footer px-5 py-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="../../assets/images/avatar/avatar-7.jpg" alt="avatar"
+                                                        class="avatar avatar-md rounded-circle">
+                                                    <div class="ms-3">
+                                                        <h4 class="mb-0">Barry Watson</h4>
+                                                        <p class="mb-0 small">Web Developer,UK</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item tns-item" id="tns5-item7" aria-hidden="true" tabindex="-1">
+                                        <!-- card -->
+                                        <div class="card border shadow-none">
+                                            <!-- card body -->
+                                            <div class="card-body p-5">
+                                                <div class="mb-2">
+                                                    <span class="align-text-top">
+                                                        <span class="fs-6">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <!-- para -->
+                                                <p class="lead text-dark font-italic fw-medium mb-0">
+                                                    "Sed pretium risus magna, ac efficitur nunc rutrum imperdiet. Vivamus
+                                                    sed ante sed mi fermentum tempus. Nullam finibus augue eget felis
+                                                    efficitur
+                                                    semper."
+                                                </p>
+                                            </div>
+                                            <!-- card footer -->
+                                            <div class="card-footer px-5 py-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="../../assets/images/avatar/avatar-3.jpg" alt="avatar"
+                                                        class="avatar avatar-md rounded-circle">
+                                                    <div class="ms-3">
+                                                        <h4 class="mb-0">Jean Watson</h4>
+                                                        <p class="mb-0 small">Engineering Architect</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+                                        <!-- card -->
+                                        <div class="card border shadow-none">
+                                            <!-- card body -->
+                                            <div class="card-body p-5">
+                                                <div class="mb-2">
+                                                    <span class="align-text-top">
+                                                        <span class="fs-6">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <!-- para -->
+                                                <p class="lead text-dark font-italic fw-medium mb-0">
+                                                    "I started at stage zero. With Geeks I was able to start learning online
+                                                    and eventually build up enough knowledge and skills to transition into a
+                                                    well-paying career."
+                                                </p>
+                                            </div>
+                                            <!-- card footer -->
+                                            <div class="card-footer px-5 py-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="../../assets/images/avatar/avatar-1.jpg" alt="avatar"
+                                                        class="avatar avatar-md rounded-circle">
+                                                    <div class="ms-3">
+                                                        <h4 class="mb-0">Barry Watson</h4>
+                                                        <p class="mb-0 small">Web Developer,UK</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+                                        <!-- card -->
+                                        <div class="card border shadow-none">
+                                            <!-- card body -->
+                                            <div class="card-body p-5">
+                                                <div class="mb-2">
+                                                    <span class="align-text-top">
+                                                        <span class="fs-6">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <!-- para -->
+                                                <p class="lead text-dark font-italic fw-medium mb-0">
+                                                    "Orci varius natoque penatibus et magnis dis parturient montes, nascetur
+                                                    ridiculus mus. Etiam vulputate euismod justo in consequat. Sed tempus
+                                                    elementum
+                                                    urnanisl et lacus. "
+                                                </p>
+                                            </div>
+                                            <!-- card footer -->
+                                            <div class="card-footer px-5 py-4">
+                                                <div class="d-flex align-items-center">
+                                                    <!-- img -->
+                                                    <img src="../../assets/images/avatar/avatar-2.jpg" alt="avatar"
+                                                        class="avatar avatar-md rounded-circle">
+                                                    <div class="ms-3">
+                                                        <h4 class="mb-0">Linda Shenoy</h4>
+                                                        <p class="mb-0 small">Developer and Bootcamp Instructor</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+                                        <!-- card -->
+                                        <div class="card border shadow-none">
+                                            <!-- card body -->
+                                            <div class="card-body p-5">
+                                                <div class="mb-2">
+                                                    <span class="align-text-top">
+                                                        <span class="fs-6">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <!-- para -->
+                                                <p class="lead text-dark font-italic fw-medium mb-0">
+                                                    "Sed pretium risus magna, ac efficitur nunc rutrum imperdiet. Vivamus
+                                                    sed ante sed mi fermentum tempus. Nullam finibus augue eget felis
+                                                    efficitur
+                                                    semper."
+                                                </p>
+                                            </div>
+                                            <!-- card footer -->
+                                            <div class="card-footer px-5 py-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="../../assets/images/avatar/avatar-3.jpg" alt="avatar"
+                                                        class="avatar avatar-md rounded-circle">
+                                                    <div class="ms-3">
+                                                        <h4 class="mb-0">Jean Watson</h4>
+                                                        <p class="mb-0 small">Engineering Architect</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+                                        <!-- card -->
+                                        <div class="card border shadow-none">
+                                            <!-- card body -->
+                                            <div class="card-body p-5">
+                                                <div class="mb-2">
+                                                    <span class="align-text-top">
+                                                        <span class="fs-6">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                                fill="currentColor" class="bi bi-star-fill text-warning"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <!-- para -->
+                                                <p class="lead text-dark font-italic fw-medium mb-0">
+                                                    "Morbi quis posuere lacus. Morbi et metus sit amet tellus dapibus
+                                                    aliquam. Morbi consectetur magna vel turpis lobortis lorem iopsum dolor
+                                                    sit commodo."
+                                                </p>
+                                            </div>
+                                            <!-- card footer -->
+                                            <div class="card-footer px-5 py-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="../../assets/images/avatar/avatar-4.jpg" alt="avatar"
+                                                        class="avatar avatar-md rounded-circle">
+                                                    <div class="ms-3">
+                                                        <h4 class="mb-0">John Deo</h4>
+                                                        <p class="mb-0 small">Web Developer,UK</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="controls-testimonial controls" id="sliderTestimonialControls"
+                        aria-label="Carousel Navigation" tabindex="0">
+                        <li class="prev me-md-1" aria-controls="tns5" tabindex="-1" data-controls="prev">
+                            <i class="fe fe-chevron-left"></i>
+                        </li>
+                        <li class="next ms-md-1" aria-controls="tns5" tabindex="-1" data-controls="next">
+                            <i class="fe fe-chevron-right"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+
+    <!-- Go To -->
+    <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden" data-hs-go-to-options='{
+       "offsetTop": 700,
+       "position": {
+         "init": {
+           "right": "2rem"
+         },
+         "show": {
+           "bottom": "2rem"
+         },
+         "hide": {
+           "bottom": "-2rem"
+         }
+       }
+     }'>
+        <i class="bi-chevron-up"></i>
+    </a>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <footer id="contact" class="bg-dark position-relative">
+        <div class="container content-space-b-1 position-relative z-2">
+            <div class="row justify-content-lg-between mb-10">
+                <div class="col-lg-5 content-space-t-2 content-space-t-lg-3 mb-7 mb-lg-0">
+                    <!-- Heading -->
+                    <div class="mb-7">
+                        <h2 class="h1 text-white">
+                            Rejoignez-nous pour construire l’avenir
+                        </h2>
+                        <p class="text-white-70">
+                            Vous souhaitez en savoir plus sur nos projets ou contribuer à
+                            notre mission ? Contactez-nous dès aujourd’hui !
+                        </p>
+                    </div>
+                    <!-- End Heading -->
+
+                    <div class="row">
+                        <div class="col-sm-6 mb-5">
+                            <span class="icon icon-soft-light icon-circle mb-3">
+                                <i class="bi-envelope-open-fill"></i>
+                            </span>
+                            <h4 class="text-white mb-0">Questions générales</h4>
+                            <a class="text-white-70 small" href="#">hello@example.com.com</a>
+                        </div>
+                        <!-- End Col -->
+
+                        <div class="col-sm-6 mb-5">
+                            <span class="icon icon-soft-light icon-circle mb-3">
+                                <i class="bi-telephone-inbound-fill"></i>
+                            </span>
+                            <h4 class="text-white mb-0">Numéro de téléphone</h4>
+                            <a class="text-white-70 small" href="#">+1 (062) 109-9222</a>
+                        </div>
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Row -->
+                </div>
+
+                <div class="col-lg-6 mt-lg-n10">
+                    <!-- Card -->
+                    <div class="card zi-2">
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <h3>Envoyer nous un message</h3>
+                            </div>
+
+                            <!-- Form -->
+                            <form>
+                                <div class="row gx-3">
+                                    <div class="col-sm-6">
+                                        <!-- Form -->
+                                        <div class="mb-3">
+                                            <label class="form-label visually-hidden" for="hireUsFormFirstName">Prénom
+                                            </label>
+                                            <input type="text" class="form-control form-control-lg"
+                                                name="hireUsFormNameFirstName" id="hireUsFormFirstName"
+                                                placeholder="Prénom" aria-label="Prénom" />
+                                        </div>
+                                        <!-- End Form -->
+                                    </div>
+                                    <!-- End Col -->
+
+                                    <div class="col-sm-6">
+                                        <!-- Form -->
+                                        <div class="mb-3">
+                                            <label class="form-label visually-hidden" for="hireUsFormLasttName">Nom de
+                                                famille</label>
+                                            <input type="text" class="form-control form-control-lg"
+                                                name="hireUsFormNameLastName" id="hireUsFormLasttName"
+                                                placeholder="Nom de famille" aria-label="Nom de famille" />
+                                        </div>
+                                        <!-- End Form -->
+                                    </div>
+                                    <!-- End Col -->
+                                </div>
+                                <!-- End Row -->
+
+                                <!-- Form -->
+                                <div class="mb-3">
+                                    <label class="form-label visually-hidden" for="hireUsFormWorkEmail">Adresse
+                                        email</label>
+                                    <input type="email" class="form-control form-control-lg"
+                                        name="hireUsFormNameWorkEmail" id="hireUsFormWorkEmail"
+                                        placeholder="email@site.com" aria-label="email@site.com" />
+                                </div>
+                                <!-- End Form -->
+
+                                <!-- Form -->
+                                <div class="mb-3">
+                                    <label class="form-label visually-hidden" for="hireUsFormDetails">Détails</label>
+                                    <textarea class="form-control form-control-lg" name="hireUsFormNameDetails"
+                                        id="hireUsFormDetails" placeholder="Poser votre question"
+                                        aria-label="Poser votre question" rows="4"></textarea>
+                                </div>
+                                <!-- End Form -->
+
+                                <!-- Check -->
+                                <div class="form-check mb-4">
+                                    <input type="checkbox" class="form-check-input" id="signupFormPrivacyCheck"
+                                        name="signupFormPrivacyCheck" required=""
+                                        data-msg="Please accept our Privacy Policy." />
+                                    <label class="form-check-label small" for="signupFormPrivacyCheck">
+                                        En soumettant ce formulaire, j'ai lu et reconnu la
+                                        <a href="./page-privacy.html">Politique de confidentialité</a></label>
+                                </div>
+                                <!-- End Check -->
+
+                                <div class="d-grid mb-2">
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        Envoyer une demande
+                                    </button>
+                                </div>
+
+                                <div class="text-center">
+                                    <span class="form-text">Nous vous reviendrons dans les 1-2 jours ouvrables.</span>
+                                </div>
+                            </form>
+                            <!-- End Form -->
+                        </div>
+                    </div>
+                    <!-- End Card -->
+                </div>
+            </div>
+
+            <div class="text-center">
+                <!-- Logo -->
+                <!-- <a class="d-inline-flex align-items-center mb-2" href="index.html" aria-label="Front">
+                    <img class="brand" src="https://digita.sn/assets/images/logo-digita.png" alt="Logo">
+                </a> -->
+                <!-- End Logo -->
+
+                <p class="text-white-70 small">
+                    Copyrights © 2024 Digita. Build by
+                    <a href="https://digita.sn"> © Digita</a>. All rights reserved.
+                </p>
+            </div>
+        </div>
+
+        <!-- SVG Background Shape -->
+        <div class="position-absolute bottom-0 start-0 end-0">
+            <img class="img-fluid" src="./assets/img/footer/isometric-light.svg" alt="Image Description" />
+        </div>
+        <!-- End SVG Background Shape -->
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Libs JS -->
+    <script src="./assets/libs/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./assets/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="./assets/libs/typed.js/dist/typed.umd.js"></script>
+    <!-- ========== END SECONDARY CONTENTS ========== -->
+
+    <!-- JS Implementing Plugins -->
+    <script src="./assets/libs/tiny-slider/dist/min/tiny-slider.js"></script>
+    <script src="./assets/vendor/tnsSlider.js"></script>
+    <script src="./assets/vendor/typed.js"></script>
+    <script src="./assets/js/vendor.min.js"></script>
+    <script src="./assets/vendor/aos/dist/aos.js"></script>
+
+    <!-- JS Front -->
+    <script src="./assets/js/theme.min.js"></script>
+
+    <!-- JS Plugins Init. -->
+    <script>
+        (function () {
+            // INITIALIZATION OF HEADER
+            // =======================================================
+            new HSHeader("#header").init();
+
+            // INITIALIZATION OF MEGA MENU
+            // =======================================================
+            new HSMegaMenu(".js-mega-menu", {
+                desktop: {
+                    position: "left",
+                },
+            });
+
+            // INITIALIZATION OF SHOW ANIMATIONS
+            // =======================================================
+            new HSShowAnimation(".js-animation-link");
+
+            // INITIALIZATION OF BOOTSTRAP VALIDATION
+            // =======================================================
+            HSBsValidation.init(".js-validate", {
+                onSubmit: (data) => {
+                    data.event.preventDefault();
+                    alert("Submited");
+                },
+            });
+
+            // INITIALIZATION OF BOOTSTRAP DROPDOWN
+            // =======================================================
+            HSBsDropdown.init();
+
+            // INITIALIZATION OF GO TO
+            // =======================================================
+            new HSGoTo(".js-go-to");
+
+            // INITIALIZATION OF AOS
+            // =======================================================
+            AOS.init({
+                duration: 650,
+                once: true,
+            });
+
+            // INITIALIZATION OF SWIPER
+            // =======================================================
+            let activeIndex = 0;
+            var sliderThumbs = new Swiper(".js-swiper-thumbs", {
+                slidesPerView: 1,
+                autoplay: false,
+                watchSlidesVisibility: true,
+                watchSlidesProgress: true,
+                followFinger: false,
+                loop: true,
+                on: {
+                    slideChangeTransitionEnd: function (event) {
+                        if (sliderMain === undefined) return;
+                        sliderMain.slideTo(event.activeIndex);
+                    },
+                },
+            });
+
+            var sliderMain = new Swiper(".js-swiper-main", {
+                effect: "fade",
+                autoplay: false,
+                disableOnInteraction: true,
+                loop: true,
+                navigation: {
+                    nextEl: ".js-swiper-main-button-next",
+                    prevEl: ".js-swiper-main-button-prev",
+                },
+                thumbs: {
+                    swiper: sliderThumbs,
+                },
+                on: {
+                    slideChangeTransitionEnd: function (event) {
+                        if (sliderThumbs === undefined) return;
+                        sliderThumbs.slideTo(event.activeIndex);
+                    },
+                },
+            });
+
+            // Clients
+            var swiper = new Swiper(".js-swiper-clients", {
+                slidesPerView: 2,
+                breakpoints: {
+                    380: {
+                        slidesPerView: 3,
+                        spaceBetween: 15,
+                    },
+                    768: {
+                        slidesPerView: 4,
+                        spaceBetween: 15,
+                    },
+                    1024: {
+                        slidesPerView: 5,
+                        spaceBetween: 15,
+                    },
+                },
+            });
+
+            // Card Grid
+            var swiper = new Swiper(".js-swiper-card-blocks", {
+                slidesPerView: 1,
+                pagination: {
+                    el: ".js-swiper-card-blocks-pagination",
+                    dynamicBullets: true,
+                    clickable: true,
+                },
+                breakpoints: {
+                    620: {
+                        slidesPerView: 2,
+                        spaceBetween: 15,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 15,
+                    },
+                },
+            });
+        })();
+    </script>
+</body>
+
+</html>
