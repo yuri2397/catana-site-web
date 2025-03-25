@@ -1,5 +1,5 @@
 // Service Worker pour mise en cache des images
-const CACHE_NAME = 'digita-cache-v3';
+const CACHE_NAME = 'digita-cache-v4';
 const CACHED_URLS = [
     'assets/img/personel/1.png',
     'assets/img/personel/2.png',
@@ -10,7 +10,7 @@ const CACHED_URLS = [
     'assets/img/personel/7.png',
     'assets/img/personel/8.png',
     'assets/img/personel/9.png',
-    'assets/img/personel/10.png',
+    'assets/img/personel/10.jpeg',
     'assets/img/personel/11.png',
     'assets/img/personel/12.png',
     'assets/img/personel/13.png',
