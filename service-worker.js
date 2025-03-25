@@ -1,5 +1,5 @@
 // Service Worker pour mise en cache des images
-const CACHE_NAME = 'digita-cache-v1';
+const CACHE_NAME = 'digita-cache-v3';
 const CACHED_URLS = [
     'assets/img/personel/1.png',
     'assets/img/personel/2.png',
@@ -17,7 +17,26 @@ const CACHED_URLS = [
     'assets/img/personel/14.png',
     'assets/img/personel/15.png',
 
+    // pdf 
+
+    'assets/pdf/1_AnnalesSupTANA_article_Mécanique quantique 1_L2PC_UIDT.pdf',
+    'assets/pdf/2_AnnalesSupTANA_article_Mécanique quantique 2_L3PC_UIDT.pdf',
+    'assets/pdf/3_AnnalesSupTANA_article_Physique atomique et nucléaire 2_L3PC_UIDT.pdf',
+    'assets/pdf/4_AnnalesSupTANA_article_Photoionisation et physique des plasmas M2_PCA_UIDT.pdf',
+    'assets/pdf/template CAFTANA article epreuves dévaluation_17032025.pdf',
+    
 ];
+
+// remove all cache version
+self.addEventListener('install', event => {
+    event.waitUntil(
+        caches.keys().then(cacheNames => {
+            return Promise.all(cacheNames.map(cacheName => {
+                return caches.delete(cacheName);
+            }));
+        })
+    );
+});
 
 // Installation du Service Worker
 self.addEventListener('install', event => {
